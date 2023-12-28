@@ -48,7 +48,7 @@ export default async function MyApp() {
 			<FooterSection mainMenu={test} />
 			<FooterSection mainMenu={test} />
 			<FooterSection mainMenu={test} />
-
+			{/* @ts-expect-error Server Component */}
 			<Test Component={undefined} pageProps={undefined} mainMenu={undefined} />
 		</>
 	);
