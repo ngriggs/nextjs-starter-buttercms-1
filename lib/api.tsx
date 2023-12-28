@@ -2,10 +2,22 @@ import Butter from "buttercms";
 
 let butter;
 
+interface GetPostsDataParams {
+	page?: number;
+	pageSize?: number;
+	tag?: string;
+	category?: string;
+}
+interface Params {
+	page_size: number;
+	page: number;
+	tag_slug?: string;
+	category_slug?: string;
+}
 const previewSetting = process.env.PREVIEW;
 // make preview mode by default
-const preview =
-	previewSetting === "true" || previewSetting === undefined ? 1 : 0;
+const preview: true | false =
+	previewSetting === "true" || previewSetting === undefined ? true : false;
 
 try {
 	butter = Butter(process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY, preview);
@@ -57,11 +69,14 @@ async function getLandingPagesData(page, pageSize = defaultPageSize) {
 }
 
 export async function getPostsData(
-	{ page, pageSize, tag, category } = { page: 1, pageSize: defaultPostCount }
-) {
+	{ page, pageSize, tag, category }: GetPostsDataParams = {
+		page: 1,
+		pageSize: defaultPostCount,
+	}
+): Promise<any> {
 	try {
 		// https://buttercms.com/docs/api/node?javascript#get-your-blog-posts
-		const params = {
+		const params: Params = {
 			page_size: pageSize || defaultPostCount,
 			page: page || 1,
 		};

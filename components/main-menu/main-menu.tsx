@@ -21,7 +21,7 @@ export default function ManiMenu({ mainMenuLinks }) {
 	function highlightLinks() {
 		const sections = document.querySelectorAll(".page-scroll");
 		const scrollPos =
-			window.pageYOffset ||
+			window.scrollY ||
 			document.documentElement.scrollTop ||
 			document.body.scrollTop;
 

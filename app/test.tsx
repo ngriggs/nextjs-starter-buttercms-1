@@ -11,16 +11,8 @@ import ScrollToButtonButton from "../components/scroll-to-top-button";
 import Preloader from "../components/preloader";
 import React from "react";
 
-export default async function Test({ Component, pageProps, mainMenu }) {
-	const [isLoading, setIsLoading] = useState(false);
+export default function Test({ Component, pageProps, mainMenu }) {
 	const authToken = process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY;
-	if (authToken) {
-		try {
-			mainMenu = await getMainMenu();
-		} catch (e) {
-			console.error("Couldn't load main menu links.", e);
-		}
-	}
 
 	const pageLayout = authToken ? (
 		<>
@@ -50,9 +42,7 @@ export default async function Test({ Component, pageProps, mainMenu }) {
 				/>
 			</Head>
 
-			{isLoading && <Preloader></Preloader>}
-
-			{!isLoading && pageLayout}
+			{pageLayout}
 		</>
 	);
 }
