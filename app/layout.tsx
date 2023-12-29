@@ -1,5 +1,5 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.css";
+// import "bootstrap/dist/css/bootstrap.css";
 import "../css/lineicons.css";
 
 import "../css/tiny-slider.min.css";
@@ -31,9 +31,8 @@ export default async function RootLayout({
 				/>
 			</head>
 
-			<body>
+			<body className="relative">
 				<HeaderSection mainMenu={test} />
-
 				{children}
 				<FooterSection mainMenu={test} />
 				<ScrollToButtonButton />

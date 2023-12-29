@@ -37,10 +37,6 @@ export default async function MyApp() {
 				<LandingPageSection key={index} type={type} sectionData={sectionData} />
 			))}
 			<FooterSection mainMenu={test} />
-			<FooterSection mainMenu={test} />
-			<FooterSection mainMenu={test} />
-			<FooterSection mainMenu={test} />
-			<FooterSection mainMenu={test} />
 		</>
 	);
 }

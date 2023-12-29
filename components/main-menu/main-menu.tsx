@@ -67,7 +67,7 @@ export default function ManiMenu({ mainMenuLinks }) {
 	return (
 		<>
 			<button
-				className={`navbar-toggler ${isMenuActive ? "active" : ""}`}
+				className={`navbar-toggler md:hidden ${isMenuActive ? "active" : ""}`}
 				type="button"
 				data-bs-toggle="collapse"
 				data-bs-target="#navbarSupportedContent"
@@ -81,13 +81,9 @@ export default function ManiMenu({ mainMenuLinks }) {
 				<span className="toggler-icon"></span>
 			</button>
 
-			<div
-				className="collapse navbar-collapse sub-menu-bar"
-				ref={menuLinksEl}
-				id="navbarSupportedContent"
-			>
-				<div className="ms-auto">
-					<ul id="nav" className="navbar-nav ms-auto">
+			<div className="hidden md:flex" ref={menuLinksEl}>
+				<div className="ms-auto my-auto">
+					<ul id="nav" className="flex ms-auto space-x-5">
 						{mainMenuLinks.map((navLink) => (
 							<MainMenuLink
 								key={navLink.url}

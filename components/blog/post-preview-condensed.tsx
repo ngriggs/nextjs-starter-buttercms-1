@@ -11,7 +11,7 @@ export default function PostPreviewCondensed({
 	author,
 }) {
 	return (
-		<div className="col-lg-4 col-md-8 col-sm-10">
+		<div className="col-lg-4 col-md-8 col-sm-10 ">
 			<div className="single-blog">
 				{coverImage && (
 					<div className="blog-header">

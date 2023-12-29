@@ -8,10 +8,10 @@ export default function FooterSection({ mainMenu }) {
 	}));
 
 	return (
-		<footer className="footer pt-120">
-			<div className="container">
-				<div className="row">
-					<div className="col-xl-3 col-lg-4 col-md-6 col-sm-10">
+		<footer className="footer w-screen left-0 right-0 pt-120">
+			<div className="">
+				<div className="flex flex-col md:flex-row">
+					<div className="w-1/3 p-4">
 						<div className="footer-widget">
 							<div className="logo">
 								<a href="https://buttercms.com">
@@ -54,7 +54,7 @@ export default function FooterSection({ mainMenu }) {
 							</ul>
 						</div>
 					</div>
-					<div className="col-xl-5 col-lg-4 col-md-12 col-sm-12 offset-xl-1">
+					<div className="w-1/3 p-4">
 						<div className="footer-widget">
 							<h3>About Us</h3>
 							<ul className="links">
@@ -66,8 +66,7 @@ export default function FooterSection({ mainMenu }) {
 							</ul>
 						</div>
 					</div>
-
-					<div className="col-xl-3 col-lg-4 col-md-6">
+					<div className="w-1/3 p-4">
 						<div className="footer-widget">
 							<h3>Subscribe Newsletter</h3>
 							<form action="#">

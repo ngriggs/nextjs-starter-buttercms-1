@@ -30,8 +30,11 @@ export default function Testimonials({
 	});
 
 	return (
-		<section id={scrollAnchorId} className="testimonial-section mt-100">
-			<div className="container">
+		<section
+			id={scrollAnchorId}
+			className="testimonial-section mt-[200px] pt-[200px]"
+		>
+			<div className="container mx-auto">
 				<div className="row justify-content-center">
 					<div className="col-xl-7 col-lg-9">
 						<div className="testimonial-active-wrapper">

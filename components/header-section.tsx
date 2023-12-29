@@ -13,7 +13,7 @@ export default function HeaderSection({ mainMenu }) {
 
 	function fixNavBar() {
 		if (navbarAreaEl.current) {
-			setIsNavbarSticky(window.pageYOffset > navbarAreaEl.current.offsetTop);
+			setIsNavbarSticky(window.scrollY > navbarAreaEl.current.offsetTop);
 		}
 	}
 
@@ -26,15 +26,17 @@ export default function HeaderSection({ mainMenu }) {
 	}, []);
 
 	return (
-		<header className="header">
+		<header className="header relative">
 			<div
 				ref={navbarAreaEl}
-				className={`navbar-area ${isNavbarSticky ? "sticky" : ""}`}
+				className={`absolute top-0 z-50 left-0 right-0 w-screen  ${
+					isNavbarSticky ? "sticky" : ""
+				}`}
 			>
 				<div className="container">
-					<div className="row align-items-center">
-						<div className="col-lg-12">
-							<nav className="navbar navbar-expand-lg">
+					<div className="w-screen mx-auto align-items-center">
+						<div className="mx-auto">
+							<nav className="flex justify-between max-w-[1440px] z-50 mx-auto">
 								<Link className="navbar-brand" href="/">
 									<Image
 										src="https://cdn.buttercms.com/PBral0NQGmmFzV0uG7Q6"
