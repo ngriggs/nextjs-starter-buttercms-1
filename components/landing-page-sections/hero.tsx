@@ -11,7 +11,7 @@ export default function Hero({
 	return (
 		<section
 			id={scrollAnchorId}
-			className="relative cta-section overflow-hidden items-center bg-gradient-to-b w-screen mx-auto from-blue-200 via-transparent to-transparent -z-10 min-h-screen flex"
+			className="hero-section relative cta-section overflow-hidden items-center bg-gradient-to-b w-screen mx-auto from-blue-200 via-transparent to-transparent -z-10 min-h-screen flex"
 		>
 			<div className="container mx-auto">
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
