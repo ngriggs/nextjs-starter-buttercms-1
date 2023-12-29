@@ -3,12 +3,7 @@ import { useEffect, useState } from "react";
 
 import Head from "next/head";
 
-import { getMainMenu } from "../lib/api";
-
-import FooterSection from "../components/footer-section";
-import HeaderSection from "../components/header-section";
 import ScrollToButtonButton from "../components/scroll-to-top-button";
-import Preloader from "../components/preloader";
 import React from "react";
 
 export default function Test({ Component, pageProps, mainMenu }) {

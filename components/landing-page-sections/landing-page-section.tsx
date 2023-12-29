@@ -1,8 +1,6 @@
-import dynamic from "next/dynamic";
-
+"use client";
 import camelcaseKeys from "camelcase-keys";
 
-import Preloader from "../preloader";
 import MissingSection from "./missing-section";
 import Features from "./features";
 import Hero from "./hero";

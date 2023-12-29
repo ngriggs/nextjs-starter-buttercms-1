@@ -5,6 +5,7 @@ import Image from "next/image";
 
 import MainMenu from "./main-menu/main-menu";
 import React from "react";
+import Link from "next/link";
 
 export default function HeaderSection({ mainMenu }) {
 	const [isNavbarSticky, setIsNavbarSticky] = useState(false);
@@ -34,7 +35,7 @@ export default function HeaderSection({ mainMenu }) {
 					<div className="row align-items-center">
 						<div className="col-lg-12">
 							<nav className="navbar navbar-expand-lg">
-								<a className="navbar-brand" href="https://buttercms.com">
+								<Link className="navbar-brand" href="/">
 									<Image
 										src="https://cdn.buttercms.com/PBral0NQGmmFzV0uG7Q6"
 										alt="Logo"
@@ -45,7 +46,7 @@ export default function HeaderSection({ mainMenu }) {
 											height: "auto",
 										}}
 									/>
-								</a>
+								</Link>
 								<MainMenu mainMenuLinks={mainMenu} />
 							</nav>
 						</div>

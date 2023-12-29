@@ -5,23 +5,14 @@ import Test from "./test";
 import { getMainMenu } from "../lib/api";
 import FooterSection from "../components/footer-section";
 import HeaderSection from "../components/header-section";
-
-async function getMainMenu2() {
-	const authToken = process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY;
-	let mainMenu = "something";
-	if (authToken) {
-		try {
-			mainMenu = await getMainMenu();
-			console.log(mainMenu);
-		} catch (e) {
-			console.error("Couldn't load main menu links.", e);
-		}
-	}
-	return mainMenu;
-}
+import { getLandingPage, getLandingPages } from "../lib/api";
+import LandingPageSection from "../components/landing-page-sections/landing-page-section";
 
 export default async function MyApp() {
-	const test = await getMainMenu2();
+	const test = await getMainMenu();
+	const page = await getLandingPage("landing-page-with-components");
+	const pages = await getLandingPages();
+	console.log(pages);
 
 	return (
 		<>
@@ -42,13 +33,14 @@ export default async function MyApp() {
 					href="https://buttercms.com/static/v2/images/favicon.png"
 				/>
 			</Head>
-			<HeaderSection mainMenu={test} />
+			{page.fields.body.map(({ type, fields: sectionData }, index) => (
+				<LandingPageSection key={index} type={type} sectionData={sectionData} />
+			))}
 			<FooterSection mainMenu={test} />
 			<FooterSection mainMenu={test} />
 			<FooterSection mainMenu={test} />
 			<FooterSection mainMenu={test} />
 			<FooterSection mainMenu={test} />
-			<Test Component={undefined} pageProps={undefined} mainMenu={undefined} />
 		</>
 	);
 }
