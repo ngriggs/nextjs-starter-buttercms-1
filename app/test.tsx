@@ -6,7 +6,7 @@ import Head from "next/head";
 import ScrollToButtonButton from "../components/scroll-to-top-button";
 import React from "react";
 
-export default function Test({ Component, pageProps, mainMenu }) {
+export default function Test({ Component, pageProps }) {
 	const authToken = process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY;
 
 	const pageLayout = authToken ? (

@@ -12,8 +12,6 @@ export default async function MyApp() {
 	const test = await getMainMenu();
 	const page = await getLandingPage("landing-page-with-components");
 	const pages = await getLandingPages();
-	console.log(pages);
-
 	return (
 		<>
 			<Head>
@@ -33,10 +31,15 @@ export default async function MyApp() {
 					href="https://buttercms.com/static/v2/images/favicon.png"
 				/>
 			</Head>
-			{page.fields.body.map(({ type, fields: sectionData }, index) => (
-				<LandingPageSection key={index} type={type} sectionData={sectionData} />
-			))}
-			<FooterSection mainMenu={test} />
+			<div className="">
+				{page.fields.body.map(({ type, fields: sectionData }, index) => (
+					<LandingPageSection
+						key={index}
+						type={type}
+						sectionData={sectionData}
+					/>
+				))}
+			</div>
 		</>
 	);
 }

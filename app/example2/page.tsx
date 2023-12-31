@@ -1,12 +1,12 @@
 import { Button } from "../../components/ui/button";
 import { getAllLandingPages } from "../../lib/getAllLandingPages";
 import { getLandingPage } from "../../lib/getLandingPage";
-import LandingPageSection from "../example2/landingPageSection";
+import LandingPageSection from "./landingPageSection";
 
 export default async function Component({ params }) {
 	const allLandingPageData = await getAllLandingPages();
 	// console.log(allLandingPageData.landingPages[0]);
-	const landingPageData = await getLandingPage(params.slug);
+	const landingPageData = await getLandingPage("test");
 
 	return (
 		<div className="bg-[#0f172a] text-white min-h-screen">

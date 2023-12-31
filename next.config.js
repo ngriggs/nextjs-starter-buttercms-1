@@ -30,7 +30,7 @@ module.exports = {
 			  }));
 	},
 	images: {
-		domains: ["cdn.buttercms.com"],
+		domains: ["cdn.buttercms.com", "media.graphassets.com"],
 		dangerouslyAllowSVG: true,
 	},
 };

@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function Hero({
 	headline,
@@ -11,23 +13,22 @@ export default function Hero({
 	return (
 		<section
 			id={scrollAnchorId}
-			className="hero-section relative cta-section overflow-hidden items-center bg-gradient-to-b w-screen mx-auto from-blue-200 via-transparent to-transparent -z-10 min-h-screen flex"
+			className="hero-section relative cta-section overflow-hidden items-center bg-gradient-to-b w-screen mx-auto from-blue-200 via-transparent to-transparent -z-10 flex"
 		>
-			<div className="container mx-auto">
+			<div className="container mx-auto mt-[56px]">
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-					<div className="section-title">
-						<h1 className="font-bold">{headline}</h1>
+					<div className="mt-20">
+						<h2 className="font-bold">{headline}</h2>
 						<p className="mt-4">{subheadline}</p>
-						<div className="flex cta-content-wrapper">
-							<a
-								href={buttonUrl}
-								className="main-btn btn-hover border-btn mt-30"
-							>
-								{buttonLabel}
-							</a>
+						<div className="flex flex-col md:flex-row items-center place-content-center mt-40">
+							<Link href={buttonUrl}>
+								<Button variant="outline" size="lg">
+									{buttonLabel}
+								</Button>
+							</Link>
 							<a
 								href="https://buttercms.com/join/"
-								className="mt-40 ml-5 my-auto block underline"
+								className="ml-5 my-auto block underline"
 							>
 								Need an account?
 							</a>

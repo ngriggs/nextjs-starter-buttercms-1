@@ -10,14 +10,14 @@ export default function Features({
 		<section id={scrollAnchorId} className="feature-section">
 			<div className="container mx-auto">
 				<div className="flex flex-col md:flex-row">
-					<div className="w-1/2 my-auto p-2">
+					<div className="flex-1 my-auto p-2">
 						<div className="section-title mb-60">
 							<h2 className="mb-20">{headline}</h2>
 							<p className="max-w-md">{subheadline}</p>
 						</div>
 					</div>
 
-					<div className="w-1/2">
+					<div className="flex-1">
 						<div className="grid grid-cols-1 md:grid-cols-2">
 							{features.map((feature, index) => (
 								<Feature

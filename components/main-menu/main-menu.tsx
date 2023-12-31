@@ -13,7 +13,7 @@ type MainMenuProps = {
 	mainMenuLinks: MainMenuLink[];
 };
 
-export default function ManiMenu({ mainMenuLinks }) {
+export default function MainMenu({ mainMenuLinks }) {
 	const [activeMenuLink, setActiveMenuLink] = useState(
 		mainMenuLinks.length ? mainMenuLinks[0].url : ""
 	);
@@ -81,9 +81,12 @@ export default function ManiMenu({ mainMenuLinks }) {
 				<span className="toggler-icon"></span>
 			</button>
 
-			<div className="hidden md:flex" ref={menuLinksEl}>
+			<div
+				className={`${isMenuActive ? "" : "hidden"} md:flex`}
+				ref={menuLinksEl}
+			>
 				<div className="ms-auto my-auto">
-					<ul id="nav" className="flex ms-auto space-x-5">
+					<ul id="nav" className="flex flex-col md:flex-row ms-auto space-x-5">
 						{mainMenuLinks.map((navLink) => (
 							<MainMenuLink
 								key={navLink.url}
