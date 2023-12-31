@@ -6,8 +6,8 @@ export default function Hero({ ...params }) {
 	console.log("Hero", params);
 
 	return (
-		<div className="bg-gradient-to-b from-purple-600 to-transparent pt-20 container">
-			<div className="z-20 my-20 flex min-h-screen flex-col">
+		<div className="bg-gradient-to-b from-purple-600 to-transparent pt-20 ">
+			<div className="container text-white z-20 my-20 flex min-h-screen flex-col">
 				<div className="flex-1 px-4 pb-10 md:px-6">
 					<div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
 						<Image

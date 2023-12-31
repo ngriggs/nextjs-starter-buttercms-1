@@ -32,6 +32,7 @@ import {
 	Calendar,
 	LayoutList,
 	LucideIcon,
+	ChevronsUpDown,
 } from "lucide-react";
 
 export type Icon = LucideIcon;
@@ -50,6 +51,7 @@ export const Icons = {
 			<circle cx="12" cy="12" r="10"></circle>
 		</svg>
 	),
+	chevronsUpDown: ChevronsUpDown,
 	shoppingBag: ShoppingBag,
 	chevronDown: ChevronDown,
 	menu: Menu,
