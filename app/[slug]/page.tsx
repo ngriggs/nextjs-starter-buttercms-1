@@ -9,9 +9,9 @@ export default async function Component({ params }) {
 	const landingPageData = await getLandingPage(params.slug);
 
 	return (
-		<div className="relative bg-inherit text-black min-h-screen">
+		<div className="relative bg-inherit text-black min-svh">
 			<div className="mx-auto py-16 px-4 sm:px-6 lg:px-8  bg-gradient-to-b from-blue-600 to-blue-50 min-h-screen">
-				<div className="container">
+				<div className="container mt-[120px]">
 					<div className="text-center">
 						<h2 className="text-base font-semibold text-indigo-600 tracking-wide uppercase">
 							Features
