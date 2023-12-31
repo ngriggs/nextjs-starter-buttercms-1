@@ -47,11 +47,11 @@ export default async function Component({ params }) {
 										5 min
 									</span>
 								</div>
-								<div className="flex space-x-4">
+								<div className="flex flex-col md:flex-row space-y-4 mx-auto md:space-y-0 space-x-0 md:space-x-4">
 									<Button className="bg-indigo-600 hover:bg-indigo-700 text-white">
 										Download Draft
 									</Button>
-									<Button className="bg-indigo-600 hover:bg-indigo-700 text-white">
+									<Button className="mx-auto bg-indigo-600 hover:bg-indigo-700 text-white">
 										Export to Editor
 									</Button>
 								</div>
