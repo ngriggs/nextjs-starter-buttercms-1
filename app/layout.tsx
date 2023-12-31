@@ -204,6 +204,10 @@ const nav = [
 		title: "example",
 		href: "/example",
 	},
+	{
+		title: "test",
+		href: "/test",
+	},
 ];
 
 export default async function RootLayout({
