@@ -32,7 +32,7 @@ export default function HoverPopover({ item }: any) {
 		<Popover open={open} onOpenChange={setOpen}>
 			{/* // <Popover> */}
 			<PopoverTrigger
-				className="group flex cursor-pointer flex-row text-base font-light text-[#232323] hover:text-[#37c2cc] transition-all"
+				className="group flex cursor-pointer flex-row text-[#232323] my-auto text-lg focus:ring-transparent active:ring-transparent hover:text-primary-foreground transition-all"
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseLeave}
 			>

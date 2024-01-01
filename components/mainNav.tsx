@@ -26,6 +26,7 @@ import {
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
+import Image from "next/image";
 
 // Social Media Links
 export const socialMedia = [
@@ -70,40 +71,22 @@ export default function NavBar({ nav }) {
 			{/* Main nav */}
 			<div className="hidden md:block">
 				<div
-					className={`w-screen h-[56px] absolute top-0 z-50  ${
-						isNavbarSticky ? "sticky" : ""
+					className={`w-screen h-[56px] top-0 z-50  ${
+						isNavbarSticky ? "fixed bg-white z-50" : "absolute"
 					}`}
 					ref={navbarAreaEl}
 				>
 					<div className="z-20 flex h-14 items-center justify-between px-4 lg:px-6">
 						<div className="flex flex-1 justify-items-start space-x-4">
 							<Link className="" href="/" target="_top">
-								<svg
-									className=" h-6 w-6"
-									fill="none"
-									height="24"
-									stroke="currentColor"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									viewBox="0 0 24 24"
-									width="24"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<rect height="20" rx="2" ry="2" width="16" x="4" y="2" />
-									<path d="M9 22v-4h6v4" />
-									<path d="M8 6h.01" />
-									<path d="M16 6h.01" />
-									<path d="M12 6h.01" />
-									<path d="M12 10h.01" />
-									<path d="M12 14h.01" />
-									<path d="M16 10h.01" />
-									<path d="M16 14h.01" />
-									<path d="M8 10h.01" />
-									<path d="M8 14h.01" />
-								</svg>{" "}
+								<Image
+									src={"/lgalogotrans.png"}
+									alt={"libertyville gymnastics academy"}
+									width={50}
+									height={50}
+								/>
 							</Link>
-							<nav className="hidden gap-4 text-sm sm:gap-6 md:block">
+							<nav className="hidden gap-4 text-sm sm:gap-6 md:block my-auto">
 								<div className="flex">
 									{nav?.length ? (
 										<div className="my-auto hidden flex-1 justify-center space-x-8 md:flex md:flex-1 ">
@@ -117,7 +100,7 @@ export default function NavBar({ nav }) {
 													<Link
 														href={item.href!}
 														key={item.title}
-														className="group flex cursor-pointer flex-row text-lg font-medium text-[#232323] hover:underline hover:underline-offset-[8px]"
+														className="group flex cursor-pointer flex-row text-lg text-[#232323] hover:text-primary-foreground"
 													>
 														{item.title}
 													</Link>
@@ -193,30 +176,12 @@ export default function NavBar({ nav }) {
 			<div className="md:hidden w-screen h-[56px] fixed bg-white top-0 z-50">
 				<div className="z-20 flex h-14 items-center justify-between px-4 lg:px-6">
 					<Link className="" href="/" target="_top">
-						<svg
-							className=" h-6 w-6"
-							fill="none"
-							height="24"
-							stroke="currentColor"
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							strokeWidth="2"
-							viewBox="0 0 24 24"
-							width="24"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<rect height="20" rx="2" ry="2" width="16" x="4" y="2" />
-							<path d="M9 22v-4h6v4" />
-							<path d="M8 6h.01" />
-							<path d="M16 6h.01" />
-							<path d="M12 6h.01" />
-							<path d="M12 10h.01" />
-							<path d="M12 14h.01" />
-							<path d="M16 10h.01" />
-							<path d="M16 14h.01" />
-							<path d="M8 10h.01" />
-							<path d="M8 14h.01" />
-						</svg>{" "}
+						<Image
+							src={"/lgalogotrans.png"}
+							alt={"libertyville gymnastics academy"}
+							width={50}
+							height={50}
+						/>
 					</Link>
 					<Popover modal>
 						<PopoverTrigger className="group px-2 md:hidden">

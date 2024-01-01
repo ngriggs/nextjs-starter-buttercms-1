@@ -1,18 +1,21 @@
 import Image from "next/image";
 import Typewriter from "./typewriter";
 import Link from "next/link";
+import { Button } from "../../components/ui/button";
 
 export default function Hero({ ...params }) {
 	console.log("Hero", params);
 
 	return (
-		<div className="bg-gradient-to-b from-purple-600 to-transparent pt-20 ">
+		<div className="relative bg-gradient-to-b from-purple-400 to-transparent pt-20 ">
+			<div className="w-[862px] h-[862px] rounded-full bg-purple-600 z-10 after:block hidden md:absolute after:rounded-full right-[-150px] top-[-150px]"></div>
+
 			<div className="container text-white z-20 my-20 flex min-h-screen flex-col">
 				<div className="flex-1 px-4 pb-10 md:px-6">
 					<div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
 						<Image
 							alt="Indoor Playspace"
-							className="mx-auto flex justify-end overflow-hidden rounded-xl object-bottom sm:w-full lg:order-last"
+							className="mx-auto flex justify-end overflow-hidden rounded-xl object-bottom sm:w-full lg:order-last z-20"
 							height="315"
 							src={params.image.url}
 							width="480"
@@ -30,17 +33,11 @@ export default function Hero({ ...params }) {
 								</p>
 							</div>
 							<div className="flex flex-col gap-2 min-[400px]:flex-row">
-								<Link
-									className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-									href="#"
-								>
-									Discover Our Work
+								<Link href="#">
+									<Button variant="default"> Discover Our Work</Button>
 								</Link>
-								<Link
-									className="inline-flex text-black h-10 items-center justify-center rounded-md border border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800  dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
-									href="#"
-								>
-									Get in Touch
+								<Link href="#">
+									<Button variant="ghost"> Get in Touch</Button>
 								</Link>
 							</div>
 						</div>
@@ -49,7 +46,7 @@ export default function Hero({ ...params }) {
 				<div className="mx-auto flex-1">
 					<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 						<div className="grid gap-6 md:grid-cols-3">
-							<div className="flex group flex-col items-center hover:text-[#37c2cc] justify-center space-y-4">
+							<div className="flex group flex-col items-center hover:text-primary hover:border hover:border-primary rounded-2xl p-4 justify-center space-y-4">
 								<PlayIcon className="h-8 w-8" />
 								<h2 className="text-2xl font-bold tracking-tighter">
 									Web Development
@@ -59,7 +56,7 @@ export default function Hero({ ...params }) {
 									web development tailored to meet your business needs.
 								</p>
 							</div>
-							<div className="flex group flex-col hover:text-[#37c2cc] items-center justify-center space-y-4">
+							<div className="flex group flex-col hover:text-primary items-center justify-center hover:border hover:border-primary rounded-2xl p-4 space-y-4">
 								<SchoolIcon className="h-8 w-8 " />
 								<h2 className="text-2xl font-bold tracking-tighter">
 									Creative Design{" "}
@@ -69,7 +66,7 @@ export default function Hero({ ...params }) {
 									reflect the essence of your brand and captivate your visitors.
 								</p>
 							</div>
-							<div className="flex group flex-col hover:text-[#37c2cc] items-center justify-center space-y-4">
+							<div className="flex group flex-col hover:text-primary items-center justify-center hover:border hover:border-primary rounded-2xl p-4 space-y-4">
 								<ActivityIcon className="h-8 w-8" />
 								<h2 className="text-2xl font-bold tracking-tighter">
 									Strategic Planning

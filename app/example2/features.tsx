@@ -21,10 +21,12 @@ import {
 import { Icons } from "../../components/icons";
 import Link from "next/link";
 
+// [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]
+
 export default function Features({ ...params }) {
 	console.log("Features", params);
 	return (
-		<div className="inset-0 -z-10 min-h-screen w-screen bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]">
+		<div className="bg-cover bg-center bg-feature-background inset-0 -z-10 min-h-screen w-screen bg-white ">
 			<div className="container grid grid-cols-1 md:grid-cols-2">
 				<div className="flex flex-col my-20">
 					<div className="grid place-content-start">
@@ -84,7 +86,7 @@ export default function Features({ ...params }) {
 					</div>
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-20">
-					<Card className="w-[300px] transition-all duration-100 hover:outline hover:outline-teal-500">
+					<Card className=" transition-all duration-100 hover:outline hover:outline-teal-500">
 						<CardHeader>
 							<CardTitle>Create project</CardTitle>
 							<CardDescription>
@@ -120,7 +122,7 @@ export default function Features({ ...params }) {
 							<Button>Deploy</Button>
 						</CardFooter>
 					</Card>
-					<Card className="w-[300px] transition-all duration-100 hover:outline hover:outline-teal-500">
+					<Card className="transition-all duration-100 hover:outline hover:outline-teal-500">
 						<CardHeader>
 							<CardTitle>Create project</CardTitle>
 							<CardDescription>
@@ -156,7 +158,7 @@ export default function Features({ ...params }) {
 							<Button>Deploy</Button>
 						</CardFooter>
 					</Card>
-					<Card className="w-[300px] transition-all duration-100 hover:outline hover:outline-teal-500">
+					<Card className="transition-all duration-100 hover:outline hover:outline-teal-500">
 						<CardHeader>
 							<CardTitle>Create project</CardTitle>
 							<CardDescription>
@@ -192,7 +194,7 @@ export default function Features({ ...params }) {
 							<Button>Deploy</Button>
 						</CardFooter>
 					</Card>
-					<Card className="w-[300px] transition-all duration-100 hover:outline hover:outline-teal-500">
+					<Card className=" transition-all duration-100 hover:outline hover:outline-teal-500">
 						<CardHeader>
 							<CardTitle>Create project</CardTitle>
 							<CardDescription>
