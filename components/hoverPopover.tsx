@@ -6,26 +6,51 @@ import Link from "next/link";
 
 export default function HoverPopover({ item }: any) {
 	const [open, setOpen] = useState(false);
-	let timeoutId: NodeJS.Timeout | null = null;
+	const [isMouseInside, setMouseInside] = useState(false);
+	const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+	const example = useRef(null);
 
 	const handleMouseEnter = () => {
-		clearTimeout(timeoutId!); // Clear the timeout if the mouse re-enters the popover
+		clearTimeout(closeTimeoutRef.current!);
 		setOpen(true);
+		setMouseInside(true);
 	};
 
 	const handleMouseLeave = () => {
-		// Set a timeout to delay closing the popover
-		timeoutId = setTimeout(() => {
+		closeTimeoutRef.current = setTimeout(() => {
 			setOpen(false);
-		}, 200); // Delay of 200 ms
+			example.current.blur();
+		}, 200); // Adjust the delay time (in milliseconds) as needed
+		setMouseInside(false);
+		example.current.blur();
+	};
+
+	const handlePopoverMouseEnter = () => {
+		clearTimeout(closeTimeoutRef.current!);
+		setMouseInside(true);
+	};
+
+	const handlePopoverMouseLeave = () => {
+		clearTimeout(closeTimeoutRef.current!);
+		setOpen(false);
+		setMouseInside(false);
+		example.current.blur();
 	};
 
 	return (
 		<Popover open={open} onOpenChange={setOpen}>
 			<PopoverTrigger
-				className="group flex cursor-pointer flex-row text-[#232323] my-auto text-lg focus-visible:ring-transparent hover:text-primary-foreground transition-all"
+				className="group flex cursor-pointer flex-row text-[#232323] my-auto text-lg hover:text-primary-foreground transition-all"
+				// ... (existing code)
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseLeave}
+				ref={example}
+				// Conditionally blur based on the mouse position
+				onFocus={() => {
+					if (!isMouseInside) {
+						example.current.blur();
+					}
+				}}
 			>
 				{item.title}
 				<Icons.chevronDown
@@ -35,8 +60,11 @@ export default function HoverPopover({ item }: any) {
 			</PopoverTrigger>
 			<PopoverContent
 				className="mt-[15px] rounded-sm"
-				onMouseEnter={handleMouseEnter}
-				onMouseLeave={handleMouseLeave}
+				onMouseEnter={handlePopoverMouseEnter}
+				onMouseLeave={handlePopoverMouseLeave}
+				onMouseOut={() => {
+					example.current.blur();
+				}}
 			>
 				{item.subheadings?.map((sub: any) => (
 					<div className="text-base font-light" key={sub.name}>
