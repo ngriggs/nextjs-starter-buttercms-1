@@ -91,11 +91,11 @@ export default async function Component({ params }) {
 					<ColorForm />
 				</div>
 			</div>
-			<div className="min-h-screen">
+			{/* <div className="min-h-screen">
 				<div className="bg-cover bg-center bg-motion-example">
 					<p className="min-h-screen">something</p>
 				</div>
-			</div>
+			</div> */}
 			{landingPageData?.landingPage?.body.map((section, index) => {
 				return (
 					<LandingPageSection

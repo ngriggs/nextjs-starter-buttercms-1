@@ -217,7 +217,7 @@ export default async function RootLayout({
 }) {
 	const test = await getMainMenu();
 	return (
-		<html lang="en">
+		<html lang="en" className="scroll-smooth">
 			<head>
 				<link
 					href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap"
