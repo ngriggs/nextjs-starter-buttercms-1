@@ -73,6 +73,7 @@ module.exports = {
 			},
 			backgroundImage: {
 				"feature-background": "url('../public/images/common-bg2.svg')",
+				"motion-example": "url('../public/videos/sample.avif')",
 			},
 		},
 	},

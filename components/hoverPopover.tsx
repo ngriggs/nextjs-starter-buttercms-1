@@ -1,51 +1,42 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { Icons } from "./icons";
 import Link from "next/link";
 
 export default function HoverPopover({ item }: any) {
 	const [open, setOpen] = useState(false);
-	const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+	let timeoutId: NodeJS.Timeout | null = null;
 
 	const handleMouseEnter = () => {
-		clearTimeout(closeTimeoutRef.current!);
+		clearTimeout(timeoutId!); // Clear the timeout if the mouse re-enters the popover
 		setOpen(true);
 	};
 
 	const handleMouseLeave = () => {
-		closeTimeoutRef.current = setTimeout(() => {
+		// Set a timeout to delay closing the popover
+		timeoutId = setTimeout(() => {
 			setOpen(false);
-		}, 100); // Adjust the delay time (in milliseconds) as needed
-	};
-
-	const handlePopoverMouseEnter = () => {
-		clearTimeout(closeTimeoutRef.current!);
-	};
-
-	const handlePopoverMouseLeave = () => {
-		clearTimeout(closeTimeoutRef.current!);
-		setOpen(false);
+		}, 200); // Delay of 200 ms
 	};
 
 	return (
 		<Popover open={open} onOpenChange={setOpen}>
-			{/* // <Popover> */}
 			<PopoverTrigger
-				className="group flex cursor-pointer flex-row text-[#232323] my-auto text-lg focus:ring-transparent active:ring-transparent hover:text-primary-foreground transition-all"
+				className="group flex cursor-pointer flex-row text-[#232323] my-auto text-lg focus-visible:ring-transparent hover:text-primary-foreground transition-all"
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseLeave}
 			>
 				{item.title}
 				<Icons.chevronDown
-					className="relative my-auto ml-2 h-5 w-5 stroke-1 transition duration-200 group-data-[state=open]:rotate-180"
+					className="relative my-auto ml-2 h-5 w-5 stroke-1 transition-transform duration-200 group-data-[state=open]:rotate-180"
 					aria-hidden="true"
 				/>
 			</PopoverTrigger>
 			<PopoverContent
-				onMouseEnter={handlePopoverMouseEnter}
-				onMouseLeave={handlePopoverMouseLeave}
 				className="mt-[15px] rounded-sm"
+				onMouseEnter={handleMouseEnter}
+				onMouseLeave={handleMouseLeave}
 			>
 				{item.subheadings?.map((sub: any) => (
 					<div className="text-base font-light" key={sub.name}>
