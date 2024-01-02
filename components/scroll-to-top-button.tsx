@@ -1,6 +1,9 @@
 "use client";
 import React from "react";
 import { useEffect, useState } from "react";
+import { Button } from "./ui/button";
+import { Icons } from "./icons";
+import Link from "next/link";
 
 export default function ScrollToButtonButton() {
 	const [hasScrollToTopButton, setHasScrollToTopButton] = useState(false);
@@ -22,9 +25,11 @@ export default function ScrollToButtonButton() {
 	return (
 		<>
 			{hasScrollToTopButton && (
-				<a href="#" className="scroll-top btn-hover">
-					<i className="lni lni-chevron-up"></i>
-				</a>
+				<Link href="#" className="fixed bottom-5 right-5">
+					<Button className="rounded-xl h-10 w-10 p-2" variant="default">
+						<Icons.chevronDown className="rotate-180 h-7 w-7" />
+					</Button>
+				</Link>
 			)}
 		</>
 	);
