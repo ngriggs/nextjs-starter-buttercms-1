@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function Feature({ headline, description, icon }) {
 	return (
-		<div className="">
+		<div className="w-10 h-10 relative">
 			<div className="single-feature">
-				<div className="feature-icon">
+				<div className="feature-icon w-10 h-10">
 					{icon && <Image src={icon} alt="" layout="fill" objectFit="cover" />}
 				</div>
 				<div className="feature-content">

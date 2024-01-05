@@ -20,7 +20,7 @@ export default function HoverPopover({ item }: any) {
 		closeTimeoutRef.current = setTimeout(() => {
 			setOpen(false);
 			example.current.blur();
-		}, 200); // Adjust the delay time (in milliseconds) as needed
+		}, 50); // Adjust the delay time (in milliseconds) as needed
 		setMouseInside(false);
 		example.current.blur();
 	};
@@ -40,7 +40,7 @@ export default function HoverPopover({ item }: any) {
 	return (
 		<Popover open={open} onOpenChange={setOpen}>
 			<PopoverTrigger
-				className="group flex cursor-pointer flex-row text-[#232323] my-auto text-lg hover:text-primary-foreground transition-all"
+				className="group flex cursor-pointer flex-row my-auto text-lg transition-all"
 				// ... (existing code)
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseLeave}
@@ -65,6 +65,7 @@ export default function HoverPopover({ item }: any) {
 				onMouseOut={() => {
 					example.current.blur();
 				}}
+				side="top"
 			>
 				{item.subheadings?.map((sub: any) => (
 					<div className="text-base font-light" key={sub.name}>

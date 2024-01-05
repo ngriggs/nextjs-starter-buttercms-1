@@ -27,6 +27,8 @@ import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 import Image from "next/image";
+import { useTheme } from "next-themes";
+import { ModeToggle } from "./mode-toggle";
 
 // Social Media Links
 export const socialMedia = [
@@ -66,13 +68,15 @@ export default function NavBar({ nav }) {
 		};
 	}, []);
 
+	const { theme, setTheme } = useTheme();
+
 	return (
 		<header className="relative">
 			{/* Main nav */}
 			<div className="hidden md:block">
 				<div
-					className={`w-screen h-[56px] top-0 z-50  ${
-						isNavbarSticky ? "fixed bg-white z-50" : "absolute"
+					className={`w-screen h-[56px] top-0 z-50 bg-white text-black dark:bg-black dark:text-white  ${
+						isNavbarSticky ? "fixed bg-white z-50" : "absolute "
 					}`}
 					ref={navbarAreaEl}
 				>
@@ -100,7 +104,7 @@ export default function NavBar({ nav }) {
 													<Link
 														href={item.href!}
 														key={item.title}
-														className="group flex cursor-pointer flex-row text-lg text-[#232323] hover:text-primary-foreground"
+														className="group flex cursor-pointer flex-row text-lg"
 													>
 														{item.title}
 													</Link>
@@ -110,6 +114,9 @@ export default function NavBar({ nav }) {
 									) : null}
 								</div>
 							</nav>
+							<div className="my-auto flex justify-end place-content-end items-end">
+								<ModeToggle align={"left"} />
+							</div>
 						</div>
 
 						<div className="hidden justify-end md:flex md:flex-1">
@@ -173,7 +180,7 @@ export default function NavBar({ nav }) {
 				</div>
 			</div>
 			{/* Mobile nav */}
-			<div className="md:hidden w-screen h-[56px] fixed bg-white top-0 z-50">
+			<div className="md:hidden w-screen h-[56px] bg-white text-black dark:bg-black dark:text-white fixed top-0 z-50">
 				<div className="z-20 flex h-14 items-center justify-between px-4 lg:px-6">
 					<Link className="" href="/" target="_top">
 						<Image
@@ -183,17 +190,10 @@ export default function NavBar({ nav }) {
 							height={50}
 						/>
 					</Link>
+					<ModeToggle align={"center"} />
+
 					<Popover modal>
 						<PopoverTrigger className="group px-2 md:hidden">
-							{/* <Icons.menu
-								className="mr-2 h-6 w-6 group-data-[state=open]:hidden group-data-[state=open]:transform"
-								aria-label="Open Navigation Menu"
-							/>
-							<Icons.close
-								className="mr-2 hidden h-6 w-6 group-data-[state=open]:flex group-data-[state=open]:transform"
-								aria-label="Close Navigation Menu"
-							/> */}
-
 							<div
 								className={`w-[20px] md:hidden group flex flex-col`}
 								data-bs-toggle="collapse"
@@ -202,17 +202,18 @@ export default function NavBar({ nav }) {
 								aria-expanded="false"
 								aria-label="Toggle navigation"
 							>
-								<span className="w-[20px] h-[2px] m-[2px] bg-[#000000e6] duration-300 group-data-[state=open]:rotate-45"></span>
+								<span className="w-[20px] h-[2px] m-[2px] bg-black dark:bg-white duration-300 group-data-[state=open]:rotate-45"></span>
 								<span
-									className={`w-[20px] h-[2px] m-[2px] bg-[#000000e6] duration-300 group-data-[state=open]:hidden`}
+									className={`w-[20px] h-[2px] m-[2px] bg-black dark:bg-white duration-300 group-data-[state=open]:hidden`}
 								></span>
 								<span
-									className={`w-[20px] h-[2px] m-[2px] bg-[#000000e6] duration-300 group-data-[state=open]:-rotate-45 group-data-[state=open]:translate-y-[-6px]`}
+									className={`w-[20px] h-[2px] m-[2px] bg-black dark:bg-white duration-300 group-data-[state=open]:-rotate-45 group-data-[state=open]:translate-y-[-6px]`}
 								></span>
 							</div>
 						</PopoverTrigger>
 						<PopoverContent
 							sideOffset={26}
+							side="top"
 							className="-mt-1 h-screen overflow-scroll rounded-none border-none"
 						>
 							{/* <Separator className="z-20 -ml-4 -mt-1 w-screen bg-slate-900" /> */}
