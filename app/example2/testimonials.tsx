@@ -27,9 +27,9 @@ export default function Testimonials({ ...params }) {
 									</div>
 								</div>
 								<div className="font-normal text-gray-600 dark:text-gray-300 text-center">
-									"This product really helped me improve my workflow. I would
-									recommend it to anyone looking for a solution to this
-									problem."
+									&quot;This product really helped me improve my workflow. I
+									would recommend it to anyone looking for a solution to this
+									problem.&quot;
 								</div>
 							</Card>
 							<Card className="flex flex-col p-6 space-y-4">
@@ -46,9 +46,9 @@ export default function Testimonials({ ...params }) {
 									</div>
 								</div>
 								<div className="font-normal text-gray-600 dark:text-gray-300 text-center">
-									"I've seen a significant increase in productivity since I
-									started using this product. It's easy to use and very
-									effective."
+									&quot;I&apos;ve seen a significant increase in productivity
+									since I started using this product. It&apos;s easy to use and
+									very effective.&quot;
 								</div>
 							</Card>
 							<Card className="flex flex-col p-6 space-y-4">
@@ -65,9 +65,9 @@ export default function Testimonials({ ...params }) {
 									</div>
 								</div>
 								<div className="font-normal text-gray-600 dark:text-gray-300 text-center">
-									"The quality of this product is unmatched. I've tried other
-									solutions in the past, and this by far is the best I've come
-									across."
+									&quot;The quality of this product is unmatched. I&apos;ve
+									tried other solutions in the past, and this by far is the best
+									I&apos;ve come across.&quot;
 								</div>
 							</Card>
 						</div>
