@@ -6,8 +6,8 @@ import { Icons } from "../../components/icons";
 export default function TwoColumnWithImage({ ...params }) {
 	console.log("TwoColumnWithImage", params);
 	return (
-		<div className=" relative bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
-			<div className="container mx-auto mb-10 mt-20 flex w-full flex-col sm:py-20 md:flex-row">
+		<div className="relative bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-[#000000] dark:bg-[radial-gradient(#fff_1px,transparent_1px)]">
+			<div className="container mx-auto  flex w-full flex-col sm:py-20 md:flex-row">
 				{params.image && params.imagePosition === "left" && (
 					<div className="basis-1/2">
 						<div

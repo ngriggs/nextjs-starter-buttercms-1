@@ -86,7 +86,7 @@ export default function Features({ ...params }) {
 					</div>
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-20">
-					<Card className=" transition-all duration-100 hover:outline hover:outline-teal-500">
+					<Card className=" transition-all duration-100 hover:outline hover:outline-border">
 						<CardHeader>
 							<CardTitle>Create project</CardTitle>
 							<CardDescription>

@@ -7,7 +7,7 @@ export default function Hero({ ...params }) {
 	console.log("Hero", params);
 
 	return (
-		<div className="relative bg-gradient-to-b from-purple-400 to-transparent pt-20 ">
+		<div className="relative bg-gradient-to-b from-[#5a1a99] to-[#e6d3f8] pt-20 ">
 			<div className="w-[862px] h-[862px] rounded-full bg-purple-600 z-10 after:block hidden md:absolute after:rounded-full right-[-150px] top-[-150px]"></div>
 
 			<div className="container text-white z-20 my-20 flex min-h-screen flex-col">
@@ -26,7 +26,7 @@ export default function Hero({ ...params }) {
 									<Typewriter texts={["Elevate", "Enhance", "Enrich"]} />
 									Your Online Presence
 								</h1>
-								<p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
+								<p className="max-w-[600px] text-gray-100 md:text-xl">
 									We are a passionate web design agency dedicated to crafting
 									stunning websites that leave a lasting impression. Explore our
 									services and take your online presence to the next level!
@@ -34,10 +34,16 @@ export default function Hero({ ...params }) {
 							</div>
 							<div className="flex flex-col gap-2 min-[400px]:flex-row">
 								<Link href="#">
-									<Button variant="default"> Discover Our Work</Button>
+									<Button variant="outline2">
+										<span className="w-0 h-0 rounded-full bg-secondary/50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ease-out duration-300 transition-all group-hover:w-[200px] group-hover:h-[200px] -z-1"></span>
+										Discover Our Work
+									</Button>
 								</Link>
 								<Link href="#">
-									<Button variant="ghost"> Get in Touch</Button>
+									<Button variant="ghost2">
+										<span className="w-0 h-0 rounded-full bg-secondary/50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ease-out duration-300 transition-all group-hover:w-[200px] group-hover:h-[200px] -z-1"></span>
+										Get in Touch
+									</Button>
 								</Link>
 							</div>
 						</div>
@@ -51,7 +57,7 @@ export default function Hero({ ...params }) {
 								<h2 className="text-2xl font-bold tracking-tighter">
 									Web Development
 								</h2>
-								<p className="text-center text-gray-500">
+								<p className="text-center text-gray-100">
 									Our skilled developers bring your ideas to life with custom
 									web development tailored to meet your business needs.
 								</p>
@@ -61,7 +67,7 @@ export default function Hero({ ...params }) {
 								<h2 className="text-2xl font-bold tracking-tighter">
 									Creative Design{" "}
 								</h2>
-								<p className="text-center text-gray-500">
+								<p className="text-center text-gray-100">
 									Immerse your audience with visually stunning designs that
 									reflect the essence of your brand and captivate your visitors.
 								</p>
@@ -71,7 +77,7 @@ export default function Hero({ ...params }) {
 								<h2 className="text-2xl font-bold tracking-tighter">
 									Strategic Planning
 								</h2>
-								<p className="text-center text-gray-500">
+								<p className="text-center text-gray-100">
 									We work collaboratively to devise strategic plans that align
 									with your business goals and drive online success.
 								</p>

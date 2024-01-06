@@ -20,7 +20,7 @@ export default function HoverPopover({ item }: any) {
 		closeTimeoutRef.current = setTimeout(() => {
 			setOpen(false);
 			example.current.blur();
-		}, 50); // Adjust the delay time (in milliseconds) as needed
+		}, 500); // Adjust the delay time (in milliseconds) as needed
 		setMouseInside(false);
 		example.current.blur();
 	};
@@ -66,6 +66,7 @@ export default function HoverPopover({ item }: any) {
 					example.current.blur();
 				}}
 				side="top"
+				sideOffset={0}
 			>
 				{item.subheadings?.map((sub: any) => (
 					<div className="text-base font-light" key={sub.name}>

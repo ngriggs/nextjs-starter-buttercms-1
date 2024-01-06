@@ -58,6 +58,7 @@ export default function NavBar({ nav }) {
 				setIsNavbarSticky(scrollY >= 1);
 			}
 		};
+		handleScroll();
 
 		// Attach scroll event listener when the component mounts
 		window.addEventListener("scroll", handleScroll);
@@ -75,7 +76,7 @@ export default function NavBar({ nav }) {
 			{/* Main nav */}
 			<div className="hidden md:block">
 				<div
-					className={`w-screen h-[56px] top-0 z-50 bg-white text-black dark:bg-black dark:text-white  ${
+					className={`w-screen h-[56px] top-0 z-50  dark:bg-gray-800 dark:text-white  ${
 						isNavbarSticky ? "fixed bg-white z-50" : "absolute "
 					}`}
 					ref={navbarAreaEl}

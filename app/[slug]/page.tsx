@@ -5,14 +5,27 @@ import { getAllLandingPages } from "../../lib/getAllLandingPages";
 import { getLandingPage } from "../../lib/getLandingPage";
 import LandingPageSection from "../example2/landingPageSection";
 import ColorForm from "../../components/colorForm";
+import Component from "../../components/hero";
+import Component2 from "../../components/services1";
+import TeamMembers from "../../components/team-members";
+import TeamMembers2 from "../../components/team-members2";
+import Camps from "../../components/camps";
+import Classes from "../../components/classes";
 
-export default async function Component({ params }) {
+export default async function Page({ params }) {
 	const allLandingPageData = await getAllLandingPages();
 	// console.log(allLandingPageData.landingPages[0]);
 	const landingPageData = await getLandingPage(params.slug);
 
 	return (
-		<div className="relative bg-inherit text-black min-svh">
+		<div className="relative bg-inherit text-secondary-foreground min-svh">
+			<Component />
+			<Component2 />
+			<TeamMembers />
+			<TeamMembers2 />
+			<Camps />
+			<Classes />
+
 			<div className="mx-auto py-16 px-4 sm:px-6 lg:px-8  bg-gradient-to-b from-[#808080] to-[#666666] min-h-screen">
 				<div className="container mt-[120px]">
 					<div className="text-center">
@@ -91,11 +104,6 @@ export default async function Component({ params }) {
 					<ColorForm />
 				</div>
 			</div>
-			{/* <div className="min-h-screen">
-				<div className="bg-cover bg-center bg-motion-example">
-					<p className="min-h-screen">something</p>
-				</div>
-			</div> */}
 			{landingPageData?.landingPage?.body.map((section, index) => {
 				return (
 					<LandingPageSection

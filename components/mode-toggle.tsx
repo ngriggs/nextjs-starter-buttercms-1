@@ -26,9 +26,11 @@ export function ModeToggle({ align }) {
 			</DropdownMenuTrigger>
 			<DropdownMenuContent align={align}>
 				<DropdownMenuItem onClick={() => setTheme("light")}>
+					<SunIcon className="h-[1.2rem] w-[1.2rem] mr-2" />
 					Light
 				</DropdownMenuItem>
 				<DropdownMenuItem onClick={() => setTheme("dark")}>
+					<MoonIcon className="h-[1.2rem] w-[1.2rem] mr-2" />
 					Dark
 				</DropdownMenuItem>
 				<DropdownMenuItem onClick={() => setTheme("system")}>

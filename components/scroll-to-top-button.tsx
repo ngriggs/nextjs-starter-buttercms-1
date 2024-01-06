@@ -8,13 +8,15 @@ import Link from "next/link";
 export default function ScrollToButtonButton() {
 	const [hasScrollToTopButton, setHasScrollToTopButton] = useState(false);
 
-	function toggleScrollTopButton() {
-		setHasScrollToTopButton(
-			document.body.scrollTop > 50 || document.documentElement.scrollTop > 50
-		);
-	}
-
 	useEffect(() => {
+		function toggleScrollTopButton() {
+			setHasScrollToTopButton(
+				document.body.scrollTop > 50 || document.documentElement.scrollTop > 50
+			);
+		}
+
+		toggleScrollTopButton();
+
 		window.addEventListener("scroll", toggleScrollTopButton);
 
 		return () => {

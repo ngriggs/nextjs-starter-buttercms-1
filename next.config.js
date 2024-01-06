@@ -30,7 +30,25 @@ module.exports = {
 			  }));
 	},
 	images: {
-		domains: ["cdn.buttercms.com", "media.graphassets.com"],
-		dangerouslyAllowSVG: true,
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "flowbite.s3.amazonaws.com",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "cdn.buttercms.com",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "media.graphassets.com",
+				port: "",
+				pathname: "/**",
+			},
+		],
 	},
 };
