@@ -1,5 +1,3 @@
-import Head from "next/head";
-
 import React from "react";
 import Test from "./test";
 import { getMainMenu } from "../lib/api";
@@ -14,23 +12,6 @@ export default async function MyApp() {
 	const pages = await getLandingPages();
 	return (
 		<>
-			<Head>
-				<meta charSet="utf-8" />
-				<meta httpEquiv="x-ua-compatible" content="ie=edge" />
-				<title>
-					Sample Landing Page with Components - powered by ButterCMS
-				</title>
-				<meta
-					name="description"
-					content="Sample Landing Page with Components - powered by ButterCMS"
-				/>
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<link
-					rel="shortcut icon"
-					type="image/x-icon"
-					href="https://buttercms.com/static/v2/images/favicon.png"
-				/>
-			</Head>
 			<div className="">
 				{page.fields.body.map(({ type, fields: sectionData }, index) => (
 					<LandingPageSection

@@ -87,8 +87,11 @@ export default function Features({ ...params }) {
 					</div>
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-20">
-					{[0, 1, 2, 3].map(() => (
-						<Card className=" transition-all duration-100 hover:outline hover:outline-border outline-border">
+					{[0, 1, 2, 3].map((_, index) => (
+						<Card
+							key={index}
+							className=" transition-all duration-100 hover:outline hover:outline-border outline-border"
+						>
 							<CardHeader>
 								<CardTitle>Create project</CardTitle>
 								<CardDescription>
