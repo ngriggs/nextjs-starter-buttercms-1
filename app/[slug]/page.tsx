@@ -18,7 +18,7 @@ export default async function Page({ params }) {
 	const landingPageData = await getLandingPage(params.slug);
 
 	return (
-		<div className="relative bg-inherit text-secondary-foreground min-svh">
+		<div className="relative bg-inherit text-secondary-foreground min-svh ">
 			<Component />
 			<Component2 />
 			<TeamMembers />

@@ -21,12 +21,33 @@ import {
 import { Icons } from "../../components/icons";
 import Link from "next/link";
 
-// [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]
-
 export default function Features({ ...params }) {
 	console.log("Features", params);
 	return (
 		<div className="bg-cover bg-center bg-feature-background inset-0 -z-10 min-h-screen w-screen ">
+			{/* <svg
+				fill="none"
+				height="701"
+				viewBox="0 0 1440 701"
+				width="1440"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<linearGradient
+					id="a"
+					gradientUnits="userSpaceOnUse"
+					x1="720.435"
+					x2="720.435"
+					y1="791.976"
+					y2="42.5723"
+				>
+					<stop offset="0" stop-color="#a0a8ff" stop-opacity="1" />
+					<stop offset="1" stop-color="#fff" stop-opacity="0.8" />
+				</linearGradient>
+				<path
+					d="m.435883 649.737c486.403117-274.293 312.179117 121.413 1440.004117 0 1127.82-121.413 0-649.595215 0-649.595215h-1440.004117s-486.402883 923.887215 0 649.595215z"
+					fill="url(#a)"
+				/>
+			</svg> */}
 			<div className="container grid grid-cols-1 md:grid-cols-2">
 				<div className="flex flex-col my-20">
 					<div className="grid place-content-start">

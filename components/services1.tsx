@@ -7,7 +7,7 @@ import {
 
 export default function Component() {
 	return (
-		<section className="lg:p-12 bg-white dark:bg-gray-800 ">
+		<section className="lg:p-12 bg-white dark:bg-gray-900 ">
 			<div className="container py-8 px-4 mx-auto lg:py-16 lg:px-6  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 				<Card className="mx-auto bg-blue-200 transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
 					<CardContent className="p-4 flex flex-col items-center justify-center">

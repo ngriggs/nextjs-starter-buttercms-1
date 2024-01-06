@@ -5,7 +5,7 @@ import { Card } from "../../components/ui/card";
 export default function Testimonials({ ...params }) {
 	console.log("Testimonials", params);
 	return (
-		<div className="bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-[#000000] dark:bg-[radial-gradient(#fff_1px,transparent_1px)]">
+		<div className="">
 			<div className="container grid place-items-center min-h-svh">
 				<div className="w-full py-12 bg-gray-50 dark:bg-gray-900">
 					<div className="container mx-auto px-4 sm:px-6 lg:px-8">
