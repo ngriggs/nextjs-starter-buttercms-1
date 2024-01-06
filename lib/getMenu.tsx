@@ -1,15 +1,24 @@
-export async function getAllPosts() {
+export async function getMenu() {
 	try {
 		const headers = {
 			"content-type": "application/json",
 		};
 		const requestBody = {
 			query: `
-            query Assets {
-                posts {
-                  id
-                }
-              }
+      query Assets {
+        menus {
+          title
+          items {
+            title
+            link
+            submenu {
+              title
+              link
+            }
+          }
+        }
+      }
+      
 			`,
 		};
 		const options = {

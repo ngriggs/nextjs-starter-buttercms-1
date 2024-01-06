@@ -25,10 +25,15 @@ export default function Component() {
 			<div className="relative container mx-auto px-4 md:px-6 h-full flex items-center justify-center">
 				<div className="text-center text-white max-w-2xl">
 					<h1 className="text-4xl md:text-6xl font-bold mb-4">
-						Welcome to Our Blog
+						Cultivating Champions Beyond the Mat
 					</h1>
 					<p className="text-lg md:text-2xl font-light mb-8">
-						Discover new insights, ideas and best practices
+						At Libertyville Gymnastics Academy, we go beyond training gymnasts;
+						we shape champions. Our philosophy centers on creating an
+						environment that instills safety, discipline, self-esteem, and
+						respect. Our dedicated coaches aim to develop not just exceptional
+						athletes but individuals with the tools to succeed in any endeavor
+						they pursue throughout their lives.
 					</p>
 
 					<Dialog>

@@ -13,8 +13,6 @@ import Camps from "../components/camps";
 import Classes from "../components/classes";
 
 export default async function Page({ params }) {
-	const allLandingPageData = await getAllLandingPages();
-	// console.log(allLandingPageData.landingPages[0]);
 	const landingPageData = await getLandingPage(params.slug);
 
 	return (
@@ -22,7 +20,6 @@ export default async function Page({ params }) {
 			<Component />
 			<Component2 />
 			<TeamMembers />
-			<TeamMembers2 />
 			<Camps />
 			<Classes />
 

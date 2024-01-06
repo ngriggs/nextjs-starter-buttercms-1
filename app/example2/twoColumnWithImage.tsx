@@ -6,7 +6,7 @@ import { Icons } from "../../components/icons";
 export default function TwoColumnWithImage({ ...params }) {
 	console.log("TwoColumnWithImage", params);
 	return (
-		<div className="relative">
+		<div id={params.scrollAnchorId} className="relative">
 			<div className="container mx-auto  flex w-full flex-col sm:py-20 md:flex-row">
 				{params.image && params.imagePosition === "left" && (
 					<div className="basis-1/2">

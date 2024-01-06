@@ -9,6 +9,7 @@ export default function HoverPopover({ item }: any) {
 	const [isMouseInside, setMouseInside] = useState(false);
 	const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 	const example = useRef(null);
+	console.log(item);
 
 	const handleMouseEnter = () => {
 		clearTimeout(closeTimeoutRef.current!);
@@ -68,17 +69,17 @@ export default function HoverPopover({ item }: any) {
 				side="top"
 				sideOffset={0}
 			>
-				{item.subheadings?.map((sub: any) => (
+				{item.submenu?.map((sub: any) => (
 					<div className="text-base font-light" key={sub.name}>
 						<Link
-							key={sub.name}
-							href={sub.href}
-							target={sub.target}
+							key={sub.title}
+							href={sub.link}
+							// target={sub.link}
 							className="-m-3 flex items-start rounded-sm p-3"
 						>
 							<ul className="">
 								<li className="text-base font-light hover:underline hover:underline-offset-2">
-									{sub.name}
+									{sub.title}
 								</li>
 							</ul>
 						</Link>

@@ -5,7 +5,7 @@ import "../css/lineicons.css";
 import "../css/tiny-slider.min.css";
 import "../css/main.css";
 
-import { getMainMenu } from "../lib/api";
+import { getMenu } from "../lib/getMenu";
 import FooterSection from "../components/footer-section";
 import HeaderSection from "../components/header-section";
 import ScrollToButtonButton from "../components/scroll-to-top-button";
@@ -226,7 +226,7 @@ export default async function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	const test = await getMainMenu();
+	const test = await getMenu();
 	return (
 		<html lang="en" className="scroll-smooth" suppressHydrationWarning>
 			<head>
@@ -244,7 +244,7 @@ export default async function RootLayout({
 					enableSystem
 					disableTransitionOnChange
 				>
-					<NavBar nav={nav} />
+					<NavBar test={test.menus[0].items} />
 					{children} <Footer />
 					<ScrollToButtonButton />
 				</ThemeProvider>

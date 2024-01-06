@@ -44,10 +44,11 @@ export const socialMedia = [
 	},
 ];
 
-export default function NavBar({ nav }) {
+export default function NavBar({ test }) {
 	const [showSeparator, setShowSeparator] = useState(false);
 	const [isNavbarSticky, setIsNavbarSticky] = useState(false);
 	const navbarAreaEl = useRef(null);
+	const [open, setOpen] = useState(false);
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -68,16 +69,13 @@ export default function NavBar({ nav }) {
 			window.removeEventListener("scroll", handleScroll);
 		};
 	}, []);
-
-	const { theme, setTheme } = useTheme();
-
 	return (
 		<header className="relative">
 			{/* Main nav */}
 			<div className="hidden md:block">
 				<div
-					className={`w-screen h-[56px] top-0 z-50  dark:bg-gray-800 dark:text-white  ${
-						isNavbarSticky ? "fixed bg-white z-50" : "absolute "
+					className={`w-screen h-[56px] font-extrabold text-3xl top-0 z-50 dark:bg-gray-800 dark:text-white  ${
+						isNavbarSticky ? "fixed bg-white z-50" : "absolute"
 					}`}
 					ref={navbarAreaEl}
 				>
@@ -93,24 +91,25 @@ export default function NavBar({ nav }) {
 							</Link>
 							<nav className="hidden gap-4 text-sm sm:gap-6 md:block my-auto">
 								<div className="flex">
-									{nav?.length ? (
+									{test?.length ? (
 										<div className="my-auto hidden flex-1 justify-center space-x-8 md:flex md:flex-1 ">
-											{nav?.map((item, index) =>
-												item.subheadings ? (
+											{test?.map((item, index) => {
+												console.log(item.submenu);
+												return item.submenu.length > 0 ? (
 													<HoverPopover
 														item={item}
 														key={index + Math.random()}
 													/>
 												) : (
 													<Link
-														href={item.href!}
+														href={item.link!}
 														key={item.title}
 														className="group flex cursor-pointer flex-row text-lg"
 													>
 														{item.title}
 													</Link>
-												)
-											)}
+												);
+											})}
 										</div>
 									) : null}
 								</div>
@@ -176,7 +175,7 @@ export default function NavBar({ nav }) {
 					</div>
 
 					{showSeparator && (
-						<Separator className="z-20 hidden bg-slate-900 md:block" />
+						<Separator className="z-20 hidden bg-primary md:block" />
 					)}
 				</div>
 			</div>
@@ -193,7 +192,7 @@ export default function NavBar({ nav }) {
 					</Link>
 					<ModeToggle align={"center"} />
 
-					<Popover modal>
+					<Popover open={open} onOpenChange={setOpen} modal>
 						<PopoverTrigger className="group px-2 md:hidden">
 							<div
 								className={`w-[20px] md:hidden group flex flex-col`}
@@ -223,8 +222,8 @@ export default function NavBar({ nav }) {
 								collapsible
 								className="w-screen pr-10 text-2xl"
 							>
-								{nav?.map((item) =>
-									item.subheadings ? (
+								{test?.map((item) =>
+									item.submenu.length > 0 ? (
 										<AccordionItem
 											value={item.title}
 											key={item.title}
@@ -234,14 +233,15 @@ export default function NavBar({ nav }) {
 												{item.title}
 											</AccordionTrigger>
 											<AccordionContent>
-												{item.subheadings?.map((sub) => (
+												{item.submenu?.map((sub) => (
 													<Link
-														key={sub.name}
-														href={sub.href}
-														target={sub.target}
+														key={sub.title}
+														href={sub.link}
+														target={"_top"}
 														className="-m-3 my-2 flex items-start rounded-lg p-3 pl-8 text-lg font-normal"
+														onClick={() => setOpen(false)}
 													>
-														{sub.name}
+														{sub.title}
 													</Link>
 												))}
 											</AccordionContent>
@@ -249,7 +249,7 @@ export default function NavBar({ nav }) {
 									) : (
 										<div key={item.title}>
 											<Link
-												href={item.href}
+												href={item.link}
 												target={"_top"}
 												className="mb-2 mt-4 flex items-start rounded-lg pt-4 text-xl font-medium"
 											>

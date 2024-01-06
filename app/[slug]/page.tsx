@@ -13,20 +13,11 @@ import Camps from "../../components/camps";
 import Classes from "../../components/classes";
 
 export default async function Page({ params }) {
-	const allLandingPageData = await getAllLandingPages();
-	// console.log(allLandingPageData.landingPages[0]);
 	const landingPageData = await getLandingPage(params.slug);
 
 	return (
 		<div className="relative bg-inherit text-secondary-foreground min-svh ">
-			<Component />
-			<Component2 />
-			<TeamMembers />
-			<TeamMembers2 />
-			<Camps />
-			<Classes />
-
-			<div className="mx-auto py-16 px-4 sm:px-6 lg:px-8  bg-gradient-to-b from-[#808080] to-[#666666] min-h-screen">
+			{/* <div className="mx-auto py-16 px-4 sm:px-6 lg:px-8  bg-gradient-to-b from-[#808080] to-[#666666] min-h-screen">
 				<div className="container mt-[120px]">
 					<div className="text-center">
 						<h2 className="text-base font-semibold text-white tracking-wide uppercase">
@@ -112,7 +103,7 @@ export default async function Page({ params }) {
 					</div>
 					<ColorForm />
 				</div>
-			</div>
+			</div> */}
 			{landingPageData?.landingPage?.body.map((section, index) => {
 				return (
 					<LandingPageSection

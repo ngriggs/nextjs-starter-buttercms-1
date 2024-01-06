@@ -86,7 +86,7 @@ export async function getLandingPage(slug) {
 		};
 		const response = await (
 			await fetch(
-				`https://us-east-1-shared-usea1-02.cdn.hygraph.com/content/clqdxx2tyda6001t8e9az3mo6/master`,
+				`https://us-east-1-shared-usea1-02.cdn.hygraph.com/content/${process.env.HYGRAPH_API}/master`,
 				options
 			)
 		).json();
