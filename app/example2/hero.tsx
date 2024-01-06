@@ -42,7 +42,7 @@ export default function Hero({ ...params }) {
 								<Link href="#">
 									<Button variant="ghost2">
 										<span className="w-0 h-0 rounded-full bg-secondary/50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ease-out duration-300 transition-all group-hover:w-[200px] group-hover:h-[200px] -z-1"></span>
-										Get in Touch
+										Get in Touch to test!
 									</Button>
 								</Link>
 							</div>

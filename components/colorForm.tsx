@@ -46,7 +46,14 @@ const ColorForm: React.FC = () => {
 	return (
 		<form id="colorForm" onSubmit={handleSubmit} className="max-w-xs mx-auto">
 			<Label htmlFor="hue">Hue:</Label>
-			<Input type="number" id="hue" name="hue" min="0" max="360" />
+			<Input
+				type="number"
+				id="hue"
+				name="hue"
+				min="0"
+				max="360"
+				placeholder="Hue"
+			/>
 
 			<Label htmlFor="saturation">Saturation:</Label>
 			<Input
@@ -55,10 +62,18 @@ const ColorForm: React.FC = () => {
 				name="saturation"
 				min="0"
 				max="100"
+				placeholder="Saturation"
 			/>
 
 			<Label htmlFor="lightness">Lightness:</Label>
-			<Input type="number" id="lightness" name="lightness" min="0" max="100" />
+			<Input
+				type="number"
+				id="lightness"
+				name="lightness"
+				min="0"
+				max="100"
+				placeholder="Lightness"
+			/>
 
 			<Button variant="default" type="submit" className="mt-10">
 				Update Theme Color

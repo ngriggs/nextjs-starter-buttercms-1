@@ -6,7 +6,7 @@ export default function Testimonials({ ...params }) {
 	console.log("Testimonials", params);
 	return (
 		<div className="bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-[#000000] dark:bg-[radial-gradient(#fff_1px,transparent_1px)]">
-			<div className="container grid place-items-center h-svh">
+			<div className="container grid place-items-center min-h-svh">
 				<div className="w-full py-12 bg-gray-50 dark:bg-gray-900">
 					<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 						<h2 className="text-3xl leading-9 font-extrabold text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 mb-10 text-center">

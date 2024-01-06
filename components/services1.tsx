@@ -7,9 +7,9 @@ import {
 
 export default function Component() {
 	return (
-		<section className="p-12 bg-white dark:bg-gray-800">
-			<div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-				<Card className="bg-blue-200 transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
+		<section className="lg:p-12 bg-white dark:bg-gray-800 ">
+			<div className="container py-8 px-4 mx-auto lg:py-16 lg:px-6  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+				<Card className="mx-auto bg-blue-200 transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
 					<CardContent className="p-4 flex flex-col items-center justify-center">
 						<CloudIcon className="w-12 h-12 text-blue-800" />
 						<CardTitle className="text-blue-800 mt-4">Cloud Services</CardTitle>

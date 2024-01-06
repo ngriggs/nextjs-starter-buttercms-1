@@ -26,7 +26,7 @@ import Link from "next/link";
 export default function Features({ ...params }) {
 	console.log("Features", params);
 	return (
-		<div className="bg-cover bg-center bg-feature-background inset-0 -z-10 min-h-screen w-screen bg-white ">
+		<div className="bg-cover bg-center bg-feature-background inset-0 -z-10 min-h-screen w-screen ">
 			<div className="container grid grid-cols-1 md:grid-cols-2">
 				<div className="flex flex-col my-20">
 					<div className="grid place-content-start">
@@ -63,7 +63,7 @@ export default function Features({ ...params }) {
 								</div>
 							</div>
 						</div>
-						<p className="max-w-lg p-2 text-[#798185]">
+						<p className="max-w-lg p-2">
 							Please note that weekend hours will vary based on private events.
 							Refer to{" "}
 							<Link
@@ -75,161 +75,59 @@ export default function Features({ ...params }) {
 							</Link>{" "}
 							for our most up to date hours.
 						</p>
-						<Link href="/giggles" target="_top" className="mx-auto sm:ml-0">
+						<Link href="#" target="_top" className="mx-auto sm:ml-0">
 							<Button
-								variant={"outline"}
-								className="mt-4 h-[48px] border-[1px] border-solid border-giggles-yellow bg-white px-6 font-bold text-giggles-yellow"
+								variant="outline2"
+								className="mt-4 h-[48px] border-[1px] border-solid  px-6"
 							>
-								OUR MISSION
+								<span className="w-0 h-0 rounded-full bg-secondary/50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ease-out duration-300 transition-all group-hover:w-[200px] group-hover:h-[200px] -z-1"></span>
+								Discover Our Work
 							</Button>
 						</Link>
 					</div>
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-20">
-					<Card className=" transition-all duration-100 hover:outline hover:outline-border">
-						<CardHeader>
-							<CardTitle>Create project</CardTitle>
-							<CardDescription>
-								Deploy your new project in one-click.
-							</CardDescription>
-						</CardHeader>
-						<CardContent>
-							<form>
-								<div className="grid w-full items-center gap-4">
-									<div className="flex flex-col space-y-1.5">
-										<Label htmlFor="name">Name</Label>
-										<Input id="name" placeholder="Name of your project" />
+					{[0, 1, 2, 3].map(() => (
+						<Card className=" transition-all duration-100 hover:outline hover:outline-border outline-border">
+							<CardHeader>
+								<CardTitle>Create project</CardTitle>
+								<CardDescription>
+									Deploy your new project in one-click.
+								</CardDescription>
+							</CardHeader>
+							<CardContent>
+								<form>
+									<div className="grid w-full items-center gap-4">
+										<div className="flex flex-col space-y-1.5">
+											<Label htmlFor="name">Name</Label>
+											<Input id="name" placeholder="Name of your project" />
+										</div>
+										<div className="flex flex-col space-y-1.5">
+											<Label htmlFor="framework">Framework</Label>
+											<Select>
+												<SelectTrigger id="framework">
+													<SelectValue placeholder="Select" />
+												</SelectTrigger>
+												<SelectContent position="popper">
+													<SelectItem value="next">Next.js</SelectItem>
+													<SelectItem value="sveltekit">SvelteKit</SelectItem>
+													<SelectItem value="astro">Astro</SelectItem>
+													<SelectItem value="nuxt">Nuxt.js</SelectItem>
+												</SelectContent>
+											</Select>
+										</div>
 									</div>
-									<div className="flex flex-col space-y-1.5">
-										<Label htmlFor="framework">Framework</Label>
-										<Select>
-											<SelectTrigger id="framework">
-												<SelectValue placeholder="Select" />
-											</SelectTrigger>
-											<SelectContent position="popper">
-												<SelectItem value="next">Next.js</SelectItem>
-												<SelectItem value="sveltekit">SvelteKit</SelectItem>
-												<SelectItem value="astro">Astro</SelectItem>
-												<SelectItem value="nuxt">Nuxt.js</SelectItem>
-											</SelectContent>
-										</Select>
-									</div>
-								</div>
-							</form>
-						</CardContent>
-						<CardFooter className="flex justify-between">
-							<Button variant="outline">Cancel</Button>
-							<Button>Deploy</Button>
-						</CardFooter>
-					</Card>
-					<Card className="transition-all duration-100 hover:outline hover:outline-teal-500">
-						<CardHeader>
-							<CardTitle>Create project</CardTitle>
-							<CardDescription>
-								Deploy your new project in one-click.
-							</CardDescription>
-						</CardHeader>
-						<CardContent>
-							<form>
-								<div className="grid w-full items-center gap-4">
-									<div className="flex flex-col space-y-1.5">
-										<Label htmlFor="name">Name</Label>
-										<Input id="name" placeholder="Name of your project" />
-									</div>
-									<div className="flex flex-col space-y-1.5">
-										<Label htmlFor="framework">Framework</Label>
-										<Select>
-											<SelectTrigger id="framework">
-												<SelectValue placeholder="Select" />
-											</SelectTrigger>
-											<SelectContent position="popper">
-												<SelectItem value="next">Next.js</SelectItem>
-												<SelectItem value="sveltekit">SvelteKit</SelectItem>
-												<SelectItem value="astro">Astro</SelectItem>
-												<SelectItem value="nuxt">Nuxt.js</SelectItem>
-											</SelectContent>
-										</Select>
-									</div>
-								</div>
-							</form>
-						</CardContent>
-						<CardFooter className="flex justify-between">
-							<Button variant="outline">Cancel</Button>
-							<Button>Deploy</Button>
-						</CardFooter>
-					</Card>
-					<Card className="transition-all duration-100 hover:outline hover:outline-teal-500">
-						<CardHeader>
-							<CardTitle>Create project</CardTitle>
-							<CardDescription>
-								Deploy your new project in one-click.
-							</CardDescription>
-						</CardHeader>
-						<CardContent>
-							<form>
-								<div className="grid w-full items-center gap-4">
-									<div className="flex flex-col space-y-1.5">
-										<Label htmlFor="name">Name</Label>
-										<Input id="name" placeholder="Name of your project" />
-									</div>
-									<div className="flex flex-col space-y-1.5">
-										<Label htmlFor="framework">Framework</Label>
-										<Select>
-											<SelectTrigger id="framework">
-												<SelectValue placeholder="Select" />
-											</SelectTrigger>
-											<SelectContent position="popper">
-												<SelectItem value="next">Next.js</SelectItem>
-												<SelectItem value="sveltekit">SvelteKit</SelectItem>
-												<SelectItem value="astro">Astro</SelectItem>
-												<SelectItem value="nuxt">Nuxt.js</SelectItem>
-											</SelectContent>
-										</Select>
-									</div>
-								</div>
-							</form>
-						</CardContent>
-						<CardFooter className="flex justify-between">
-							<Button variant="outline">Cancel</Button>
-							<Button>Deploy</Button>
-						</CardFooter>
-					</Card>
-					<Card className=" transition-all duration-100 hover:outline hover:outline-teal-500">
-						<CardHeader>
-							<CardTitle>Create project</CardTitle>
-							<CardDescription>
-								Deploy your new project in one-click.
-							</CardDescription>
-						</CardHeader>
-						<CardContent>
-							<form>
-								<div className="grid w-full items-center gap-4">
-									<div className="flex flex-col space-y-1.5">
-										<Label htmlFor="name">Name</Label>
-										<Input id="name" placeholder="Name of your project" />
-									</div>
-									<div className="flex flex-col space-y-1.5">
-										<Label htmlFor="framework">Framework</Label>
-										<Select>
-											<SelectTrigger id="framework">
-												<SelectValue placeholder="Select" />
-											</SelectTrigger>
-											<SelectContent position="popper">
-												<SelectItem value="next">Next.js</SelectItem>
-												<SelectItem value="sveltekit">SvelteKit</SelectItem>
-												<SelectItem value="astro">Astro</SelectItem>
-												<SelectItem value="nuxt">Nuxt.js</SelectItem>
-											</SelectContent>
-										</Select>
-									</div>
-								</div>
-							</form>
-						</CardContent>
-						<CardFooter className="flex justify-between">
-							<Button variant="outline">Cancel</Button>
-							<Button>Deploy</Button>
-						</CardFooter>
-					</Card>
+								</form>
+							</CardContent>
+							<CardFooter className="flex justify-between">
+								<Button variant={"destructive"}>Cancel</Button>
+								<Button variant="outline2">
+									<span className="w-0 h-0 rounded-full bg-secondary/50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ease-out duration-300 transition-all group-hover:w-[200px] group-hover:h-[200px] -z-1"></span>
+									Deploy
+								</Button>
+							</CardFooter>
+						</Card>
+					))}
 				</div>
 			</div>
 		</div>

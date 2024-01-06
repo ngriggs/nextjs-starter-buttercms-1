@@ -72,7 +72,7 @@ export default function Component() {
 										Message
 									</Label>
 									<Textarea
-										className="col-span-3 bg-white"
+										className="col-span-3"
 										placeholder="Type your message here."
 									/>
 								</div>

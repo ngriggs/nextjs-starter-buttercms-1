@@ -68,12 +68,10 @@ export default function TwoColumnWithImage({ ...params }) {
 								</Link>{" "}
 								for our most up to date hours.
 							</p>
-							<Link href="/giggles" target="_top" className="mx-auto sm:ml-0">
-								<Button
-									variant={"outline"}
-									className="mt-4 h-[48px] border-[1px] border-solid border-giggles-yellow bg-white px-6 font-bold text-giggles-yellow"
-								>
-									OUR MISSION
+							<Link href="#" target="_top" className="mx-auto sm:ml-0">
+								<Button variant="outline2">
+									<span className="w-0 h-0 rounded-full bg-secondary/50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ease-out duration-300 transition-all group-hover:w-[200px] group-hover:h-[200px] -z-1"></span>
+									Our mission
 								</Button>
 							</Link>
 						</div>

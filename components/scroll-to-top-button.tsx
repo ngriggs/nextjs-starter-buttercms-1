@@ -6,21 +6,32 @@ import { Icons } from "./icons";
 import Link from "next/link";
 
 export default function ScrollToButtonButton() {
-	const [hasScrollToTopButton, setHasScrollToTopButton] = useState(false);
+	const [hasScrollToTopButton, setHasScrollToTopButton] = useState(true);
+
+	const handleScroll = () => {
+		const scrollPosition = window.scrollY;
+		const windowHeight = window.innerHeight;
+		const documentHeight = document.documentElement.scrollHeight;
+
+		// Adjust the threshold as needed
+		const threshold = 50;
+		requestAnimationFrame(() => {
+			if (
+				documentHeight - (scrollPosition + windowHeight) < threshold ||
+				scrollPosition < 50
+			) {
+				setHasScrollToTopButton(false);
+			} else {
+				setHasScrollToTopButton(true);
+			}
+		});
+	};
 
 	useEffect(() => {
-		function toggleScrollTopButton() {
-			setHasScrollToTopButton(
-				document.body.scrollTop > 50 || document.documentElement.scrollTop > 50
-			);
-		}
-
-		toggleScrollTopButton();
-
-		window.addEventListener("scroll", toggleScrollTopButton);
+		window.addEventListener("scroll", handleScroll);
 
 		return () => {
-			window.removeEventListener("scroll", toggleScrollTopButton);
+			window.removeEventListener("scroll", handleScroll);
 		};
 	}, []);
 

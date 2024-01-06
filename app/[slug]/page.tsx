@@ -48,7 +48,8 @@ export default async function Page({ params }) {
 								Generate your SEO-optimised first draft with minimal inputs and
 								maximum efficiency in 5 simple steps.
 							</p>
-							<Button className="mt-8 bg-primary hover:bg-primary/70">
+							<Button variant="outline2">
+								<span className="w-0 h-0 rounded-full bg-secondary/50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ease-out duration-300 transition-all group-hover:w-[300px] group-hover:h-[300px] -z-1"></span>
 								Write a blog in 5 minutes now!
 								<ArrowRightIcon className="ml-2 w-4 h-4" />
 							</Button>
@@ -64,10 +65,12 @@ export default async function Page({ params }) {
 									</span>
 								</div>
 								<div className="flex flex-col md:flex-row space-y-4 mx-auto md:space-y-0 space-x-0 md:space-x-4">
-									<Button className="bg-primary hover:bg-primary/70 text-white">
+									<Button variant="outline2">
+										<span className="w-0 h-0 rounded-full bg-secondary/50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ease-out duration-300 transition-all group-hover:w-[200px] group-hover:h-[200px] -z-1"></span>
 										Download Draft
 									</Button>
-									<Button className="mx-auto bg-primary hover:bg-primary/70 text-white">
+									<Button variant="outline2">
+										<span className="w-0 h-0 rounded-full bg-secondary/50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ease-out duration-300 transition-all group-hover:w-[200px] group-hover:h-[200px] -z-1"></span>
 										Export to Editor
 									</Button>
 								</div>
@@ -81,22 +84,28 @@ export default async function Page({ params }) {
 						</div>
 					</div>
 					<div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-						<div className="bg-primary hover:bg-primary/70 text-white p-6 rounded-lg">
+						<div className="bg-primary group relative overflow-hidden text-secondary p-6 rounded-lg">
+							<span className="w-0 h-0 rounded-full bg-secondary/50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ease-out duration-300 transition-all group-hover:w-[350px] group-hover:h-[350px] -z-1"></span>
+
 							<h4 className="text-lg font-semibold">Content Optimizer</h4>
 							<p className="mt-2 text-sm">AI-led Content Optimization</p>
 							<ArrowRightIcon className="mt-4 w-4 h-4" />
 						</div>
-						<div className="bg-primary hover:bg-primary/70 text-white p-6 rounded-lg shadow-lg">
+						<div className="bg-primary group relative overflow-hidden text-secondary p-6 rounded-lg">
+							<span className="w-0 h-0 rounded-full bg-secondary/50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ease-out duration-300 transition-all group-hover:w-[350px] group-hover:h-[350px] -z-1"></span>
 							<h4 className="text-lg font-semibold">AI-led Content Writing</h4>
 							<p className="mt-2 text-sm">Generate Quality Content now</p>
 							<ArrowRightIcon className="mt-4 w-4 h-4" />
 						</div>
-						<div className="bg-primary hover:bg-primary/70 text-white p-6 rounded-lg shadow-lg">
+						<div className="bg-primary group relative overflow-hidden text-secondary p-6 rounded-lg">
+							<span className="w-0 h-0 rounded-full bg-secondary/50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ease-out duration-300 transition-all group-hover:w-[350px] group-hover:h-[350px] -z-1"></span>
 							<h4 className="text-lg font-semibold">Keyword Planner</h4>
 							<p className="mt-2 text-sm">Create winning Content Strategies</p>
 							<ArrowRightIcon className="mt-4 w-4 h-4" />
 						</div>
-						<div className="bg-white hover:bg-gray-100 text-gray-800 p-6 rounded-lg shadow-lg">
+						<div className="bg-white group relative overflow-hidden text-gray-800 p-6 rounded-lg shadow-lg">
+							<span className="w-0 h-0 rounded-full bg-secondary-foreground/50 dark:bg-secondary/50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ease-out duration-300 transition-all group-hover:w-[350px] group-hover:h-[350px] -z-1"></span>
+
 							<h4 className="text-lg font-semibold">Explore All Features</h4>
 							<ChevronRightIcon className="mt-4 w-4 h-4" />
 						</div>

@@ -10,6 +10,7 @@ import FooterSection from "../components/footer-section";
 import HeaderSection from "../components/header-section";
 import ScrollToButtonButton from "../components/scroll-to-top-button";
 import NavBar from "../components/mainNav";
+import Footer from "../components/mainFooter";
 
 import { ThemeProvider } from "../components/theme-provider";
 
@@ -236,7 +237,7 @@ export default async function RootLayout({
 					disableTransitionOnChange
 				>
 					<NavBar nav={nav} />
-					{children} <FooterSection mainMenu={test} />
+					{children} <Footer />
 					<ScrollToButtonButton />
 				</ThemeProvider>
 			</body>
