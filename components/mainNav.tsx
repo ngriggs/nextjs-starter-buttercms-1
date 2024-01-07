@@ -62,7 +62,8 @@ export default function NavBar({ test, socialMedia }) {
 				<div
 					className={`w-screen font-extrabold text-3xl tracking-wide top-0 z-50 dark:bg-gray-800 dark:text-white  ${
 						isNavbarSticky ? "fixed  bg-white z-50" : "absolute"
-					}`}
+					}
+					${pathName === "/" && !isNavbarSticky ? "text-white" : ""}`}
 					ref={navbarAreaEl}
 				>
 					<div className="z-20 flex items-center justify-between px-4 lg:px-6">
