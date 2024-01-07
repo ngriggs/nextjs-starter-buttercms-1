@@ -1,7 +1,7 @@
 import { getClasses } from "../../../lib/getClasses";
 import Component from "../../../components/classes";
 
-export enum ClassCategory {
+enum ClassCategory {
 	PRESCHOOL = "PRESCHOOL",
 	RECREATIONAL_TUMBLE = "RECREATIONAL_TUMBLE",
 	NINJA = "NINJA",
