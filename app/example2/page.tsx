@@ -85,15 +85,19 @@ export default async function Component({ params }) {
 					</div>
 				</div>
 			</div>
-			{landingPageData.landingPage.body.map((section, index) => {
-				return (
-					<LandingPageSection
-						key={index}
-						type={section.type}
-						sectionData={section}
-					/>
-				);
-			})}
+			{landingPageData ? (
+				landingPageData.landingPage?.body.map((section, index) => {
+					return (
+						<LandingPageSection
+							key={index}
+							type={section.type}
+							sectionData={section}
+						/>
+					);
+				})
+			) : (
+				<div>Section Missing</div>
+			)}
 		</div>
 	);
 }
