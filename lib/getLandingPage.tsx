@@ -82,7 +82,7 @@ export async function getLandingPage(slug) {
 			method: "POST",
 			headers,
 			body: JSON.stringify(requestBody),
-			next: { revalidate: 100 },
+			next: { revalidate: 36000 },
 		};
 		const response = await (
 			await fetch(
@@ -90,7 +90,6 @@ export async function getLandingPage(slug) {
 				options
 			)
 		).json();
-		// console.log("RESPONSE FROM FETCH REQUEST", response?.data);
 		return response.data;
 	} catch (err) {
 		console.log("ERROR DURING FETCH REQUEST", err);

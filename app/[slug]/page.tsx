@@ -16,7 +16,7 @@ export default async function Page({ params }) {
 	const landingPageData = await getLandingPage(params.slug);
 
 	return (
-		<div className="relative bg-inherit text-secondary-foreground min-svh ">
+		<div className="relative bg-inherit text-secondary-foreground min-svh pt-20">
 			{/* <div className="mx-auto py-16 px-4 sm:px-6 lg:px-8  bg-gradient-to-b from-[#808080] to-[#666666] min-h-screen">
 				<div className="container mt-[120px]">
 					<div className="text-center">

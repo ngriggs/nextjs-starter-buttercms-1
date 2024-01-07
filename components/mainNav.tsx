@@ -12,7 +12,6 @@ import { Separator } from "./ui/separator";
 import Link from "next/link";
 import { useState, useRef, useEffect, cloneElement } from "react";
 import HoverPopover from "./hoverPopover";
-import { Icons } from "./icons";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import {
 	Dialog,
@@ -27,28 +26,15 @@ import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 import Image from "next/image";
-import { useTheme } from "next-themes";
+import { usePathname } from "next/navigation";
 import { ModeToggle } from "./mode-toggle";
 
-// Social Media Links
-export const socialMedia = [
-	{
-		id: "giggles play instagram link",
-		icon: <Icons.instagram className="h-[28px] w-[28px]" />,
-		link: "https://www.instagram.com/giggles.play/?fbclid=IwAR0-NhgItCvF9QTFJVUSnTPRaCS12Bv5HfOzghQa2SemmTWXGQpM_EwuGls",
-	},
-	{
-		id: "giggles play facebook link",
-		icon: <Icons.facebook className="h-[28px] w-[28px]" />,
-		link: "https://www.facebook.com/profile.php?id=100089486487628",
-	},
-];
-
-export default function NavBar({ test }) {
+export default function NavBar({ test, socialMedia }) {
 	const [showSeparator, setShowSeparator] = useState(false);
 	const [isNavbarSticky, setIsNavbarSticky] = useState(false);
 	const navbarAreaEl = useRef(null);
 	const [open, setOpen] = useState(false);
+	const pathName = usePathname();
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -74,27 +60,41 @@ export default function NavBar({ test }) {
 			{/* Main nav */}
 			<div className="hidden md:block">
 				<div
-					className={`w-screen h-[56px] font-extrabold text-3xl top-0 z-50 dark:bg-gray-800 dark:text-white  ${
-						isNavbarSticky ? "fixed bg-white z-50" : "absolute"
+					className={`w-screen font-extrabold text-3xl tracking-wide top-0 z-50 dark:bg-gray-800 dark:text-white  ${
+						isNavbarSticky ? "fixed  bg-white z-50" : "absolute"
 					}`}
 					ref={navbarAreaEl}
 				>
-					<div className="z-20 flex h-14 items-center justify-between px-4 lg:px-6">
+					<div className="z-20 flex items-center justify-between px-4 lg:px-6">
 						<div className="flex flex-1 justify-items-start space-x-4">
-							<Link className="" href="/" target="_top">
-								<Image
-									src={"/lgalogotrans.png"}
-									alt={"libertyville gymnastics academy"}
-									width={50}
-									height={50}
-								/>
-							</Link>
+							{/* <Link className="relative" href="/" target="_top">
+								<div className="flex items-center justify-center bg-white dark:bg-gray-800 z-10 h-[112px] w-[112px] rounded-full">
+									<Image
+										src={"/lgalogotrans.png"}
+										alt={"libertyville gymnastics academy"}
+										width={100}
+										height={100}
+										className="relative z-20"
+									/>
+								</div>
+							</Link> */}
 							<nav className="hidden gap-4 text-sm sm:gap-6 md:block my-auto">
 								<div className="flex">
+									<Link
+										className="flex-1 flex mr-6 bg-white rounded-sm rounded-tl-3xl rounded-br-3xl"
+										href="/"
+										target="_top"
+									>
+										<Image
+											src={"/lgalogotrans.png"}
+											alt={"libertyville gymnastics academy"}
+											width={100}
+											height={100}
+										/>
+									</Link>
 									{test?.length ? (
 										<div className="my-auto hidden flex-1 justify-center space-x-8 md:flex md:flex-1 ">
 											{test?.map((item, index) => {
-												console.log(item.submenu);
 												return item.submenu.length > 0 ? (
 													<HoverPopover
 														item={item}
@@ -104,7 +104,9 @@ export default function NavBar({ test }) {
 													<Link
 														href={item.link!}
 														key={item.title}
-														className="group flex cursor-pointer flex-row text-lg"
+														className={`group flex cursor-pointer flex-row text-lg hover:underline ${
+															pathName === item.link ? "underline" : ""
+														}`}
 													>
 														{item.title}
 													</Link>
@@ -119,7 +121,7 @@ export default function NavBar({ test }) {
 							</div>
 						</div>
 
-						<div className="hidden justify-end md:flex md:flex-1">
+						<div className="hidden justify-end md:flex md:flex-1 my-1">
 							<Dialog>
 								<DialogTrigger asChild>
 									<Button variant="outline2">
@@ -180,118 +182,121 @@ export default function NavBar({ test }) {
 				</div>
 			</div>
 			{/* Mobile nav */}
-			<div className="md:hidden w-screen h-[56px] bg-white text-black dark:bg-black dark:text-white fixed top-0 z-50">
-				<div className="z-20 flex h-14 items-center justify-between px-4 lg:px-6">
-					<Link className="" href="/" target="_top">
+			<div className="md:hidden w-screen bg-white text-black dark:bg-gray-800 dark:text-white fixed top-0 z-50">
+				<div className="z-20 grid grid-cols-3 px-4 lg:px-6">
+					<div className="grid justify-start items-center">
+						<Popover open={open} onOpenChange={setOpen} modal>
+							<PopoverTrigger className="group px-2 md:hidden">
+								<div
+									className={`w-[20px] md:hidden group flex flex-col`}
+									data-bs-toggle="collapse"
+									data-bs-target="#navbarSupportedContent"
+									aria-controls="navbarSupportedContent"
+									aria-expanded="false"
+									aria-label="Toggle navigation"
+								>
+									<span className="w-[20px] h-[2px] m-[2px] bg-black dark:bg-white duration-300 group-data-[state=open]:rotate-45"></span>
+									<span
+										className={`w-[20px] h-[2px] m-[2px] bg-black dark:bg-white duration-300 group-data-[state=open]:hidden`}
+									></span>
+									<span
+										className={`w-[20px] h-[2px] m-[2px] bg-black dark:bg-white duration-300 group-data-[state=open]:-rotate-45 group-data-[state=open]:translate-y-[-6px]`}
+									></span>
+								</div>
+							</PopoverTrigger>
+							<PopoverContent
+								sideOffset={39}
+								side="top"
+								className="-mt-1 h-screen overflow-scroll rounded-none border-none"
+							>
+								{/* <Separator className="z-20 -ml-4 -mt-1 w-screen bg-slate-900" /> */}
+								<Accordion
+									type="single"
+									collapsible
+									className="w-screen pr-10 text-2xl"
+								>
+									{test?.map((item) =>
+										item.submenu.length > 0 ? (
+											<AccordionItem
+												value={item.title}
+												key={item.title}
+												className="my-4"
+											>
+												<AccordionTrigger className="text-xl font-medium">
+													{item.title}
+												</AccordionTrigger>
+												<AccordionContent>
+													{item.submenu?.map((sub) => (
+														<Link
+															key={sub.title}
+															href={sub.link}
+															target={"_top"}
+															className="-m-3 my-2 flex items-start rounded-lg p-3 pl-8 text-lg font-normal"
+															onClick={() => setOpen(false)}
+														>
+															{sub.title}
+														</Link>
+													))}
+												</AccordionContent>
+											</AccordionItem>
+										) : (
+											<div key={item.title}>
+												<Link
+													href={item.link}
+													target={"_top"}
+													className="mb-2 mt-4 flex items-start rounded-lg pt-4 text-xl font-medium"
+												>
+													{item.title}
+												</Link>
+												<Separator className="my-4 bg-primary" />
+											</div>
+										)
+									)}
+								</Accordion>
+								<div className="my-auto flex justify-center py-7">
+									<Link href="/contact" target="_top">
+										<Button
+											variant={"outline2"}
+											className="rounded-full uppercase"
+										>
+											Get in touch
+										</Button>
+									</Link>
+								</div>
+								<div className="mb-[120px] flex h-[20vh] flex-1 items-end justify-center pb-20">
+									{socialMedia.map((social, index) => (
+										<div
+											key={social.id}
+											className={`h-[34px] w-[34px] cursor-pointer object-contain hover:scale-105 ${
+												index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
+											}`}
+										>
+											<Link
+												href={social.link}
+												target={"_blank"}
+												aria-label={social.id}
+											>
+												{cloneElement(social.icon, {
+													className: "h-[34px] w-[34px] fill-primary mt-20",
+												})}
+											</Link>
+										</div>
+									))}
+								</div>
+							</PopoverContent>
+						</Popover>
+					</div>
+					<Link className="grid place-items-center" href="/" target="_top">
 						<Image
 							src={"/lgalogotrans.png"}
 							alt={"libertyville gymnastics academy"}
-							width={50}
-							height={50}
+							width={100}
+							height={100}
 						/>
 					</Link>
-					<ModeToggle align={"center"} />
-
-					<Popover open={open} onOpenChange={setOpen} modal>
-						<PopoverTrigger className="group px-2 md:hidden">
-							<div
-								className={`w-[20px] md:hidden group flex flex-col`}
-								data-bs-toggle="collapse"
-								data-bs-target="#navbarSupportedContent"
-								aria-controls="navbarSupportedContent"
-								aria-expanded="false"
-								aria-label="Toggle navigation"
-							>
-								<span className="w-[20px] h-[2px] m-[2px] bg-black dark:bg-white duration-300 group-data-[state=open]:rotate-45"></span>
-								<span
-									className={`w-[20px] h-[2px] m-[2px] bg-black dark:bg-white duration-300 group-data-[state=open]:hidden`}
-								></span>
-								<span
-									className={`w-[20px] h-[2px] m-[2px] bg-black dark:bg-white duration-300 group-data-[state=open]:-rotate-45 group-data-[state=open]:translate-y-[-6px]`}
-								></span>
-							</div>
-						</PopoverTrigger>
-						<PopoverContent
-							sideOffset={26}
-							side="top"
-							className="-mt-1 h-screen overflow-scroll rounded-none border-none"
-						>
-							{/* <Separator className="z-20 -ml-4 -mt-1 w-screen bg-slate-900" /> */}
-							<Accordion
-								type="single"
-								collapsible
-								className="w-screen pr-10 text-2xl"
-							>
-								{test?.map((item) =>
-									item.submenu.length > 0 ? (
-										<AccordionItem
-											value={item.title}
-											key={item.title}
-											className="my-4"
-										>
-											<AccordionTrigger className="text-xl font-medium">
-												{item.title}
-											</AccordionTrigger>
-											<AccordionContent>
-												{item.submenu?.map((sub) => (
-													<Link
-														key={sub.title}
-														href={sub.link}
-														target={"_top"}
-														className="-m-3 my-2 flex items-start rounded-lg p-3 pl-8 text-lg font-normal"
-														onClick={() => setOpen(false)}
-													>
-														{sub.title}
-													</Link>
-												))}
-											</AccordionContent>
-										</AccordionItem>
-									) : (
-										<div key={item.title}>
-											<Link
-												href={item.link}
-												target={"_top"}
-												className="mb-2 mt-4 flex items-start rounded-lg pt-4 text-xl font-medium"
-											>
-												{item.title}
-											</Link>
-											<Separator className="my-4 bg-slate-200" />
-										</div>
-									)
-								)}
-							</Accordion>
-							<div className="my-auto flex justify-center py-7">
-								<Link href="/contact" target="_top">
-									<Button
-										variant={"outline"}
-										className="rounded-full uppercase"
-									>
-										Get in touch
-									</Button>
-								</Link>
-							</div>
-							<div className="mb-[120px] flex h-[20vh] flex-1 items-end justify-center pb-20">
-								{socialMedia.map((social, index) => (
-									<div
-										key={social.id}
-										className={`h-[34px] w-[34px] cursor-pointer object-contain hover:scale-105 ${
-											index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
-										}`}
-									>
-										<Link
-											href={social.link}
-											target={"_blank"}
-											aria-label={social.id}
-										>
-											{cloneElement(social.icon, {
-												className: "h-[34px] w-[34px] fill-giggles-red-800",
-											})}
-										</Link>
-									</div>
-								))}
-							</div>
-						</PopoverContent>
-					</Popover>
+					<div className="grid justify-end items-center">
+						<ModeToggle align={"center"} />
+					</div>
 				</div>
 			</div>
 		</header>

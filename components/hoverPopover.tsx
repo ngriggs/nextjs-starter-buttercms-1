@@ -3,13 +3,15 @@ import React, { useState, useRef, useEffect } from "react";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { Icons } from "./icons";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function HoverPopover({ item }: any) {
 	const [open, setOpen] = useState(false);
 	const [isMouseInside, setMouseInside] = useState(false);
 	const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 	const example = useRef(null);
-	console.log(item);
+	const pathName = usePathname();
+	const desiredPath = "/" + pathName.split("/").slice(1, 2).join("/");
 
 	const handleMouseEnter = () => {
 		clearTimeout(closeTimeoutRef.current!);
@@ -21,7 +23,7 @@ export default function HoverPopover({ item }: any) {
 		closeTimeoutRef.current = setTimeout(() => {
 			setOpen(false);
 			example.current.blur();
-		}, 500); // Adjust the delay time (in milliseconds) as needed
+		}, 200); // Adjust the delay time (in milliseconds) as needed
 		setMouseInside(false);
 		example.current.blur();
 	};
@@ -41,7 +43,9 @@ export default function HoverPopover({ item }: any) {
 	return (
 		<Popover open={open} onOpenChange={setOpen}>
 			<PopoverTrigger
-				className="group flex cursor-pointer flex-row my-auto text-lg transition-all"
+				className={`group flex cursor-pointer flex-row my-auto text-lg transition-all ${
+					desiredPath === item.link ? "underline" : ""
+				}`}
 				// ... (existing code)
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseLeave}

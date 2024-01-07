@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { getLandingPage, getPostsData } from "../../../lib/api";
-import { getAllPosts } from "../../../lib/getAllPosts";
 
 import LandingPageSection from "../../../components/landing-page-sections/landing-page-section";
 import Blog from "../../../components/blog/blog";
@@ -12,8 +11,6 @@ export default async function LandingPage({ params }) {
 	if (!page && !blogPosts) {
 		return <div>error</div>;
 	}
-	const test3 = await getAllPosts();
-	console.log(test3);
 
 	return (
 		<>

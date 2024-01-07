@@ -11,9 +11,11 @@ import TeamMembers from "../components/team-members";
 import TeamMembers2 from "../components/team-members2";
 import Camps from "../components/camps";
 import Classes from "../components/classes";
+import { getClasses } from "../lib/getClasses";
 
 export default async function Page({ params }) {
 	const landingPageData = await getLandingPage(params.slug);
+	const classes = await getClasses();
 
 	return (
 		<div className="relative bg-inherit text-secondary-foreground min-svh ">
@@ -21,9 +23,9 @@ export default async function Page({ params }) {
 			<Component2 />
 			<TeamMembers />
 			<Camps />
-			<Classes />
+			<Classes classes={classes.classes} />
 
-			<div className="mx-auto py-16 px-4 sm:px-6 lg:px-8  bg-gradient-to-b from-[#808080] to-[#666666] min-h-screen">
+			{/* <div className="mx-auto py-16 px-4 sm:px-6 lg:px-8  bg-gradient-to-b from-[#808080] to-[#666666] min-h-screen">
 				<div className="container mt-[120px]">
 					<div className="text-center">
 						<h2 className="text-base font-semibold text-white tracking-wide uppercase">
@@ -118,7 +120,7 @@ export default async function Page({ params }) {
 						sectionData={section}
 					/>
 				);
-			})}
+			})} */}
 		</div>
 	);
 }

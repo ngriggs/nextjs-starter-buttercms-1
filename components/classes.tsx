@@ -1,12 +1,38 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/N81dNfbktUH
- */
 import Link from "next/link";
+import Image from "next/image";
 
-export default function Component() {
+const ClassCard2 = ({ category, description, title, image, id }) => {
+	const formattedSlug = category
+		.split("-")
+		.map((part) => part.toLowerCase())
+		.join("_");
 	return (
-		<section className="w-full py-12">
+		<div id={`${title}`} className="grid gap-6 relative group">
+			<Link href={`/classes/${formattedSlug}#${title}`}>
+				<span className="sr-only">View</span>
+				<Image
+					src={image.url}
+					alt={`Class: ${title}`}
+					className="rounded-lg object-cover w-full aspect-[3/4] group-hover:opacity-80 transition-all duration-500 group-hover:scale-105 group-hover:shadow-xl"
+					height={1000}
+					width={1000}
+				/>
+			</Link>
+			<div className="grid gap-1">
+				<h3 className="font-semibold">{title}</h3>
+				<div
+					dangerouslySetInnerHTML={{ __html: description.html as string }}
+					className="[&>p]:text-sm [&>p]:leading-none"
+				/>
+				<p className="text-sm leading-none">Category: {formattedSlug}</p>
+			</div>
+		</div>
+	);
+};
+
+export default function Component({ classes }) {
+	return (
+		<section className="container w-full py-12">
 			<div className="container grid gap-6 md:gap-8 px-4 md:px-6 max-w-xl mx-auto lg:max-w-none">
 				<div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
 					<div className="grid gap-1">
@@ -20,94 +46,9 @@ export default function Component() {
 					</div>
 				</div>
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-					<div className="grid gap-6 relative group">
-						<Link className="absolute inset-0 z-10" href="#">
-							<span className="sr-only">View</span>
-						</Link>
-						<img
-							alt="Yoga Class"
-							className="rounded-lg object-cover w-full aspect-[3/4] group-hover:opacity-50 transition-opacity"
-							height={600}
-							src="/yoga.avif"
-							width={450}
-						/>
-						<div className="grid gap-1">
-							<h3 className="font-semibold">Yoga</h3>
-							<p className="text-sm leading-none">
-								Improve flexibility and reduce stress.
-							</p>
-						</div>
-					</div>
-					<div className="grid gap-6 relative group">
-						<Link className="absolute inset-0 z-10" href="#">
-							<span className="sr-only">View</span>
-						</Link>
-						<img
-							alt="Cardio Class"
-							className="rounded-lg object-cover w-full aspect-[3/4] group-hover:opacity-50 transition-opacity"
-							height={600}
-							src="/yoga.avif"
-							width={450}
-						/>
-						<div className="grid gap-1">
-							<h3 className="font-semibold">Cardio</h3>
-							<p className="text-sm leading-none">
-								Boost your heart health and burn calories.
-							</p>
-						</div>
-					</div>
-					<div className="grid gap-6 relative group">
-						<Link className="absolute inset-0 z-10" href="#">
-							<span className="sr-only">View</span>
-						</Link>
-						<img
-							alt="Strength Training Class"
-							className="rounded-lg object-cover w-full aspect-[3/4] group-hover:opacity-50 transition-opacity"
-							height={600}
-							src="/yoga.avif"
-							width={450}
-						/>
-						<div className="grid gap-1">
-							<h3 className="font-semibold">Strength Training</h3>
-							<p className="text-sm leading-none">
-								Build muscle and increase strength.
-							</p>
-						</div>
-					</div>
-					<div className="grid gap-6 relative group">
-						<Link className="absolute inset-0 z-10" href="#">
-							<span className="sr-only">View</span>
-						</Link>
-						<img
-							alt="Pilates Class"
-							className="rounded-lg object-cover w-full aspect-[3/4] group-hover:opacity-50 transition-opacity"
-							height={600}
-							src="/yoga.avif"
-							width={450}
-						/>
-						<div className="grid gap-1">
-							<h3 className="font-semibold">Pilates</h3>
-							<p className="text-sm leading-none">
-								Improve posture and flexibility.
-							</p>
-						</div>
-					</div>
-					<div className="grid gap-6 relative group">
-						<Link className="absolute inset-0 z-10" href="#">
-							<span className="sr-only">View</span>
-						</Link>
-						<img
-							alt="Zumba Class"
-							className="rounded-lg object-cover w-full aspect-[3/4] group-hover:opacity-50 transition-opacity"
-							height={600}
-							src="/yoga.avif"
-							width={450}
-						/>
-						<div className="grid gap-1">
-							<h3 className="font-semibold">Zumba</h3>
-							<p className="text-sm leading-none">Dance your way to fitness.</p>
-						</div>
-					</div>
+					{classes.map((classItem) => (
+						<ClassCard2 key={classItem.id} {...classItem} />
+					))}
 				</div>
 			</div>
 		</section>

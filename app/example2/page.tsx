@@ -5,7 +5,6 @@ import LandingPageSection from "./landingPageSection";
 
 export default async function Component({ params }) {
 	const allLandingPageData = await getAllLandingPages();
-	// console.log(allLandingPageData.landingPages[0]);
 	const landingPageData = await getLandingPage("test");
 
 	return (

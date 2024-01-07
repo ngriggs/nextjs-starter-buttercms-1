@@ -1,21 +1,9 @@
-import React from "react";
+import React, { cloneElement } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Icons } from "./icons";
 
-export default function footer() {
-	const socialMedia = [
-		{
-			id: "giggles play instagram link",
-			icon: <Icons.instagram className="h-[28px] w-[28px]" />,
-			link: "https://www.instagram.com/giggles.play/?fbclid=IwAR0-NhgItCvF9QTFJVUSnTPRaCS12Bv5HfOzghQa2SemmTWXGQpM_EwuGls",
-		},
-		{
-			id: "giggles play facebook link",
-			icon: <Icons.facebook className="h-[28px] w-[28px]" />,
-			link: "https://www.facebook.com/profile.php?id=100089486487628",
-		},
-	];
+export default function footer({ socialMedia }) {
 	return (
 		<footer className="clip5 sm:clip4 z-80 relative bg-giggles-yellow-100 pt-12">
 			<div className="mx-auto flex max-w-7xl flex-col p-2 md:flex-row">
@@ -36,7 +24,7 @@ export default function footer() {
 						{socialMedia.map((social, index) => (
 							<div
 								key={social.id}
-								className={`h-[28px] w-[28px] cursor-pointer object-contain hover:scale-105 fill-primary ${
+								className={`h-[28px] w-[28px] cursor-pointer object-contain hover:scale-105 ${
 									index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
 								}`}
 							>
@@ -45,7 +33,9 @@ export default function footer() {
 									target={"_blank"}
 									aria-label={social.id}
 								>
-									{social.icon}
+									{cloneElement(social.icon, {
+										className: "h-[34px] w-[34px] fill-primary",
+									})}
 								</Link>
 							</div>
 						))}
@@ -54,20 +44,18 @@ export default function footer() {
 						Please note that weekend hours will vary based on private events.
 						Refer to{" "}
 						<Link
-							href={"https://g.co/kgs/STgKdp"}
+							href={"https://www.google.com"}
 							className="font-bold text-giggles-navy underline"
 							target="_blank"
 						>
 							Google
-						</Link>{" "}
+						</Link>
 						for our most up to date hours.
 					</p>
 				</div>
-				<div className="my-auto flex-1 p-2">
-					<div className="grid place-content-center"></div>
-
-					<div className="my-auto flex flex-col place-content-center md:flex-row	">
-						<div className="mb-4 max-w-sm text-left md:mr-12">
+				<div className="my-auto flex mx-auto p-2">
+					<div className="my-auto grid grid-cols-1 place-items-center sm:grid-cols-2	">
+						<div className="mb-4 max-w-sm text-center md:text-left md:mr-12">
 							<div className="">
 								<p className="mb-2 font-bold uppercase text-giggles-red">
 									Hours of Operation
@@ -78,7 +66,7 @@ export default function footer() {
 								<p className="py-1">Sun: 11am - 5pm</p>
 							</div>
 						</div>
-						<div className="max-w-sm">
+						<div className="max-w-sm text-center md:text-left items-center">
 							<p className="mb-2 font-bold uppercase text-giggles-red">
 								Get in touch
 							</p>

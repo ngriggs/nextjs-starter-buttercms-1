@@ -1,18 +1,16 @@
 import React from "react";
-// import "bootstrap/dist/css/bootstrap.css";
 import "../css/lineicons.css";
 
 import "../css/tiny-slider.min.css";
 import "../css/main.css";
 
 import { getMenu } from "../lib/getMenu";
-import FooterSection from "../components/footer-section";
-import HeaderSection from "../components/header-section";
 import ScrollToButtonButton from "../components/scroll-to-top-button";
 import NavBar from "../components/mainNav";
 import Footer from "../components/mainFooter";
 
 import { ThemeProvider } from "../components/theme-provider";
+import { Icons } from "../components/icons";
 
 export const metadata = {
 	title: "JN Collective Web Starter",
@@ -27,197 +25,16 @@ export const metadata = {
 	},
 };
 
-const nav = [
+const socialMedia = [
 	{
-		title: "About us",
-		href: "/about-us",
-		subheadings: [
-			{
-				name: "Handy Manny",
-				description:
-					"Book an upcoming party or check availability on your event date",
-				href: "/handy-manny",
-				target: "_top",
-				icon: "CalendarDaysIcon",
-			},
-			{
-				name: "gallery",
-				description:
-					"Book an upcoming party or check availability on your event date",
-				href: "/gallery",
-				target: "_top",
-				icon: "CalendarDaysIcon",
-			},
-			{
-				name: "our space",
-				description:
-					"Book an upcoming party or check availability on your event date",
-				href: "/our-space",
-				target: "_top",
-				icon: "CalendarDaysIcon",
-			},
-		],
+		id: "giggles play instagram link",
+		icon: <Icons.instagram className="h-[28px] w-[28px]" />,
+		link: "https://www.instagram.com/",
 	},
 	{
-		title: "Business",
-		href: "/business",
-		subheadings: [
-			{
-				name: "giggles",
-				description:
-					"Book an upcoming party or check availability on your event date",
-				href: "/giggles",
-				target: "_top",
-				icon: "CalendarDaysIcon",
-			},
-			{
-				name: "gallery",
-				description:
-					"Book an upcoming party or check availability on your event date",
-				href: "/gallery",
-				target: "_top",
-				icon: "CalendarDaysIcon",
-			},
-			{
-				name: "our space",
-				description:
-					"Book an upcoming party or check availability on your event date",
-				href: "/our-space",
-				target: "_top",
-				icon: "CalendarDaysIcon",
-			},
-			{
-				name: "blog articles",
-				description: "Send us any feedback or inquiries",
-				href: "/posts",
-				target: "_top",
-				icon: "CursorArrowRaysIcon",
-			},
-			{
-				name: "contact us",
-				description: "Sign a waiver for your children in advance",
-				href: "/contact",
-				target: "_top",
-				icon: "ShieldCheckIcon",
-			},
-			{
-				name: "FAQs",
-				description: "Learn more about the team.",
-				href: "/faq",
-				target: "_top",
-				icon: "Squares2X2Icon",
-			},
-		],
-	},
-	{
-		title: "Events",
-		href: "/events",
-		subheadings: [
-			{
-				name: "giggles",
-				description:
-					"Book an upcoming party or check availability on your event date",
-				href: "/giggles",
-				target: "_top",
-				icon: "CalendarDaysIcon",
-			},
-			{
-				name: "gallery",
-				description:
-					"Book an upcoming party or check availability on your event date",
-				href: "/gallery",
-				target: "_top",
-				icon: "CalendarDaysIcon",
-			},
-			{
-				name: "our space",
-				description:
-					"Book an upcoming party or check availability on your event date",
-				href: "/our-space",
-				target: "_top",
-				icon: "CalendarDaysIcon",
-			},
-			{
-				name: "blog articles",
-				description: "Send us any feedback or inquiries",
-				href: "/posts",
-				target: "_top",
-				icon: "CursorArrowRaysIcon",
-			},
-			{
-				name: "contact us",
-				description: "Sign a waiver for your children in advance",
-				href: "/contact",
-				target: "_top",
-				icon: "ShieldCheckIcon",
-			},
-			{
-				name: "FAQs",
-				description: "Learn more about the team.",
-				href: "/faq",
-				target: "_top",
-				icon: "Squares2X2Icon",
-			},
-		],
-	},
-	{
-		title: "Shop",
-		href: "/shop",
-		subheadings: [
-			{
-				name: "giggles",
-				description:
-					"Book an upcoming party or check availability on your event date",
-				href: "/giggles",
-				target: "_top",
-				icon: "CalendarDaysIcon",
-			},
-			{
-				name: "gallery",
-				description:
-					"Book an upcoming party or check availability on your event date",
-				href: "/gallery",
-				target: "_top",
-				icon: "CalendarDaysIcon",
-			},
-			{
-				name: "our space",
-				description:
-					"Book an upcoming party or check availability on your event date",
-				href: "/our-space",
-				target: "_top",
-				icon: "CalendarDaysIcon",
-			},
-			{
-				name: "blog articles",
-				description: "Send us any feedback or inquiries",
-				href: "/posts",
-				target: "_top",
-				icon: "CursorArrowRaysIcon",
-			},
-			{
-				name: "contact us",
-				description: "Sign a waiver for your children in advance",
-				href: "/contact",
-				target: "_top",
-				icon: "ShieldCheckIcon",
-			},
-			{
-				name: "FAQs",
-				description: "Learn more about the team.",
-				href: "/faq",
-				target: "_top",
-				icon: "Squares2X2Icon",
-			},
-		],
-	},
-	{
-		title: "example",
-		href: "/example",
-	},
-	{
-		title: "test",
-		href: "/test",
+		id: "giggles play facebook link",
+		icon: <Icons.facebook className="h-[28px] w-[28px]" />,
+		link: "https://www.facebook.com/",
 	},
 ];
 
@@ -244,8 +61,10 @@ export default async function RootLayout({
 					enableSystem
 					disableTransitionOnChange
 				>
-					<NavBar test={test.menus[0].items} />
-					{children} <Footer />
+					<NavBar test={test.menus[0].items} socialMedia={socialMedia} />
+					<div className="my-[83px] md:my-0" />
+					{children}
+					<Footer socialMedia={socialMedia} />
 					<ScrollToButtonButton />
 				</ThemeProvider>
 			</body>

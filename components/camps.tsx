@@ -13,7 +13,7 @@ import { Button } from "./ui/button";
 
 export default function Component() {
 	return (
-		<main className="p-4 md:p-6 lg:p-8">
+		<main className="container p-4 md:p-6 lg:p-8">
 			<div className="space-y-4 text-center">
 				<h1 className="text-3xl font-bold">Events</h1>
 				<p className="text-gray-500 dark:text-gray-400">
