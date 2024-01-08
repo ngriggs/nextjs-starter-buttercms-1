@@ -76,6 +76,9 @@ module.exports = {
 				"feature-background": "url('../public/images/common-bg2.svg')",
 				"motion-example": "url('../public/videos/sample.avif')",
 			},
+			transitionProperty: {
+				height: "height",
+			},
 		},
 	},
 	plugins: [require("tailwindcss-animate")],

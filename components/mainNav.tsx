@@ -61,7 +61,7 @@ export default function NavBar({ test, socialMedia }) {
 			<div className="hidden md:block">
 				<div
 					className={`w-screen font-extrabold text-3xl tracking-wide top-0 z-50 dark:bg-gray-800 dark:text-white  ${
-						isNavbarSticky ? "fixed  bg-white z-50" : "absolute"
+						isNavbarSticky ? "fixed bg-white z-50 h-[66px]" : "absolute"
 					}
 					${pathName === "/" && !isNavbarSticky ? "text-white" : ""}`}
 					ref={navbarAreaEl}
@@ -82,7 +82,9 @@ export default function NavBar({ test, socialMedia }) {
 							<nav className="hidden gap-4 text-sm sm:gap-6 md:block my-auto">
 								<div className="flex">
 									<Link
-										className="flex-1 flex mr-6 my-1 bg-white rounded-sm rounded-tl-3xl rounded-br-3xl"
+										className={`flex-1 h-[58px] flex mr-6 my-1 bg-white rounded-sm rounded-tl-3xl rounded-br-3xl ${
+											isNavbarSticky ? "" : ""
+										}`}
 										href="/"
 										target="_top"
 									>
@@ -91,6 +93,7 @@ export default function NavBar({ test, socialMedia }) {
 											alt={"libertyville gymnastics academy"}
 											width={100}
 											height={100}
+											className={` w-full transition-height duration-500 ease-in-out`}
 										/>
 									</Link>
 									{test?.length ? (
@@ -122,7 +125,7 @@ export default function NavBar({ test, socialMedia }) {
 							</div>
 						</div>
 
-						<div className="hidden justify-end md:flex md:flex-1 my-1">
+						<div className="hidden justify-end md:flex md:flex-1 my-1 transition-height">
 							<Dialog>
 								<DialogTrigger asChild>
 									<Button variant="outline2">
@@ -178,7 +181,7 @@ export default function NavBar({ test, socialMedia }) {
 					</div>
 
 					{showSeparator && (
-						<Separator className="z-20 hidden bg-primary md:block" />
+						<Separator className="z-20 hidden bg-primary md:block transition-all opacity-100" />
 					)}
 				</div>
 			</div>

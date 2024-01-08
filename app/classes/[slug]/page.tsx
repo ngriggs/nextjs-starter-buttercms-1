@@ -16,7 +16,7 @@ export default async function Class({ params }) {
 	const classes = await getClasses(formattedSlug as ClassCategory);
 
 	return (
-		<div className="min-h-svh md:pt-20 container">
+		<div className="min-h-svh md:pt-20">
 			<Component classes={classes.classes} />
 		</div>
 	);

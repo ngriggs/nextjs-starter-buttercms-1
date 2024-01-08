@@ -32,7 +32,7 @@ const ClassCard2 = ({ category, description, title, image, id }) => {
 
 export default function Component({ classes }) {
 	return (
-		<section className="container w-full py-12">
+		<section className="w-full container py-12">
 			<div className="container grid gap-6 md:gap-8 px-4 md:px-6 max-w-xl mx-auto lg:max-w-none">
 				<div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
 					<div className="grid gap-1">

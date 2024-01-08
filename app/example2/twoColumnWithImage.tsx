@@ -6,21 +6,20 @@ import { Icons } from "../../components/icons";
 export default function TwoColumnWithImage({ ...params }) {
 	console.log("TwoColumnWithImage", params);
 	return (
-		<div id={params.scrollAnchorId} className="relative">
-			<div className="container mx-auto  flex w-full flex-col sm:py-20 md:flex-row">
+		<div id={params.scrollAnchorId} className="relative w-full">
+			<div className="container mx-auto grid md:grid-cols-2 grid-cols-1 sm:py-20 md:flex-row">
 				{params.image && params.imagePosition === "left" && (
-					<div className="basis-1/2">
+					<div className="my-auto">
 						<div
-							className={`my-10 grid w-[90%] max-w-[910px] place-content-center
-											rounded-r-full transition-all duration-300 ease-out 
-										  `}
+							className={`my-10 grid place-items-center
+											rounded-r-full`}
 						>
 							<Image src={params.image.url} alt="" width={3000} height={3000} />
 						</div>
 					</div>
 				)}
 
-				<div className="my-auto basis-1/2 p-4">
+				<div className="my-auto grid place-items-center p-4">
 					<div className="max-w-[600px]">
 						<div className="grid place-content-start">
 							<p className="p-2 tracking-[3px] text-giggles-yellow">ABOUT</p>
@@ -47,7 +46,7 @@ export default function TwoColumnWithImage({ ...params }) {
 
 								<div className="flex items-center pl-4">
 									<div>
-										<div className="font-quicksand text-lg">
+										<div className="font-quicksand md:text-lg text-base">
 											<p>Mon - Thur: 10am - 6pm</p>
 											<p>Fri: 10am - 7:30pm</p>
 											<p>Sat: 10am - 6pm</p>
@@ -56,7 +55,7 @@ export default function TwoColumnWithImage({ ...params }) {
 									</div>
 								</div>
 							</div>
-							<p className="max-w-lg p-2 text-[#798185]">
+							<p className="max-w-lg p-2 text-accent-foreground">
 								Please note that weekend hours will vary based on private
 								events. Refer to{" "}
 								<Link
@@ -68,7 +67,7 @@ export default function TwoColumnWithImage({ ...params }) {
 								</Link>{" "}
 								for our most up to date hours.
 							</p>
-							<Link href="#" target="_top" className="mx-auto sm:ml-0">
+							<Link href="#" target="_top" className="mx-auto mt-4">
 								<Button variant="outline2">
 									<span className="w-0 h-0 rounded-full bg-secondary/50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ease-out duration-300 transition-all group-hover:w-[200px] group-hover:h-[200px] -z-1"></span>
 									Our mission
@@ -79,11 +78,10 @@ export default function TwoColumnWithImage({ ...params }) {
 				</div>
 
 				{params.image && params.imagePosition === "right" && (
-					<div className="basis-1/2 -order-last md:order-last">
+					<div className=" my-auto -order-last md:order-last">
 						<div
-							className={`my-10 grid w-[90%] max-w-[910px] place-content-center
-											rounded-r-full transition-all duration-300 ease-out
-										  `}
+							className={`my-10 grid place-content-center
+											rounded-r-full `}
 						>
 							<Image src={params.image.url} alt="" width={3000} height={3000} />
 						</div>

@@ -62,7 +62,7 @@ export default async function RootLayout({
 					disableTransitionOnChange
 				>
 					<NavBar test={test.menus[0].items} socialMedia={socialMedia} />
-					<div className="my-[83px] md:my-0" />
+					<div className="my-[41px] md:my-0" />
 					{children}
 					<Footer socialMedia={socialMedia} />
 					<ScrollToButtonButton />
