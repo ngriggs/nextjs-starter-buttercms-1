@@ -42,27 +42,30 @@ export default function HoverPopover({ item }: any) {
 
 	return (
 		<Popover open={open} onOpenChange={setOpen}>
-			<PopoverTrigger
-				className={`group flex cursor-pointer flex-row my-auto text-lg transition-all ${
-					desiredPath === item.link ? "underline" : ""
-				}`}
-				// ... (existing code)
-				onMouseEnter={handleMouseEnter}
-				onMouseLeave={handleMouseLeave}
-				ref={example}
-				// Conditionally blur based on the mouse position
-				onFocus={() => {
-					if (!isMouseInside) {
-						example.current.blur();
-					}
-				}}
-			>
-				{item.title}
-				<Icons.chevronDown
-					className="relative my-auto ml-2 h-5 w-5 stroke-1 transition-transform duration-200 group-data-[state=open]:rotate-180"
-					aria-hidden="true"
-				/>
-			</PopoverTrigger>
+			<Link href={item.link}>
+				<PopoverTrigger
+					className={`group flex cursor-pointer flex-row my-auto text-lg transition-all ${
+						desiredPath === item.link ? "underline" : ""
+					}`}
+					// ... (existing code)
+					onMouseEnter={handleMouseEnter}
+					onMouseLeave={handleMouseLeave}
+					ref={example}
+					// Conditionally blur based on the mouse position
+					onFocus={() => {
+						if (!isMouseInside) {
+							example.current.blur();
+						}
+					}}
+				>
+					{item.title}
+					<Icons.chevronDown
+						className="relative my-auto ml-2 h-5 w-5 stroke-1 transition-transform duration-200 group-data-[state=open]:rotate-180"
+						aria-hidden="true"
+					/>
+				</PopoverTrigger>
+			</Link>
+
 			<PopoverContent
 				className="mt-[15px] rounded-sm"
 				onMouseEnter={handlePopoverMouseEnter}

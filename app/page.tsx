@@ -16,6 +16,18 @@ import { getClasses } from "../lib/getClasses";
 export default async function Page({ params }) {
 	const landingPageData = await getLandingPage(params.slug);
 	const classes = await getClasses();
+	const uniqueCategories = [
+		...new Set(classes.classes.map((item) => item.category)),
+	];
+
+	const firstItems = uniqueCategories.map((category) => {
+		const firstItem = classes.classes.find(
+			(item) => item.category === category
+		);
+		return firstItem;
+	});
+
+	console.log(firstItems);
 
 	return (
 		<div className="relative bg-inherit text-secondary-foreground min-svh ">
@@ -23,7 +35,7 @@ export default async function Page({ params }) {
 			<Component2 />
 			<TeamMembers />
 			<Camps />
-			<Classes classes={classes.classes} />
+			<Classes classes={firstItems} />
 
 			{/* <div className="mx-auto py-16 px-4 sm:px-6 lg:px-8  bg-gradient-to-b from-[#808080] to-[#666666] min-h-screen">
 				<div className="container mt-[120px]">
