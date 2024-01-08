@@ -189,6 +189,17 @@ export default function NavBar({ test, socialMedia }) {
 			<div className="md:hidden w-screen bg-white text-black dark:bg-gray-800 dark:text-white fixed top-0 z-50">
 				<div className="z-20 grid grid-cols-3 px-4 lg:px-6">
 					<div className="grid justify-start items-center">
+						<ModeToggle align={"center"} />
+					</div>
+					<Link className="grid place-items-center" href="/" target="_top">
+						<Image
+							src={"/lgalogotrans.png"}
+							alt={"libertyville gymnastics academy"}
+							width={100}
+							height={100}
+						/>
+					</Link>
+					<div className="grid justify-end items-center">
 						<Popover open={open} onOpenChange={setOpen} modal>
 							<PopoverTrigger className="group px-2 md:hidden">
 								<div
@@ -201,10 +212,10 @@ export default function NavBar({ test, socialMedia }) {
 								>
 									<span className="w-[20px] h-[2px] m-[2px] bg-black dark:bg-white duration-300 group-data-[state=open]:rotate-45"></span>
 									<span
-										className={`w-[20px] h-[2px] m-[2px] bg-black dark:bg-white duration-300 group-data-[state=open]:hidden`}
+										className={`w-[20px] h-[2px] m-[2px] bg-black dark:bg-white duration-300 group-data-[state=open]:-rotate-45 group-data-[state=open]:translate-y-[-6px]`}
 									></span>
 									<span
-										className={`w-[20px] h-[2px] m-[2px] bg-black dark:bg-white duration-300 group-data-[state=open]:-rotate-45 group-data-[state=open]:translate-y-[-6px]`}
+										className={`w-[10px] h-[2px] m-[2px] bg-black dark:bg-white duration-300 group-data-[state=open]:hidden`}
 									></span>
 								</div>
 							</PopoverTrigger>
@@ -289,17 +300,6 @@ export default function NavBar({ test, socialMedia }) {
 								</div>
 							</PopoverContent>
 						</Popover>
-					</div>
-					<Link className="grid place-items-center" href="/" target="_top">
-						<Image
-							src={"/lgalogotrans.png"}
-							alt={"libertyville gymnastics academy"}
-							width={100}
-							height={100}
-						/>
-					</Link>
-					<div className="grid justify-end items-center">
-						<ModeToggle align={"center"} />
 					</div>
 				</div>
 			</div>
