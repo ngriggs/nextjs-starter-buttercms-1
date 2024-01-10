@@ -5,8 +5,10 @@ export default function Test() {
 			style={{
 				backgroundImage: "url('/hero-bg1.avif')",
 			}}
-			className="bg-cover bg-center"
+			className="bg-cover bg-center relative"
 		>
+			<div className="absolute inset-0 bg-black/20" />
+
 			<div className="container relative min-h-svh pt-20 grid grid-cols-1">
 				<div className="grid place-items-center justify-start w-1/2">
 					<h1 className="text-7xl text-secondary font-extrabold">

@@ -22,7 +22,7 @@ export default function Component() {
 			}}
 		>
 			<div className="absolute inset-0 bg-black/50" />
-			<div className="relative container mx-auto px-4 md:px-6 h-full flex items-center justify-center">
+			<div className="relative container mx-auto px-4 md:px-6 h-full grid place-items-center justify-center">
 				<div className="text-center text-white max-w-2xl">
 					<h1 className="text-4xl md:text-6xl font-bold mb-4">
 						Cultivating Champions Beyond the Mat

@@ -6,49 +6,104 @@ import {
 } from "../components/ui/card";
 
 export default function Component() {
+	const cloudService = [
+		{
+			title: "Cloud Services",
+			description:
+				"We provide robust and secure cloud services for your business.",
+			icon: <CloudIcon className="w-12 h-12 text-blue-800" />,
+			bgColor: "bg-blue-200",
+			titleColor: "text-blue",
+		},
+		{
+			title: "Cybersecurity",
+			description:
+				"Our cybersecurity solutions protect your data from threats.",
+			icon: <ComputerIcon className="w-12 h-12 text-yellow-800" />,
+			bgColor: "bg-yellow-200",
+			titleColor: "text-yellow",
+		},
+		{
+			title: "IT Consulting",
+			description:
+				"We offer expert IT consulting services for your business needs.",
+			icon: <ConstructionIcon className="w-12 h-12 text-green-800" />,
+			bgColor: "bg-green-200",
+			titleColor: "text-green",
+		},
+		{
+			title: "Software Development",
+			description:
+				"We develop custom software tailored to your business requirements.",
+			icon: <ComputerIcon className="w-12 h-12 text-red-800" />,
+			bgColor: "bg-red-200",
+			titleColor: "text-red",
+		},
+	];
+	// const gymnasticsServices = [
+	// 	{
+	// 	  title: "Gymnastics Classes",
+	// 	  description:
+	// 		"Explore our gymnastics classes designed for children of all ages.",
+	// 	  icon: <GymnasticsIcon className="w-12 h-12 text-blue-800" />,
+	// 	  bgColor: "bg-blue-200",
+	// 	  titleColor: "text-blue",
+	// 	},
+	// 	{
+	// 	  title: "Camps",
+	// 	  description:
+	// 		"Join our fun and educational gymnastics camps during school breaks.",
+	// 	  icon: <CampfireIcon className="w-12 h-12 text-yellow-800" />,
+	// 	  bgColor: "bg-yellow-200",
+	// 	  titleColor: "text-yellow",
+	// 	},
+	// 	{
+	// 	  title: "Clinics",
+	// 	  description:
+	// 		"Participate in specialized clinics to enhance gymnastics skills.",
+	// 	  icon: <MedalIcon className="w-12 h-12 text-green-800" />,
+	// 	  bgColor: "bg-green-200",
+	// 	  titleColor: "text-green",
+	// 	},
+	// 	{
+	// 	  title: "Open Gyms",
+	// 	  description:
+	// 		"Enjoy open gym sessions where children can explore and practice.",
+	// 	  icon: <PlaygroundIcon className="w-12 h-12 text-red-800" />,
+	// 	  bgColor: "bg-red-200",
+	// 	  titleColor: "text-red",
+	// 	},
+	// 	{
+	// 	  title: "Birthday Parties",
+	// 	  description:
+	// 		"Celebrate birthdays with exciting gymnastics-themed parties.",
+	// 	  icon: <CakeIcon className="w-12 h-12 text-purple-800" />,
+	// 	  bgColor: "bg-purple-200",
+	// 	  titleColor: "text-purple",
+	// 	},
+	//   ];
+
 	return (
 		<section className="lg:p-12 bg-white dark:bg-gray-900 ">
 			<div className="container py-8 px-4 mx-auto lg:py-16 lg:px-6  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-				<Card className="mx-auto bg-blue-200 transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
-					<CardContent className="p-4 flex flex-col items-center justify-center">
-						<CloudIcon className="w-12 h-12 text-blue-800" />
-						<CardTitle className="text-blue-800 mt-4">Cloud Services</CardTitle>
-						<CardDescription className="text-blue-600">
-							We provide robust and secure cloud services for your business.
-						</CardDescription>
-					</CardContent>
-				</Card>
-				<Card className="bg-yellow-200 transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
-					<CardContent className="p-4 flex flex-col items-center justify-center">
-						<ComputerIcon className="w-12 h-12 text-yellow-800" />
-						<CardTitle className="text-yellow-800 mt-4">
-							Cybersecurity
-						</CardTitle>
-						<CardDescription className="text-yellow-600">
-							Our cybersecurity solutions protect your data from threats.
-						</CardDescription>
-					</CardContent>
-				</Card>
-				<Card className="bg-green-200 transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
-					<CardContent className="p-4 flex flex-col items-center justify-center">
-						<ConstructionIcon className="w-12 h-12 text-green-800" />
-						<CardTitle className="text-green-800 mt-4">IT Consulting</CardTitle>
-						<CardDescription className="text-green-600">
-							We offer expert IT consulting services for your business needs.
-						</CardDescription>
-					</CardContent>
-				</Card>
-				<Card className="bg-red-200 transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
-					<CardContent className="p-4 flex flex-col items-center justify-center">
-						<ComputerIcon className="w-12 h-12 text-red-800" />
-						<CardTitle className="text-red-800 mt-4">
-							Software Development
-						</CardTitle>
-						<CardDescription className="text-red-600">
-							We develop custom software tailored to your business requirements.
-						</CardDescription>
-					</CardContent>
-				</Card>
+				{cloudService.map((item, index) => {
+					return (
+						<Card
+							key={index}
+							className={`mx-auto transform transition-all ${item.bgColor} duration-500 hover:scale-105 hover:shadow-xl`}
+						>
+							<CardContent className="p-4 flex flex-col items-center justify-center">
+								{item.icon}
+								<CardTitle className={`${item.titleColor}-800 mt-4`}>
+									{item.title}
+								</CardTitle>
+								<CardDescription className={`${item.titleColor}-600`}>
+									{item.description}
+								</CardDescription>
+							</CardContent>
+						</Card>
+					);
+				})}
 			</div>
 		</section>
 	);
