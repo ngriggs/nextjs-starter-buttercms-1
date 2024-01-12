@@ -74,7 +74,7 @@ export default function Offerings() {
 			</div>
 			<TabsContent
 				value="classes"
-				className="border-none shadow-none place-items-center grid grid-cols-1 md:grid-cols-2 max-w-3xl mx-auto"
+				className="border-none shadow-none place-items-center grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto"
 			>
 				{classes.map((item, index) => {
 					return (
@@ -96,7 +96,7 @@ export default function Offerings() {
 			</TabsContent>
 			<TabsContent
 				value="events"
-				className="relative border-none shadow-none place-items-center grid grid-cols-1 md:grid-cols-2 max-w-3xl mx-auto"
+				className="border-none shadow-none place-items-center grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto"
 			>
 				{classes.map((item, index) => {
 					return (
@@ -118,7 +118,7 @@ export default function Offerings() {
 			</TabsContent>
 			<TabsContent
 				value="parties"
-				className="border-none shadow-none place-items-center grid grid-cols-1 md:grid-cols-2 max-w-3xl mx-auto"
+				className="border-none shadow-none place-items-center grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto"
 			>
 				{classes.map((item, index) => {
 					return (
