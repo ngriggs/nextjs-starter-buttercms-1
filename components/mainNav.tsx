@@ -71,9 +71,9 @@ export default function NavBar({ test, socialMedia }: any) {
 										<Image
 											src={"/lgalogotrans.png"}
 											alt={"libertyville gymnastics academy"}
-											width={100}
+											width={1000}
 											height={100}
-											className={` transition-height duration-500 ease-in-out`}
+											className={`w-full h-full`}
 										/>
 									</Link>
 									{test?.length ? (
