@@ -162,7 +162,7 @@ export default function FeaturesSection() {
 					<div className="grid md:grid-cols-3 grid-cols-1 gap-8">
 						{links.map((link, index) => {
 							return (
-								<Link href={link}>
+								<Link href={link} key={link}>
 									<Card
 										key={index}
 										className="rounded-lg shadow-lg group h-[500px]"

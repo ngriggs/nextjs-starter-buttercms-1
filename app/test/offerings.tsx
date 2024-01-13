@@ -50,8 +50,8 @@ export default function Offerings() {
 			defaultValue="classes"
 			className="container min-h-svh items-center flex flex-col justify-center relative"
 		>
-			<div className="flex items-center justify-center pb-3 bg-transparent w-full mx-auto space-x-3">
-				<TabsList className="grid grid-cols-3 bg-transparent space-x-3">
+			<div className="flex items-center justify-center pb-3 bg-transparent w-full mx-auto">
+				<TabsList className="grid md:grid-cols-3 grid-cols-1 bg-transparent place-items-center gap-3 mt-10 md:mt-0">
 					<TabsTrigger
 						value="classes"
 						className="data-[state=active]:bg-gradient-to-l data-[state=active]:from-[#8d2de1] data-[state=active]:to-[#4a00e0] data-[state=active]:text-primary-foreground border-primary border hover:bg-primary/90 hover:text-primary-foreground w-[190px] rounded-full"
@@ -74,7 +74,7 @@ export default function Offerings() {
 			</div>
 			<TabsContent
 				value="classes"
-				className="border-none shadow-none place-items-center grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto"
+				className="border-none shadow-none mt-40 md:mt-20 place-items-center grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto"
 			>
 				{classes.map((item, index) => {
 					return (
