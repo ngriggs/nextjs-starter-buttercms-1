@@ -154,8 +154,8 @@ function ConeIcon(props) {
 					y2="91.8335"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop stop-color="#4A00E0" />
-					<stop offset="1" stop-color="#8D2DE1" />
+					<stop stopColor="#4A00E0" />
+					<stop offset="1" stopColor="#8D2DE1" />
 				</linearGradient>
 			</defs>
 		</svg>
@@ -189,8 +189,8 @@ function RingsIcon(props) {
 					y2="91.6665"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop stop-color="#8D2DE1" />
-					<stop offset="1" stop-color="#4A00E0" />
+					<stop stopColor="#8D2DE1" />
+					<stop offset="1" stopColor="#4A00E0" />
 				</linearGradient>
 				<linearGradient
 					id="paint1_linear_4_88"
@@ -200,8 +200,8 @@ function RingsIcon(props) {
 					y2="100"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop stop-color="#8D2DE1" />
-					<stop offset="1" stop-color="#4A00E0" />
+					<stop stopColor="#8D2DE1" />
+					<stop offset="1" stopColor="#4A00E0" />
 				</linearGradient>
 			</defs>
 		</svg>
@@ -218,8 +218,8 @@ function PreschoolIcon(props) {
 			xmlns="http://www.w3.org/2000/svg"
 			{...props}
 		>
-			<g clip-path="url(#clip0_4_138)">
-				<g clip-path="url(#clip1_4_138)">
+			<g clipPath="url(#clip0_4_138)">
+				<g clipPath="url(#clip1_4_138)">
 					<path
 						d="M93.1818 18.1818C89.422 18.1818 86.3636 21.2401 86.3636 24.9999V27.2727H68.1819V6.81819C68.1819 3.05838 65.1235 0 61.3637 0C57.6039 0 54.5455 3.05838 54.5455 6.81819V9.09099H13.6364V6.81819C13.6364 3.05838 10.578 0 6.81819 0C3.05838 0 0 3.05838 0 6.81819V97.7274C0 98.9837 1.01655 100 2.2728 100H11.3638C12.62 100 13.6366 98.9837 13.6366 97.7274V22.7274H22.7276V36.7824C20.0879 37.7237 18.1822 40.2228 18.1822 43.1819C18.1822 46.9417 21.2406 50.0001 25.0004 50.0001C28.7602 50.0001 31.8186 46.9417 31.8186 43.1819C31.8186 40.2228 29.9129 37.7237 27.2732 36.7824V22.7274H40.9095V36.7824C38.2698 37.7237 36.3642 40.2228 36.3642 43.1819C36.3642 46.9417 39.4225 50.0001 43.1823 50.0001C46.9421 50.0001 50.0005 46.9417 50.0005 43.1819C50.0005 40.2228 48.0948 37.7237 45.4551 36.7824V22.7274H54.5455V97.7274C54.5455 98.9837 55.562 100 56.8183 100H65.9093C67.1655 100 68.1821 98.9837 68.1821 97.7274V40.9091H86.3638V97.7274C86.3638 98.9837 87.3804 100 88.6366 100H97.7276C98.9839 100 100 98.9837 100 97.7274V24.9999C100 21.2401 96.9416 18.1818 93.1818 18.1818ZM24.9999 45.4545C23.746 45.4545 22.7271 44.4358 22.7271 43.1817C22.7271 41.9276 23.746 40.9091 24.9999 40.9091C26.2539 40.9091 27.2727 41.9278 27.2727 43.1819C27.2727 44.436 26.2541 45.4545 24.9999 45.4545ZM43.1819 45.4545C41.928 45.4545 40.9091 44.4358 40.9091 43.1817C40.9091 41.9276 41.9278 40.9091 43.1819 40.9091C44.436 40.9091 45.4547 41.9278 45.4547 43.1819C45.4547 44.436 44.4358 45.4545 43.1819 45.4545Z"
 						fill="url(#paint0_linear_4_138)"
@@ -235,8 +235,8 @@ function PreschoolIcon(props) {
 					y2="100"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop stop-color="#4A00E0" />
-					<stop offset="1" stop-color="#8D2DE1" />
+					<stop stopColor="#4A00E0" />
+					<stop offset="1" stopColor="#8D2DE1" />
 				</linearGradient>
 				<clipPath id="clip0_4_138">
 					<rect width="100" height="100" fill="white" />
@@ -272,8 +272,8 @@ function CheerTumble(props) {
 					y2="87.5"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop stop-color="#8D2DE1" />
-					<stop offset="1" stop-color="#4A00E0" />
+					<stop stopColor="#8D2DE1" />
+					<stop offset="1" stopColor="#4A00E0" />
 				</linearGradient>
 			</defs>
 		</svg>

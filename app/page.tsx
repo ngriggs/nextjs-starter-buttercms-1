@@ -5,20 +5,17 @@ import Camps from "@/components/camps";
 import Classes from "@/components/classes";
 import { getClasses } from "@/lib/getClasses";
 
-export default async function Page() {
+export default async function Page({ params }) {
 	const classes = await getClasses();
 	const uniqueCategories = [
 		...new Set(classes.classes.map((item) => item.category)),
 	];
-
 	const firstItems = uniqueCategories.map((category) => {
 		const firstItem = classes.classes.find(
 			(item) => item.category === category
 		);
 		return firstItem;
 	});
-
-	console.log(firstItems);
 
 	return (
 		<div className="relative bg-inherit text-secondary-foreground min-svh ">

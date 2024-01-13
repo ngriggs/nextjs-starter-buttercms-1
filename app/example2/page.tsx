@@ -1,12 +1,6 @@
 import { Button } from "../../components/ui/button";
-import { getAllLandingPages } from "../../lib/getAllLandingPages";
-import { getLandingPage } from "../../lib/getLandingPage";
-import LandingPageSection from "./landingPageSection";
 
-export default async function Component({ params }) {
-	const allLandingPageData = await getAllLandingPages();
-	const landingPageData = await getLandingPage("test");
-
+export default async function Component() {
 	return (
 		<div className="bg-[#0f172a] text-white min-h-screen">
 			<div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
@@ -84,19 +78,6 @@ export default async function Component({ params }) {
 					</div>
 				</div>
 			</div>
-			{landingPageData ? (
-				landingPageData.landingPage?.body.map((section, index) => {
-					return (
-						<LandingPageSection
-							key={index}
-							type={section.type}
-							sectionData={section}
-						/>
-					);
-				})
-			) : (
-				<div>Section Missing</div>
-			)}
 		</div>
 	);
 }
