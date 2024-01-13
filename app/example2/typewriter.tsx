@@ -30,7 +30,7 @@ export default function Typewriter({ texts, classNames }: any) {
 
 	useEffect(() => {
 		typeText(0, false);
-	}, []);
+	}, [typeText]);
 
 	return (
 		<div className={classNames}>
