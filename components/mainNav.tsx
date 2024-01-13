@@ -54,7 +54,7 @@ export default function NavBar({ test, socialMedia }: any) {
 						isNavbarSticky ? "fixed bg-white z-50 h-[66px]" : "absolute"
 					}
 					${pathName === "/" && !isNavbarSticky ? "text-white" : ""}
-					${pathName === "/test" && !isNavbarSticky ? "text-white" : ""}`}
+					${pathName === "/testing" && !isNavbarSticky ? "text-white" : ""}`}
 					ref={navbarAreaEl as React.MutableRefObject<HTMLDivElement>}
 				>
 					<div className="z-20 flex items-center justify-between px-4 lg:px-6">
@@ -73,7 +73,7 @@ export default function NavBar({ test, socialMedia }: any) {
 											alt={"libertyville gymnastics academy"}
 											width={100}
 											height={100}
-											className={` w-full transition-height duration-500 ease-in-out`}
+											className={` transition-height duration-500 ease-in-out`}
 										/>
 									</Link>
 									{test?.length ? (
@@ -121,7 +121,7 @@ export default function NavBar({ test, socialMedia }: any) {
 											className={`flex items-center justify-center h-full my-auto ${
 												pathName === "/" && !isNavbarSticky ? "fill-white" : ""
 											}
-											${pathName === "/test" && !isNavbarSticky ? "fill-white" : ""}`}
+											${pathName === "/testing" && !isNavbarSticky ? "fill-white" : ""}`}
 										>
 											{cloneElement(social.icon, {
 												className: "h-[34px] w-[34px]",
