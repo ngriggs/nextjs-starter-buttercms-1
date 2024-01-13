@@ -1,5 +1,5 @@
-import { getClasses } from "../../../lib/getClasses";
-import Component from "../../../components/classes";
+import { getClasses } from "@/lib/getClasses";
+import Component from "@/components/classes";
 
 enum ClassCategory {
 	PRESCHOOL = "PRESCHOOL",

@@ -40,49 +40,6 @@ export default function Component() {
 			titleColor: "text-red",
 		},
 	];
-	// const gymnasticsServices = [
-	// 	{
-	// 	  title: "Gymnastics Classes",
-	// 	  description:
-	// 		"Explore our gymnastics classes designed for children of all ages.",
-	// 	  icon: <GymnasticsIcon className="w-12 h-12 text-blue-800" />,
-	// 	  bgColor: "bg-blue-200",
-	// 	  titleColor: "text-blue",
-	// 	},
-	// 	{
-	// 	  title: "Camps",
-	// 	  description:
-	// 		"Join our fun and educational gymnastics camps during school breaks.",
-	// 	  icon: <CampfireIcon className="w-12 h-12 text-yellow-800" />,
-	// 	  bgColor: "bg-yellow-200",
-	// 	  titleColor: "text-yellow",
-	// 	},
-	// 	{
-	// 	  title: "Clinics",
-	// 	  description:
-	// 		"Participate in specialized clinics to enhance gymnastics skills.",
-	// 	  icon: <MedalIcon className="w-12 h-12 text-green-800" />,
-	// 	  bgColor: "bg-green-200",
-	// 	  titleColor: "text-green",
-	// 	},
-	// 	{
-	// 	  title: "Open Gyms",
-	// 	  description:
-	// 		"Enjoy open gym sessions where children can explore and practice.",
-	// 	  icon: <PlaygroundIcon className="w-12 h-12 text-red-800" />,
-	// 	  bgColor: "bg-red-200",
-	// 	  titleColor: "text-red",
-	// 	},
-	// 	{
-	// 	  title: "Birthday Parties",
-	// 	  description:
-	// 		"Celebrate birthdays with exciting gymnastics-themed parties.",
-	// 	  icon: <CakeIcon className="w-12 h-12 text-purple-800" />,
-	// 	  bgColor: "bg-purple-200",
-	// 	  titleColor: "text-purple",
-	// 	},
-	//   ];
-
 	return (
 		<section className="lg:p-12 bg-white dark:bg-gray-900 ">
 			<div className="container py-8 px-4 mx-auto lg:py-16 lg:px-6  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -6,7 +6,7 @@ import {
 	CardContent,
 	CardDescription,
 	CardTitle,
-} from "../../components/ui/card";
+} from "@/components/ui/card";
 
 export default function FeaturesSection() {
 	const links = [

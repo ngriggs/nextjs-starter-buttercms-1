@@ -1,4 +1,4 @@
-import Component from "../../../components/camps";
+import Component from "@/components/camps";
 
 export default function Event({ params }) {
 	return (

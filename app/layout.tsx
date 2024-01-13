@@ -1,16 +1,13 @@
 import React from "react";
-import "../css/lineicons.css";
+import "@/css/main.css";
 
-import "../css/tiny-slider.min.css";
-import "../css/main.css";
+import { getMenu } from "@/lib/getMenu";
+import ScrollToButtonButton from "@/components/scroll-to-top-button";
+import NavBar from "@/components/mainNav";
+import Footer from "@/components/mainFooter";
 
-import { getMenu } from "../lib/getMenu";
-import ScrollToButtonButton from "../components/scroll-to-top-button";
-import NavBar from "../components/mainNav";
-import Footer from "../components/mainFooter";
-
-import { ThemeProvider } from "../components/theme-provider";
-import { Icons } from "../components/icons";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Icons } from "@/components/icons";
 
 import { Anton, Roboto } from "next/font/google";
 
@@ -65,13 +62,6 @@ export default async function RootLayout({
 			className={`${anton.variable} ${roboto.variable} scroll-smooth"`}
 			suppressHydrationWarning
 		>
-			<head>
-				<link
-					href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap"
-					rel="stylesheet"
-				/>
-			</head>
-
 			<body className="relative font-body">
 				{/* <HeaderSection mainMenu={test} /> */}
 				<ThemeProvider

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { AvatarImage, Avatar } from "../../components/ui/avatar";
 import { Card } from "../../components/ui/card";
 

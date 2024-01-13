@@ -1,5 +1,5 @@
-import { getClasses } from "../../lib/getClasses";
-import Component from "../../components/classes";
+import { getClasses } from "@/lib/getClasses";
+import Component from "@/components/classes";
 
 export default async function Classes() {
 	const classes = await getClasses();

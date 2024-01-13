@@ -13,18 +13,6 @@ import Link from "next/link";
 import { useState, useRef, useEffect, cloneElement } from "react";
 import HoverPopover from "./hoverPopover";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
-import {
-	Dialog,
-	DialogContent,
-	DialogDescription,
-	DialogFooter,
-	DialogHeader,
-	DialogTitle,
-	DialogTrigger,
-} from "./ui/dialog";
-import { Input } from "./ui/input";
-import { Label } from "./ui/label";
-import { Textarea } from "./ui/textarea";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ModeToggle } from "./mode-toggle";
@@ -69,17 +57,6 @@ export default function NavBar({ test, socialMedia }) {
 				>
 					<div className="z-20 flex items-center justify-between px-4 lg:px-6">
 						<div className="flex flex-1 justify-items-start space-x-4">
-							{/* <Link className="relative" href="/" target="_top">
-								<div className="flex items-center justify-center bg-white dark:bg-gray-800 z-10 h-[112px] w-[112px] rounded-full">
-									<Image
-										src={"/lgalogotrans.png"}
-										alt={"libertyville gymnastics academy"}
-										width={100}
-										height={100}
-										className="relative z-20"
-									/>
-								</div>
-							</Link> */}
 							<nav className="hidden gap-4 text-sm sm:gap-6 md:block my-auto">
 								<div className="flex">
 									<Link
@@ -127,57 +104,6 @@ export default function NavBar({ test, socialMedia }) {
 						</div>
 
 						<div className="hidden justify-end md:flex md:flex-1 my-1 transition-height">
-							{/* <Dialog>
-								<DialogTrigger asChild>
-									<Button variant="outline2">
-										<span className="w-0 h-0 rounded-full bg-secondary/50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ease-out duration-300 transition-all group-hover:w-[200px] group-hover:h-[200px] -z-1"></span>
-										Get in Touch
-									</Button>
-								</DialogTrigger>
-								<DialogContent className="sm:max-w-[425px]">
-									<DialogHeader>
-										<DialogTitle>Join our newsletter</DialogTitle>
-										<DialogDescription>
-											Make changes to your profile here. Click save when
-											you&apos;re done.
-										</DialogDescription>
-									</DialogHeader>
-									<div className="grid gap-4 py-4">
-										<div className="grid grid-cols-4 items-center gap-4">
-											<Label htmlFor="name" className="text-right">
-												Name
-											</Label>
-											<Input
-												id="name"
-												placeholder="your name"
-												className="col-span-3"
-											/>
-										</div>
-										<div className="grid grid-cols-4 items-center gap-4">
-											<Label htmlFor="email" className="text-right">
-												Email Address
-											</Label>
-											<Input
-												id="email"
-												placeholder="email address"
-												className="col-span-3"
-											/>
-										</div>
-										<div className="grid grid-cols-4 items-center gap-4">
-											<Label htmlFor="text" className="text-right">
-												Message
-											</Label>
-											<Textarea
-												className="col-span-3"
-												placeholder="Type your message here."
-											/>
-										</div>
-									</div>
-									<DialogFooter>
-										<Button type="submit">Save changes</Button>
-									</DialogFooter>
-								</DialogContent>
-							</Dialog> */}
 							<div className="flex flex-row justify-center">
 								{socialMedia.map((social, index) => (
 									<div

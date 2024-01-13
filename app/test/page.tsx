@@ -342,7 +342,7 @@ export default function Test() {
 				</Card>
 				<div className="md:col-span-2 md:row-span-2 order-first md:order-none bg-gradient-to-l from-[#8d2de1] to-[#4a00e0] rounded-xl place-items-center grid">
 					<div className="mx-auto flex flex-col space-y-5 items-center justify-center">
-						<h3 className={`font-title md:text-5xl text-3xl text-white`}>
+						<h3 className={`md:text-5xl text-3xl text-white`}>
 							Want to <span className="italic">join</span> us?
 						</h3>
 						<Button variant="default">See open positions</Button>

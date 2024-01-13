@@ -1,4 +1,3 @@
-import { getLandingPage } from "@/lib/getLandingPage";
 import Component from "@/components/hero";
 import Component2 from "@/components/services1";
 import TeamMembers from "@/components/team-members";
