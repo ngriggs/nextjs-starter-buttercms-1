@@ -1,5 +1,5 @@
 import { getLandingPage } from "@/lib/getLandingPage";
-import LandingPageSection from "../example2/landingPageSection";
+import LandingPageSection from "@/app/example2/landingPageSection";
 
 export default async function Page({ params }) {
 	const landingPageData = await getLandingPage(params.slug);
