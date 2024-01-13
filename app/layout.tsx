@@ -12,6 +12,21 @@ import Footer from "../components/mainFooter";
 import { ThemeProvider } from "../components/theme-provider";
 import { Icons } from "../components/icons";
 
+import { Anton, Roboto } from "next/font/google";
+
+const anton = Anton({
+	subsets: ["latin"],
+	display: "swap",
+	weight: "400",
+	variable: "--title-font",
+});
+const roboto = Roboto({
+	subsets: ["latin"],
+	display: "swap",
+	weight: "400",
+	variable: "--body-font",
+});
+
 export const metadata = {
 	title: "JN Collective Web Starter",
 	description: "Components created by JN Collective",
@@ -45,7 +60,11 @@ export default async function RootLayout({
 }) {
 	const test = await getMenu();
 	return (
-		<html lang="en" className="scroll-smooth" suppressHydrationWarning>
+		<html
+			lang="en"
+			className={`${anton.variable} ${roboto.variable} scroll-smooth"`}
+			suppressHydrationWarning
+		>
 			<head>
 				<link
 					href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap"
@@ -53,7 +72,7 @@ export default async function RootLayout({
 				/>
 			</head>
 
-			<body className="relative">
+			<body className="relative font-body">
 				{/* <HeaderSection mainMenu={test} /> */}
 				<ThemeProvider
 					attribute="class"

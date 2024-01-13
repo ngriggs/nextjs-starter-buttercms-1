@@ -127,7 +127,7 @@ export default function NavBar({ test, socialMedia }) {
 						</div>
 
 						<div className="hidden justify-end md:flex md:flex-1 my-1 transition-height">
-							<Dialog>
+							{/* <Dialog>
 								<DialogTrigger asChild>
 									<Button variant="outline2">
 										<span className="w-0 h-0 rounded-full bg-secondary/50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ease-out duration-300 transition-all group-hover:w-[200px] group-hover:h-[200px] -z-1"></span>
@@ -177,7 +177,31 @@ export default function NavBar({ test, socialMedia }) {
 										<Button type="submit">Save changes</Button>
 									</DialogFooter>
 								</DialogContent>
-							</Dialog>
+							</Dialog> */}
+							<div className="flex flex-row justify-center">
+								{socialMedia.map((social, index) => (
+									<div
+										key={social.id}
+										className={`h-[28px] w-[28px] cursor-pointer object-contain hover:scale-105 ${
+											index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
+										}`}
+									>
+										<Link
+											href={social.link}
+											target={"_blank"}
+											aria-label={social.id}
+											className={`flex items-center justify-center h-full my-auto ${
+												pathName === "/" && !isNavbarSticky ? "fill-white" : ""
+											}
+											${pathName === "/test" && !isNavbarSticky ? "fill-white" : ""}`}
+										>
+											{cloneElement(social.icon, {
+												className: "h-[34px] w-[34px]",
+											})}
+										</Link>
+									</div>
+								))}
+							</div>
 						</div>
 					</div>
 
