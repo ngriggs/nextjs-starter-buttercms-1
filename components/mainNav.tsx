@@ -17,10 +17,12 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ModeToggle } from "./mode-toggle";
 
-export default function NavBar({ test, socialMedia }) {
+type NavbarAreaType = HTMLElement | null;
+
+export default function NavBar({ test, socialMedia }: any) {
 	const [showSeparator, setShowSeparator] = useState(false);
 	const [isNavbarSticky, setIsNavbarSticky] = useState(false);
-	const navbarAreaEl = useRef(null);
+	const navbarAreaEl = useRef<NavbarAreaType>(null);
 	const [open, setOpen] = useState(false);
 	const pathName = usePathname();
 
@@ -53,7 +55,7 @@ export default function NavBar({ test, socialMedia }) {
 					}
 					${pathName === "/" && !isNavbarSticky ? "text-white" : ""}
 					${pathName === "/test" && !isNavbarSticky ? "text-white" : ""}`}
-					ref={navbarAreaEl}
+					ref={navbarAreaEl as React.MutableRefObject<HTMLDivElement>}
 				>
 					<div className="z-20 flex items-center justify-between px-4 lg:px-6">
 						<div className="flex flex-1 justify-items-start space-x-4">
@@ -76,7 +78,7 @@ export default function NavBar({ test, socialMedia }) {
 									</Link>
 									{test?.length ? (
 										<div className="my-auto hidden flex-1 justify-center space-x-8 md:flex md:flex-1 ">
-											{test?.map((item, index) => {
+											{test?.map((item: any, index: number) => {
 												return item.submenu.length > 0 ? (
 													<HoverPopover
 														item={item}
@@ -105,7 +107,7 @@ export default function NavBar({ test, socialMedia }) {
 
 						<div className="hidden justify-end md:flex md:flex-1 my-1 transition-height">
 							<div className="flex flex-row justify-center">
-								{socialMedia.map((social, index) => (
+								{socialMedia.map((social: any, index: number) => (
 									<div
 										key={social.id}
 										className={`h-[28px] w-[28px] cursor-pointer object-contain hover:scale-105 ${
@@ -184,7 +186,7 @@ export default function NavBar({ test, socialMedia }) {
 									collapsible
 									className="w-screen pr-10 text-2xl"
 								>
-									{test?.map((item) =>
+									{test?.map((item: any) =>
 										item.submenu.length > 0 ? (
 											<AccordionItem
 												value={item.title}
@@ -195,7 +197,7 @@ export default function NavBar({ test, socialMedia }) {
 													{item.title}
 												</AccordionTrigger>
 												<AccordionContent>
-													{item.submenu?.map((sub) => (
+													{item.submenu?.map((sub: any) => (
 														<Link
 															key={sub.title}
 															href={sub.link}
@@ -233,7 +235,7 @@ export default function NavBar({ test, socialMedia }) {
 									</Link>
 								</div>
 								<div className="mb-[120px] flex h-[20vh] flex-1 items-end justify-center pb-20">
-									{socialMedia.map((social, index) => (
+									{socialMedia.map((social: any, index: number) => (
 										<div
 											key={social.id}
 											className={`h-[34px] w-[34px] cursor-pointer object-contain hover:scale-105 ${

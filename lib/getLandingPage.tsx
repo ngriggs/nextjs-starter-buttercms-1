@@ -1,4 +1,4 @@
-export async function getLandingPage(slug) {
+export async function getLandingPage(slug: any) {
 	try {
 		const headers = {
 			"content-type": "application/json",

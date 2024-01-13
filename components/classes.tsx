@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const ClassCard2 = ({ category, description, title, image, id }) => {
+const ClassCard2 = ({ category, description, title, image, id }: any) => {
 	const formattedSlug = category
 		.split("-")
-		.map((part) => part.toLowerCase())
+		.map((part: string) => part.toLowerCase())
 		.join("_");
 	return (
 		<div id={`${title}`} className="grid gap-6 relative group">
@@ -30,7 +30,7 @@ const ClassCard2 = ({ category, description, title, image, id }) => {
 	);
 };
 
-export default function Component({ classes }) {
+export default function Component({ classes }: any) {
 	return (
 		<section className="w-full container py-12">
 			<div className="container grid gap-6 md:gap-8 px-4 md:px-6 max-w-xl mx-auto lg:max-w-none">
@@ -46,7 +46,7 @@ export default function Component({ classes }) {
 					</div>
 				</div>
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-					{classes.map((classItem) => (
+					{classes.map((classItem: any) => (
 						<ClassCard2 key={classItem.id} {...classItem} />
 					))}
 				</div>

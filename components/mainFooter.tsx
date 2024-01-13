@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Icons } from "./icons";
 
-export default function footer({ socialMedia }) {
+export default function footer({ socialMedia }: any) {
 	return (
 		<footer className="clip5 sm:clip4 z-80 relative bg-giggles-yellow-100 pt-12">
 			<div className="mx-auto flex max-w-7xl flex-col p-2 md:flex-row">
@@ -21,7 +21,7 @@ export default function footer({ socialMedia }) {
 						</Link>
 					</div>
 					<div className="my-6 flex flex-row justify-center md:mt-0">
-						{socialMedia.map((social, index) => (
+						{socialMedia.map((social: any, index: number) => (
 							<div
 								key={social.id}
 								className={`h-[28px] w-[28px] cursor-pointer object-contain hover:scale-105 ${

@@ -5,14 +5,14 @@ import Camps from "@/components/camps";
 import Classes from "@/components/classes";
 import { getClasses } from "@/lib/getClasses";
 
-export default async function Page({ params }) {
+export default async function Page() {
 	const classes = await getClasses();
 	const uniqueCategories = [
-		...new Set(classes.classes.map((item) => item.category)),
+		...new Set(classes.classes.map((item: any) => item.category)),
 	];
 	const firstItems = uniqueCategories.map((category) => {
 		const firstItem = classes.classes.find(
-			(item) => item.category === category
+			(item: any) => item.category === category
 		);
 		return firstItem;
 	});

@@ -82,7 +82,7 @@ export default async function Component() {
 	);
 }
 
-function ArrowRightIcon(props) {
+function ArrowRightIcon(props: any) {
 	return (
 		<svg
 			{...props}
@@ -102,7 +102,7 @@ function ArrowRightIcon(props) {
 	);
 }
 
-function ChevronRightIcon(props) {
+function ChevronRightIcon(props: any) {
 	return (
 		<svg
 			{...props}

@@ -66,7 +66,7 @@ export default function Component() {
 	);
 }
 
-function CloudIcon(props) {
+function CloudIcon(props: any) {
 	return (
 		<svg
 			{...props}
@@ -85,7 +85,7 @@ function CloudIcon(props) {
 	);
 }
 
-function ComputerIcon(props) {
+function ComputerIcon(props: any) {
 	return (
 		<svg
 			{...props}
@@ -107,7 +107,7 @@ function ComputerIcon(props) {
 	);
 }
 
-function ConstructionIcon(props) {
+function ConstructionIcon(props: any) {
 	return (
 		<svg
 			{...props}

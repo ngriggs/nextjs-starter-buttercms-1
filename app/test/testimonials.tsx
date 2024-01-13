@@ -10,7 +10,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
-export function CarouselDemo({ reviews, className, orientation }) {
+export function CarouselDemo({ reviews, className, orientation }: any) {
 	return (
 		<Carousel
 			className={cn("w-full", className)}
@@ -18,7 +18,7 @@ export function CarouselDemo({ reviews, className, orientation }) {
 			orientation={orientation}
 		>
 			<CarouselContent className="w-full md:h-[400px]">
-				{reviews.map((review, index) => (
+				{reviews.map((review: any, index: number) => (
 					<CarouselItem key={index}>
 						<div className="p-1">
 							<Card className=" border-none shadow-none">

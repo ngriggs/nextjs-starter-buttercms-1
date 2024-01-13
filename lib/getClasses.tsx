@@ -1,4 +1,4 @@
-export async function getClasses(category?) {
+export async function getClasses(category?: any) {
 	let requestBody = {};
 	try {
 		const headers = {

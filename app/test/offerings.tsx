@@ -131,7 +131,7 @@ export default function Offerings() {
 	);
 }
 
-function ConeIcon(props) {
+function ConeIcon(props: any) {
 	return (
 		<svg
 			width="100"
@@ -162,7 +162,7 @@ function ConeIcon(props) {
 	);
 }
 
-function RingsIcon(props) {
+function RingsIcon(props: any) {
 	return (
 		<svg
 			width="100"
@@ -208,7 +208,7 @@ function RingsIcon(props) {
 	);
 }
 
-function PreschoolIcon(props) {
+function PreschoolIcon(props: any) {
 	return (
 		<svg
 			width="100"
@@ -249,7 +249,7 @@ function PreschoolIcon(props) {
 	);
 }
 
-function CheerTumble(props) {
+function CheerTumble(props: any) {
 	return (
 		<svg
 			width="100"

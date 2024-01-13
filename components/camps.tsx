@@ -92,7 +92,7 @@ export default function Component() {
 	);
 }
 
-function CakeIcon(props) {
+function CakeIcon(props: any) {
 	return (
 		<svg
 			{...props}
@@ -119,7 +119,7 @@ function CakeIcon(props) {
 	);
 }
 
-function ClipboardIcon(props) {
+function ClipboardIcon(props: any) {
 	return (
 		<svg
 			{...props}
@@ -139,7 +139,7 @@ function ClipboardIcon(props) {
 	);
 }
 
-function ShoppingBasketIcon(props) {
+function ShoppingBasketIcon(props: any) {
 	return (
 		<svg
 			{...props}

@@ -12,7 +12,7 @@ import {
 	DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 
-export function ModeToggle({ align }) {
+export function ModeToggle({ align }: any) {
 	const { setTheme } = useTheme();
 
 	return (
