@@ -1,4 +1,6 @@
 {
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"display": "Default",
 	"compilerOptions": {
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"allowJs": true,
@@ -15,6 +17,7 @@
 		"jsx": "preserve",
 		"target": "es2015",
 		"downlevelIteration": true,
+		"composite": false,
 		"paths": {
 			"@/*": ["./*"]
 		},
