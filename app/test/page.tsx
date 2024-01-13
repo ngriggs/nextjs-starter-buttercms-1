@@ -3,22 +3,9 @@ import Link from "next/link";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent, CardTitle } from "../../components/ui/card";
 import Offerings from "./offerings";
-import { Anton, Roboto } from "next/font/google";
 import { CarouselDemo } from "./testimonials";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-
-// If loading a variable font, you don't need to specify the font weight
-const anton = Anton({
-	subsets: ["latin"],
-	display: "swap",
-	weight: "400",
-});
-const roboto = Roboto({
-	subsets: ["latin"],
-	display: "swap",
-	weight: "400",
-});
 
 export default function Test() {
 	const relaventReviews = [
@@ -98,6 +85,11 @@ export default function Test() {
 		{ title: "PARTIES", number: 75 },
 		{ title: "AWARDS", number: 99 },
 	];
+	const FeaturedSectionImages = [
+		{ title: "Classes", image: "/Rectangle-2.avif" },
+		{ title: "Events", image: "/Rectangle-3.avif" },
+		{ title: "Parties", image: "/Rectangle-4.avif" },
+	];
 	return (
 		<div>
 			{/* Hero */}
@@ -107,12 +99,12 @@ export default function Test() {
 					backgroundImage: "url('/hero-bg1.avif')",
 				}}
 			>
-				<div className="absolute inset-0 bg-gradient-to-b from-[#5D089F]/70 to-[#4a00e0]/40 " />
+				<div className="absolute inset-0 bg-gradient-to-b from-[#4A00E0]/75 to-[#2B213D]/75 " />
 
 				<div className="grid relative place-items-center mb-36">
 					<div className="mx-auto text-primary-foreground">
 						<h1
-							className={`text-5xl lg:text-7xl text-center max-w-3xl font-extrabold ${anton.className}`}
+							className={`text-5xl lg:text-7xl text-center max-w-3xl font-extrabold font-title`}
 						>
 							We empower your <br className="hidden md:block" /> child to
 							achieve the seemingly impossible.{" "}
@@ -131,14 +123,24 @@ export default function Test() {
 			{/* Classes Events Parties images */}
 			<div className="container max-w-[1300px]">
 				<div className="-mt-[145px] relative grid grid-cols-1 md:grid-cols-3 gap-20 ">
-					{["Classes", "Events", "Parties"].map((item, index) => {
+					{FeaturedSectionImages.map((item, index) => {
 						return (
 							<Card
 								key={index}
-								className="border-none shadow-none rounded-t-3xl"
+								className="border-none shadow-none bg-transparent"
 							>
-								<CardContent className="bg-gray-200 h-[290px] rounded-3xl"></CardContent>
-								<CardTitle className="mt-4 text-center">{item}</CardTitle>
+								<CardContent className="h-[290px] p-0">
+									<Image
+										src={item.image}
+										alt={item.title}
+										height={1000}
+										width={1000}
+										className="rounded-[40px]"
+									></Image>
+								</CardContent>
+								<CardTitle className="mt-4 text-center text-xl">
+									{item.title}
+								</CardTitle>
 							</Card>
 						);
 					})}
@@ -147,10 +149,10 @@ export default function Test() {
 			{/* About us section */}
 			<div className="container grid items-center grid-cols-1 md:grid-cols-2 min-h-[70vh] my-20">
 				<div className="p-4 space-y-4">
-					<h3 className={`${anton.className} text-3xl md:text-5xl`}>
+					<h3 className={`font-title text-3xl md:text-5xl`}>
 						Libertyville Gymnastics
 					</h3>
-					<p className={`${roboto.className} max-w-sm`}>
+					<p className={`font-body max-w-sm`}>
 						LGA is an institution that provides children of all ages the
 						opportunity to discover self confidence, determination, motivation,
 						respect, and the opportunity to achieve something that was once
@@ -170,9 +172,7 @@ export default function Test() {
 			{/* Have a question section */}
 			<div className="w-full bg-black text-white ">
 				<div className="container flex text-center items-center justify-center h-[30vh] space-x-6">
-					<p
-						className={`${anton.className} text-secondary text-3xl md:text-5xl`}
-					>
+					<p className={`font-title text-secondary text-3xl md:text-5xl`}>
 						Have a question? Get in touch now!
 					</p>
 					<Link href={"#"}>
@@ -183,11 +183,11 @@ export default function Test() {
 			{/* Offerings section */}
 			<div className="container min-h-[70vh] items-center justify-center flex flex-col">
 				<h1
-					className={`${anton.className} text-center w-full md:ml-2 my-4 md:text-5xl text-3xl`}
+					className={`font-title text-center w-full md:ml-2 my-4 md:text-5xl text-3xl`}
 				>
 					Our Offerings
 				</h1>
-				<p className={`${roboto.className}`}>Lorem ipsum.</p>
+				<p className={`font-body`}>Lorem ipsum.</p>
 				<Offerings />
 			</div>
 			{/* Stats */}
@@ -196,10 +196,8 @@ export default function Test() {
 					{stats.map((stat, index) => {
 						return (
 							<div className={`flex flex-col`} key={index}>
-								<h3 className={` text-center ${anton.className}`}>
-									{stat.number}
-								</h3>
-								<p className={roboto.className}>{stat.title}</p>
+								<h3 className={` text-center font-title`}>{stat.number}</h3>
+								<p className="font-body">{stat.title}</p>
 							</div>
 						);
 					})}
@@ -208,7 +206,7 @@ export default function Test() {
 			{/* Testimonials */}
 			<div className="container items-center justify-center text-left flex flex-col">
 				<h1
-					className={`${anton.className} text-left w-full md:ml-2 my-4 md:text-5xl text-3xl`}
+					className={`font-title text-left w-full md:ml-2 my-4 md:text-5xl text-3xl`}
 				>
 					Testimonials
 				</h1>
@@ -227,9 +225,7 @@ export default function Test() {
 			{/* Subscribe to our newsletter */}
 			<div className="w-full bg-black text-white ">
 				<div className="container flex flex-col text-center items-center justify-center h-[30vh] space-x-6">
-					<p
-						className={`${anton.className} text-secondary text-3xl md:text-5xl`}
-					>
+					<p className={`font-title text-secondary text-3xl md:text-5xl`}>
 						Subscribe to Our Newsletter
 					</p>
 					<form className="flex my-5">
@@ -346,9 +342,7 @@ export default function Test() {
 				</Card>
 				<div className="md:col-span-2 md:row-span-2 order-first md:order-none bg-gradient-to-l from-[#8d2de1] to-[#4a00e0] rounded-xl place-items-center grid">
 					<div className="mx-auto flex flex-col space-y-5 items-center justify-center">
-						<h3
-							className={`${anton.className} md:text-5xl text-3xl text-white`}
-						>
+						<h3 className={`font-title md:text-5xl text-3xl text-white`}>
 							Want to <span className="italic">join</span> us?
 						</h3>
 						<Button variant="default">See open positions</Button>

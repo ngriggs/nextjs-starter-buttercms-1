@@ -2,7 +2,7 @@ import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
 import { Label } from "../../components/ui/label";
 import { getAllLandingPages } from "../../lib/getAllLandingPages";
-import { getLandingPage } from "../../lib/getLandingPage";
+import { getLandingPage } from "@/lib/getLandingPage";
 import LandingPageSection from "../example2/landingPageSection";
 import ColorForm from "../../components/colorForm";
 import Component from "../../components/hero";
