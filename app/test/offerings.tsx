@@ -92,7 +92,6 @@ export default function Offerings() {
 						</Card>
 					);
 				})}
-				<p>classes</p>
 			</TabsContent>
 			<TabsContent
 				value="events"
@@ -114,7 +113,6 @@ export default function Offerings() {
 						</Card>
 					);
 				})}
-				<p>events</p>
 			</TabsContent>
 			<TabsContent
 				value="parties"
@@ -136,7 +134,6 @@ export default function Offerings() {
 						</Card>
 					);
 				})}
-				<p>parties</p>
 			</TabsContent>
 		</Tabs>
 	);
