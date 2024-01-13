@@ -174,6 +174,9 @@ export default function NavBar({ test, socialMedia }) {
 								sideOffset={39}
 								side="top"
 								className="-mt-1 h-screen overflow-scroll rounded-none border-none"
+								onCloseAutoFocus={(event) => {
+									event.preventDefault();
+								}}
 							>
 								{/* <Separator className="z-20 -ml-4 -mt-1 w-screen bg-slate-900" /> */}
 								<Accordion

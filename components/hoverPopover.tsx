@@ -22,10 +22,8 @@ export default function HoverPopover({ item }: any) {
 	const handleMouseLeave = () => {
 		closeTimeoutRef.current = setTimeout(() => {
 			setOpen(false);
-			example.current.blur();
 		}, 200); // Adjust the delay time (in milliseconds) as needed
 		setMouseInside(false);
-		example.current.blur();
 	};
 
 	const handlePopoverMouseEnter = () => {
@@ -37,7 +35,6 @@ export default function HoverPopover({ item }: any) {
 		clearTimeout(closeTimeoutRef.current!);
 		setOpen(false);
 		setMouseInside(false);
-		example.current.blur();
 	};
 
 	return (
@@ -47,16 +44,9 @@ export default function HoverPopover({ item }: any) {
 					className={`group flex cursor-pointer flex-row my-auto text-lg transition-all ${
 						desiredPath === item.link ? "underline" : ""
 					}`}
-					// ... (existing code)
 					onMouseEnter={handleMouseEnter}
 					onMouseLeave={handleMouseLeave}
 					ref={example}
-					// Conditionally blur based on the mouse position
-					onFocus={() => {
-						if (!isMouseInside) {
-							example.current.blur();
-						}
-					}}
 				>
 					{item.title}
 					<Icons.chevronDown
@@ -70,14 +60,14 @@ export default function HoverPopover({ item }: any) {
 				className="mt-[15px] rounded-sm"
 				onMouseEnter={handlePopoverMouseEnter}
 				onMouseLeave={handlePopoverMouseLeave}
-				onMouseOut={() => {
-					example.current.blur();
-				}}
 				side="top"
 				sideOffset={0}
+				onCloseAutoFocus={(event) => {
+					event.preventDefault();
+				}}
 			>
 				{item.submenu?.map((sub: any) => (
-					<div className="text-base font-light" key={sub.name}>
+					<div className="text-base font-light" key={sub.title}>
 						<Link
 							key={sub.title}
 							href={sub.link}
