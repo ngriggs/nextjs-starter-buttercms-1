@@ -77,8 +77,7 @@ module.exports = {
 				"accordion-up": "accordion-up 0.2s ease-out",
 			},
 			backgroundImage: {
-				"feature-background": "url('../public/images/common-bg2.svg')",
-				"motion-example": "url('../public/videos/sample.avif')",
+				"feature-background": "url('../public/common-bg2.svg')",
 			},
 			transitionProperty: {
 				height: "height",
