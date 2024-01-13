@@ -8,7 +8,7 @@ enum ClassCategory {
 	// Add other categories as needed
 }
 
-export default async function Class({ ...params }) {
+export default async function Class({ params }: any) {
 	const formattedSlug = params.slug
 		.split("-")
 		.map((part: string) => part.toUpperCase())
