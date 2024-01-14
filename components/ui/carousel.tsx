@@ -303,10 +303,10 @@ const CustomCarouselNavigation = ({
 						className={`${
 							isActive
 								? isVertical
-									? "ring-blue h-9 bg-transparent ring"
-									: "ring-blue w-9 bg-transparent ring"
-								: "bg-black"
-						}  my-auto h-6 w-6 rounded-full bg-none p-[7px] opacity-100 transition-all duration-300 ease-out`}
+									? "bg-[#5D089F]"
+									: "bg-[#5D089F]"
+								: "bg-gray-400"
+						}  my-auto h-3 w-3 rounded-full bg-none p-[7px] opacity-100 transition-all duration-300 ease-out`}
 					></button>
 				);
 			})}

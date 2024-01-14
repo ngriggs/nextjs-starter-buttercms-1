@@ -5,8 +5,8 @@ import { Icons } from "./icons";
 
 export default function footer({ socialMedia }: any) {
 	return (
-		<footer className="clip5 sm:clip4 z-80 relative bg-giggles-yellow-100 pt-12">
-			<div className="mx-auto flex max-w-7xl flex-col p-2 md:flex-row">
+		<footer className=" z-80 relative pt-12">
+			<div className="mx-auto flex container flex-col p-2 md:flex-row">
 				<div className="flex-1 flex-col">
 					<div className="mb-[3.75rem] mt-5 flex justify-center">
 						<Link href="/" className="hover:cursor-pointer">
@@ -118,5 +118,159 @@ export default function footer({ socialMedia }: any) {
 				</div>
 			</div>
 		</footer>
+	);
+}
+
+export function Footer2() {
+	return (
+		<footer className="bg-gray-800 relative text-white pt-10 px-4 md:px-6">
+			<div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+				<div>
+					<Link href="/" className="hover:cursor-pointer w-full">
+						<Image
+							className="hover:translate-y-[-2px] w-full"
+							width={260}
+							height={70}
+							alt="logo"
+							src="/lgalogotrans.png"
+							priority={false}
+						/>
+					</Link>
+					<p className="text-sm text-center">
+						2610 Commerce Dr <br /> Libertyville, IL 60048
+					</p>
+				</div>
+				<div>
+					<h3 className="font-semibold text-lg mb-4">Quick Links</h3>
+					<ul className="space-y-2 text-sm">
+						<li>
+							<Link className="text-white hover:underline" href="#">
+								Home
+							</Link>
+						</li>
+						<li>
+							<Link className="text-white hover:underline" href="#">
+								Shop
+							</Link>
+						</li>
+						<li>
+							<Link className="text-white hover:underline" href="#">
+								About
+							</Link>
+						</li>
+						<li>
+							<Link className="text-white hover:underline" href="#">
+								Contact
+							</Link>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<h3 className="font-semibold text-lg mb-4">Contact Us</h3>
+					<p className="text-sm">
+						123 Street, City, State, Country
+						<br />
+						Email: info@example.com
+						<br />
+						Phone: +1 234 567 890
+					</p>
+				</div>
+				<div>
+					<h3 className="font-semibold text-lg mb-4">Follow Us</h3>
+					<div className="flex space-x-4">
+						<Link href="#">
+							<FacebookIcon className="h-6 w-6" />
+						</Link>
+						<Link href="#">
+							<TwitterIcon className="h-6 w-6" />
+						</Link>
+						<Link href="#">
+							<InstagramIcon className="h-6 w-6" />
+						</Link>
+					</div>
+				</div>
+			</div>
+
+			<div className="bottom-0 flex w-screen border-t border-gray-700 mt-10 pt-6 ">
+				<div className="mx-auto flex w-screen flex-col gap-4 px-10 py-3 text-center sm:flex-row sm:justify-between sm:text-left">
+					<div className="">
+						&copy; {new Date().getFullYear()} Libertyville Gymnastics Academy.
+						All rights reserved. Website by{" "}
+						<Link href={"https://jncollective.org"} target="_blank">
+							JN Collective.
+						</Link>
+					</div>
+
+					<div className="">
+						<Link className="hover:underline" href="/privacy">
+							Privacy Policy
+						</Link>
+						<span> | </span>
+						<Link className="hover:underline" href="/tos">
+							Terms of Service
+						</Link>
+					</div>
+				</div>
+			</div>
+		</footer>
+	);
+}
+
+function FacebookIcon(props: any) {
+	return (
+		<svg
+			{...props}
+			xmlns="http://www.w3.org/2000/svg"
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			strokeWidth="2"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+		</svg>
+	);
+}
+
+function InstagramIcon(props: any) {
+	return (
+		<svg
+			{...props}
+			xmlns="http://www.w3.org/2000/svg"
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			strokeWidth="2"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+			<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+			<line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+		</svg>
+	);
+}
+
+function TwitterIcon(props: any) {
+	return (
+		<svg
+			{...props}
+			xmlns="http://www.w3.org/2000/svg"
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			strokeWidth="2"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+		</svg>
 	);
 }

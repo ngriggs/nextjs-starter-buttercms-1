@@ -5,6 +5,7 @@ import { getMenu } from "@/lib/getMenu";
 import ScrollToButtonButton from "@/components/scroll-to-top-button";
 import NavBar from "@/components/mainNav";
 import Footer from "@/components/mainFooter";
+import { Footer2 } from "@/components/mainFooter";
 
 import { ThemeProvider } from "@/components/theme-provider";
 import { Icons } from "@/components/icons";
@@ -73,7 +74,8 @@ export default async function RootLayout({
 					<NavBar test={test.menus[0].items} socialMedia={socialMedia} />
 					<div className="my-[41px] md:my-0" />
 					{children}
-					<Footer socialMedia={socialMedia} />
+					{/* <Footer socialMedia={socialMedia} /> */}
+					<Footer2 />
 					<ScrollToButtonButton />
 				</ThemeProvider>
 			</body>
