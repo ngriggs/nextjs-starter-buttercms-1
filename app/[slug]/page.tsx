@@ -4,7 +4,7 @@ import LandingPageSection from "@/app/example2/landingPageSection";
 export default async function Page({ params }: any) {
 	console.log(params.slug);
 	const landingPageData = await getLandingPage(params.slug);
-	console.log(landingPageData.landingPage.body);
+	console.log(landingPageData?.landingPage?.body);
 
 	return (
 		<div className="relative bg-inherit text-secondary-foreground min-svh pt-20">
