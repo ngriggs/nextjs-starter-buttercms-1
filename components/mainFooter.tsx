@@ -197,7 +197,7 @@ export function Footer2() {
 				</div>
 			</div>
 
-			<div className="bottom-0 flex w-screen border-t border-gray-700 mt-10 pt-6 ">
+			<div className="bottom-0 flex px-0 border-t border-gray-700 mt-10 pt-6 ">
 				<div className="mx-auto flex w-screen flex-col gap-4 px-10 py-3 text-center sm:flex-row sm:justify-between sm:text-left">
 					<div className="">
 						&copy; {new Date().getFullYear()} Libertyville Gymnastics Academy.
