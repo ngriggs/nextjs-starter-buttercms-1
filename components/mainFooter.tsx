@@ -128,7 +128,7 @@ export function Footer2() {
 				<div>
 					<Link href="/" className="hover:cursor-pointer w-full">
 						<Image
-							className="hover:translate-y-[-2px] w-full"
+							className="hover:scale-105 transition-all w-full"
 							width={260}
 							height={70}
 							alt="logo"
@@ -136,31 +136,37 @@ export function Footer2() {
 							priority={false}
 						/>
 					</Link>
-					<p className="text-sm text-center">
-						2610 Commerce Dr <br /> Libertyville, IL 60048
-					</p>
 				</div>
 				<div>
 					<h3 className="font-semibold text-lg mb-4">Quick Links</h3>
 					<ul className="space-y-2 text-sm">
 						<li>
-							<Link className="text-white hover:underline" href="#">
+							<Link
+								className="text-white hover:underline"
+								href="/"
+								target="_top"
+							>
 								Home
 							</Link>
 						</li>
 						<li>
-							<Link className="text-white hover:underline" href="#">
-								Shop
+							<Link className="text-white hover:underline" href="/about">
+								About us
 							</Link>
 						</li>
 						<li>
-							<Link className="text-white hover:underline" href="#">
-								About
+							<Link className="text-white hover:underline" href="/events">
+								Events
 							</Link>
 						</li>
 						<li>
-							<Link className="text-white hover:underline" href="#">
-								Contact
+							<Link className="text-white hover:underline" href="/classes">
+								Classes
+							</Link>
+						</li>
+						<li>
+							<Link className="text-white hover:underline" href="/team">
+								Coaches
 							</Link>
 						</li>
 					</ul>
@@ -168,7 +174,7 @@ export function Footer2() {
 				<div>
 					<h3 className="font-semibold text-lg mb-4">Contact Us</h3>
 					<p className="text-sm">
-						123 Street, City, State, Country
+						2610 Commerce Dr <br /> Libertyville, IL 60048
 						<br />
 						Email: info@example.com
 						<br />
@@ -179,13 +185,13 @@ export function Footer2() {
 					<h3 className="font-semibold text-lg mb-4">Follow Us</h3>
 					<div className="flex space-x-4">
 						<Link href="#">
-							<FacebookIcon className="h-6 w-6" />
+							<FacebookIcon className="h-6 w-6 hover:scale-105" />
 						</Link>
 						<Link href="#">
-							<TwitterIcon className="h-6 w-6" />
+							<TwitterIcon className="h-6 w-6 hover:scale-105" />
 						</Link>
 						<Link href="#">
-							<InstagramIcon className="h-6 w-6" />
+							<InstagramIcon className="h-6 w-6 hover:scale-105" />
 						</Link>
 					</div>
 				</div>
