@@ -171,15 +171,12 @@ export function Footer2() {
 						</li>
 					</ul>
 				</div>
-				<div>
+				<div className="flex flex-col [&>p]:text-sm">
 					<h3 className="font-semibold text-lg mb-4">Contact Us</h3>
-					<p className="text-sm">
-						2610 Commerce Dr <br /> Libertyville, IL 60048
-						<br />
-						Email: info@example.com
-						<br />
-						Phone: +1 234 567 890
-					</p>
+					<p>2610 Commerce Dr.</p>
+					<p>Libertyville, IL 60048</p>
+					<p>Email: info@example.com</p>
+					<p>Phone: +1 234 567 890</p>
 				</div>
 				<div>
 					<h3 className="font-semibold text-lg mb-4">Follow Us</h3>

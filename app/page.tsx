@@ -94,7 +94,7 @@ export default function Test() {
 		<div>
 			{/* Hero */}
 			<div
-				className="bg-cover bg-center relative md:h-[75vh] pt-20 grid grid-cols-1 md:mb-0 sm:mb-16"
+				className="bg-cover bg-center relative min-h-svh pt-20 grid grid-cols-1 md:mb-0 sm:mb-16"
 				style={{
 					backgroundImage: "url('/hero-bg1.avif')",
 				}}
@@ -102,16 +102,21 @@ export default function Test() {
 				<div className="absolute inset-0 bg-gradient-to-b from-[#4A00E0]/75 to-[#2B213D]/75 " />
 
 				<div className="grid relative place-items-center mb-36">
-					<div className="mx-auto text-primary-foreground">
+					<div className="mx-auto text-primary-foreground dark:text-primary">
 						<h1
 							className={`text-5xl lg:text-7xl text-center max-w-3xl font-extrabold font-title`}
 						>
 							We empower your <br className="hidden md:block" /> child to
 							achieve the seemingly impossible.{" "}
 						</h1>
-						<div className="flex items-center justify-center mt-4">
+						<div className="flex flex-col md:flex-row space-y-6 md:space-y-0 items-center justify-center mt-4">
 							<Link href={"#"}>
-								<Button variant="default">Sign up</Button>
+								<Button
+									variant="default"
+									className="text-primary-foreground dark:text-primary"
+								>
+									Sign up
+								</Button>
 							</Link>
 							<Link className="ml-4" href={"#"}>
 								WHY CHOOSE LIBERTYVILLE GYMNASTICS?
