@@ -151,6 +151,48 @@ export default function Test() {
 					})}
 				</div>
 			</div>
+			{/* Visualizing colors */}
+			<div className="container grid md:grid-cols-10 grid-cols-2 my-20 gap-2 md:gap-6 [&>div]:p-2">
+				<div className="bg-background text-foreground">background color</div>
+				<div className="bg-foreground text-background">foreground color</div>
+				<div className="bg-card text-card-foreground">card color</div>
+				<div className="bg-card-foreground text-card">
+					card foreground color
+				</div>
+				<div className="bg-popover text-popover-foreground">
+					popover background color
+				</div>
+				<div className="bg-popover-foreground text-popover">
+					popover foreground color
+				</div>
+				<div className="bg-primary text-primary-foreground">primary color</div>
+				<div className="bg-primary-foreground text-primary">
+					primary foreground color
+				</div>
+				<div className="bg-secondary text-secondary-foreground">
+					secondary color
+				</div>
+				<div className="bg-secondary-foreground text-secondary">
+					secondary foreground color
+				</div>
+				<div className="bg-muted text-muted-foreground">muted color</div>
+				<div className="bg-muted-forground text-muted">
+					muted foreground color
+				</div>
+				<div className="bg-accent text-accent-foreground">accent color</div>
+				<div className="bg-accent-foreground text-accent">
+					accent foreground color
+				</div>
+				<div className="bg-destructive text-destructive-foreground">
+					destructive color
+				</div>
+				<div className="bg-destructive-foreground text-destructive">
+					destructive foreground color
+				</div>
+				<div className="bg-border">border color</div>
+				<div className="bg-input">input color</div>
+				<div className="bg-ring">ring color</div>
+			</div>
 			{/* About us section */}
 			<div className="container grid items-center grid-cols-1 md:grid-cols-2 min-h-[70vh] gap-6 my-6 md:my-20">
 				<div className="md:p-4 space-y-4 md:justify-end flex flex-col md:items-end md:mr-20">
