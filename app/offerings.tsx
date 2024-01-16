@@ -40,25 +40,25 @@ export default function Offerings() {
 	return (
 		<Tabs
 			defaultValue="classes"
-			className="container min-h-svh items-center flex flex-col justify-center relative"
+			className="min-h-svh items-center flex flex-col justify-center relative"
 		>
 			<div className="flex items-center justify-center pb-3 bg-transparent w-full mx-auto">
 				<TabsList className="grid md:grid-cols-3 grid-cols-1 bg-transparent place-items-center gap-3 mt-10 md:mt-0">
 					<TabsTrigger
 						value="classes"
-						className="uppercase py-4 data-[state=active]:bg-gradient-to-l data-[state=active]:from-[#8d2de1] data-[state=active]:to-[#4a00e0] data-[state=active]:text-primary-foreground border-primary border hover:bg-primary/90 hover:text-primary-foreground w-[190px] rounded-full"
+						className="uppercase py-4 data-[state=active]:bg-gradient-to-l data-[state=active]:from-[#8d2de1] data-[state=active]:to-[#4a00e0] data-[state=active]:text-primary-foreground dark:text-white border-primary border hover:bg-primary/90 hover:text-primary-foreground w-[190px] rounded-full"
 					>
 						Classes
 					</TabsTrigger>
 					<TabsTrigger
 						value="events"
-						className="uppercase py-4 data-[state=active]:bg-gradient-to-l data-[state=active]:from-[#8d2de1] data-[state=active]:to-[#4a00e0] data-[state=active]:text-primary-foreground border-primary border hover:bg-primary/90 hover:text-primary-foreground w-[190px] rounded-full"
+						className="uppercase py-4 data-[state=active]:bg-gradient-to-l data-[state=active]:from-[#8d2de1] data-[state=active]:to-[#4a00e0] data-[state=active]:text-primary-foreground dark:text-white border-primary border hover:bg-primary/90 hover:text-primary-foreground w-[190px] rounded-full"
 					>
 						Events
 					</TabsTrigger>
 					<TabsTrigger
 						value="parties"
-						className="uppercase py-4 data-[state=active]:bg-gradient-to-l data-[state=active]:from-[#8d2de1] data-[state=active]:to-[#4a00e0] data-[state=active]:text-primary-foreground border-primary border hover:bg-primary/90 hover:text-primary-foreground w-[190px] rounded-full"
+						className="uppercase py-4 data-[state=active]:bg-gradient-to-l data-[state=active]:from-[#8d2de1] data-[state=active]:to-[#4a00e0] data-[state=active]:text-primary-foreground dark:text-white border-primary border hover:bg-primary/90 hover:text-primary-foreground w-[190px] rounded-full"
 					>
 						Parties
 					</TabsTrigger>

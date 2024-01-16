@@ -50,7 +50,7 @@ export default function NavBar({ test, socialMedia }: any) {
 			{/* Main nav */}
 			<div className="hidden md:block">
 				<div
-					className={`w-screen font-extrabold text-3xl tracking-wide top-0 z-50 dark:bg-gray-800 dark:text-white  ${
+					className={`w-screen font-extrabold text-3xl tracking-wide top-0 z-50 dark:bg-gray-800 dark:text-white ${
 						isNavbarSticky ? "fixed bg-white z-50 h-[66px]" : "absolute"
 					}
 					${pathName === "/" && !isNavbarSticky ? "text-white" : ""}
@@ -118,7 +118,7 @@ export default function NavBar({ test, socialMedia }: any) {
 											href={social.link}
 											target={"_blank"}
 											aria-label={social.id}
-											className={`flex items-center justify-center h-full my-auto ${
+											className={`flex items-center justify-center h-full my-auto dark:fill-white ${
 												pathName === "/" && !isNavbarSticky ? "fill-white" : ""
 											}
 											${pathName === "/testing" && !isNavbarSticky ? "fill-white" : ""}`}

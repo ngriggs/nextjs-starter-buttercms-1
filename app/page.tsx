@@ -153,8 +153,10 @@ export default function Test() {
 			</div>
 			{/* About us section */}
 			<div className="container grid items-center grid-cols-1 md:grid-cols-2 min-h-[70vh] gap-6 my-6 md:my-20">
-				<div className="p-4 space-y-4 md:justify-end flex flex-col md:items-end md:mr-20">
-					<h3 className={`font-title text-3xl md:text-5xl`}>
+				<div className="md:p-4 space-y-4 md:justify-end flex flex-col md:items-end md:mr-20">
+					<h3
+						className={`font-title text-center md:text-left text-3xl md:text-5xl`}
+					>
 						Libertyville Gymnastics
 					</h3>
 					<p
@@ -177,9 +179,9 @@ export default function Test() {
 				</div>
 			</div>
 			{/* Have a question section */}
-			<div className="w-full bg-black text-white">
+			<div className="w-full bg-black dark:bg-inherit text-white">
 				<div className="container flex flex-col md:flex-row text-center items-center justify-center h-[30vh] space-x-6">
-					<p className={`font-title text-secondary text-3xl md:text-5xl`}>
+					<p className={`font-title text-3xl md:text-5xl`}>
 						Have a question? Get in touch now!
 					</p>
 					<Link href={"#"}>
@@ -199,7 +201,7 @@ export default function Test() {
 			</div>
 			{/* Stats */}
 			<div className="container min-h-[50vh] items-center justify-center flex flex-col">
-				<div className="h-[300px] w-full bg-gradient-to-l from-[#8d2de1] to-[#4a00e0] rounded-[50px] [&>div>h3]:text-3xl md:[&>div>h3]:text-5xl grid grid-cols-1 md:grid-cols-3 place-items-center text-secondary">
+				<div className="h-[300px] w-full bg-gradient-to-l from-[#8d2de1] to-[#4a00e0] rounded-[50px] [&>div>h3]:text-3xl md:[&>div>h3]:text-5xl grid grid-cols-1 md:grid-cols-3 place-items-center text-white">
 					{stats.map((stat, index) => {
 						return (
 							<div className={`flex flex-col`} key={index}>
@@ -230,13 +232,13 @@ export default function Test() {
 			</div>
 
 			{/* Subscribe to our newsletter */}
-			<div className="w-full bg-black text-white py-4 md:py-10 min-h-[30vh]">
+			<div className="w-full bg-black dark:bg-inherit text-white py-4 md:py-10 min-h-[30vh]">
 				<div className="container flex flex-col text-center items-center justify-center h-[30vh] space-x-6">
-					<p className={`font-title text-secondary text-3xl md:text-5xl`}>
+					<p className={`font-title text-3xl md:text-5xl`}>
 						Subscribe to Our Newsletter
 					</p>
 					<form className="flex my-5">
-						<Input className="rounded-l-full w-[50vw] max-w-[600px] rounded-r-none text-primary" />
+						<Input className="rounded-l-full w-[50vw] max-w-[300px] rounded-r-none text-primary dark:border dark:border-primary" />
 						<Button className="rounded-l-none rounded-r-full h-full">
 							Subscribe
 						</Button>
@@ -348,8 +350,8 @@ export default function Test() {
 					</div>
 				</Card>
 				<div className="md:col-span-2 md:row-span-2 order-first md:order-none bg-gradient-to-l from-[#8d2de1] to-[#4a00e0] rounded-xl place-items-center grid">
-					<div className="mx-auto flex flex-col space-y-5 items-center justify-center py-5">
-						<h3 className={`md:text-5xl text-3xl text-white`}>
+					<div className="mx-auto flex flex-col space-y-5 items-center justify-center py-5 text-white">
+						<h3 className={`md:text-5xl text-3xl`}>
 							Want to <span className="italic">join</span> us?
 						</h3>
 						<Button variant="default">See open positions</Button>

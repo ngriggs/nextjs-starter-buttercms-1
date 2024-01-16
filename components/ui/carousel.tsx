@@ -290,7 +290,7 @@ const CustomCarouselNavigation = ({
 					isVertical
 						? "flex-col absolute -right-10 top-1/2 space-y-3 transform -translate-y-1/2 min-h-4"
 						: "flex-row space-x-4 min-h-4 mt-4"
-				} justify-${isRightPlacement ? "end" : "center"} bg-white`,
+				} justify-${isRightPlacement ? "end" : "center"} `,
 				className
 			)}
 		>
