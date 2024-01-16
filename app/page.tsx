@@ -94,7 +94,7 @@ export default function Test() {
 		<div>
 			{/* Hero */}
 			<div
-				className="bg-cover bg-center relative min-h-svh pt-20 grid grid-cols-1 md:mb-0 sm:mb-16"
+				className="bg-cover bg-center relative h-svh min-h-[800px] pt-20 grid grid-cols-1 md:mb-0 sm:mb-16"
 				style={{
 					backgroundImage: "url('/hero-bg1.avif')",
 				}}
@@ -104,12 +104,12 @@ export default function Test() {
 				<div className="grid relative place-items-center mb-36">
 					<div className="mx-auto text-primary-foreground dark:text-primary">
 						<h1
-							className={`text-5xl lg:text-7xl text-center max-w-3xl font-extrabold font-title`}
+							className={`text-center max-w-4xl text-5xl md:text-8xl font-title`}
 						>
 							We empower your <br className="hidden md:block" /> child to
 							achieve the seemingly impossible.{" "}
 						</h1>
-						<div className="flex flex-col md:flex-row space-y-6 md:space-y-0 items-center justify-center mt-4">
+						<div className="flex flex-col md:flex-row space-y-6 md:space-y-0 items-center justify-center mt-16">
 							<Link href={"#"}>
 								<Button
 									variant="default"
@@ -118,7 +118,7 @@ export default function Test() {
 									Sign up
 								</Button>
 							</Link>
-							<Link className="ml-4" href={"#"}>
+							<Link className="md:ml-4 text-xl text-center" href={"#"}>
 								WHY CHOOSE LIBERTYVILLE GYMNASTICS?
 							</Link>
 						</div>
@@ -127,12 +127,12 @@ export default function Test() {
 			</div>
 			{/* Classes Events Parties images */}
 			<div className="container max-w-[1300px]">
-				<div className="mt-20 md:mt-10 relative grid grid-cols-1 md:grid-cols-3 gap-20">
+				<div className="mt-20 md:mt-10 relative grid grid-cols-1 md:grid-cols-3 md:gap-20">
 					{FeaturedSectionImages.map((item, index) => {
 						return (
 							<Card
 								key={index}
-								className="border-none shadow-none bg-transparent md:-translate-y-1/2 "
+								className="border-none shadow-none bg-transparent md:-translate-y-1/2 md:mb-[-70%]"
 							>
 								<CardContent className="p-0">
 									<Image
@@ -143,7 +143,7 @@ export default function Test() {
 										className="rounded-[40px]"
 									></Image>
 								</CardContent>
-								<CardTitle className="mt-2 text-center text-xl">
+								<CardTitle className="text-center font-body text-xl md:text-3xl font-bold my-8">
 									{item.title}
 								</CardTitle>
 							</Card>
@@ -152,12 +152,14 @@ export default function Test() {
 				</div>
 			</div>
 			{/* About us section */}
-			<div className="container grid items-center grid-cols-1 md:grid-cols-2 min-h-[70vh] my-20">
-				<div className="p-4 space-y-4">
+			<div className="container grid items-center grid-cols-1 md:grid-cols-2 min-h-[70vh] gap-6 my-6 md:my-20">
+				<div className="p-4 space-y-4 md:justify-end flex flex-col md:items-end md:mr-20">
 					<h3 className={`font-title text-3xl md:text-5xl`}>
 						Libertyville Gymnastics
 					</h3>
-					<p className={`font-body max-w-sm`}>
+					<p
+						className={`font-body max-w-sm text-base md:text-2xl md:text-right`}
+					>
 						LGA is an institution that provides children of all ages the
 						opportunity to discover self confidence, determination, motivation,
 						respect, and the opportunity to achieve something that was once
@@ -176,7 +178,7 @@ export default function Test() {
 			</div>
 			{/* Have a question section */}
 			<div className="w-full bg-black text-white">
-				<div className="container flex text-center items-center justify-center h-[30vh] space-x-6">
+				<div className="container flex flex-col md:flex-row text-center items-center justify-center h-[30vh] space-x-6">
 					<p className={`font-title text-secondary text-3xl md:text-5xl`}>
 						Have a question? Get in touch now!
 					</p>
@@ -186,7 +188,7 @@ export default function Test() {
 				</div>
 			</div>
 			{/* Offerings section */}
-			<div className="container min-h-[70vh] items-center justify-center flex flex-col my-20">
+			<div className="container min-h-[50vh] items-center justify-center flex flex-col my-6 md:my-20">
 				<h1
 					className={`font-title text-center w-full md:ml-2 my-4 md:text-5xl text-3xl`}
 				>
@@ -196,8 +198,8 @@ export default function Test() {
 				<Offerings />
 			</div>
 			{/* Stats */}
-			<div className="container min-h-[70vh] items-center justify-center flex flex-col">
-				<div className="h-[300px] w-full bg-gradient-to-l from-[#8d2de1] to-[#4a00e0] rounded-[50px] [&>div>h3]:text-3xl md:[&>div>h3]:text-5xl grid grid-cols-3 place-items-center text-secondary">
+			<div className="container min-h-[50vh] items-center justify-center flex flex-col">
+				<div className="h-[300px] w-full bg-gradient-to-l from-[#8d2de1] to-[#4a00e0] rounded-[50px] [&>div>h3]:text-3xl md:[&>div>h3]:text-5xl grid grid-cols-1 md:grid-cols-3 place-items-center text-secondary">
 					{stats.map((stat, index) => {
 						return (
 							<div className={`flex flex-col`} key={index}>
@@ -209,7 +211,7 @@ export default function Test() {
 				</div>
 			</div>
 			{/* Testimonials */}
-			<div className="container items-center justify-center text-left flex flex-col">
+			<div className="container items-center justify-center text-left flex flex-col my-6 md:my-20">
 				<h1
 					className={`font-title text-left w-full md:ml-2 my-4 md:text-5xl text-3xl`}
 				>
@@ -228,7 +230,7 @@ export default function Test() {
 			</div>
 
 			{/* Subscribe to our newsletter */}
-			<div className="w-full bg-black text-white ">
+			<div className="w-full bg-black text-white py-4 md:py-10 min-h-[30vh]">
 				<div className="container flex flex-col text-center items-center justify-center h-[30vh] space-x-6">
 					<p className={`font-title text-secondary text-3xl md:text-5xl`}>
 						Subscribe to Our Newsletter

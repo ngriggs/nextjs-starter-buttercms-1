@@ -46,19 +46,19 @@ export default function Offerings() {
 				<TabsList className="grid md:grid-cols-3 grid-cols-1 bg-transparent place-items-center gap-3 mt-10 md:mt-0">
 					<TabsTrigger
 						value="classes"
-						className="data-[state=active]:bg-gradient-to-l data-[state=active]:from-[#8d2de1] data-[state=active]:to-[#4a00e0] data-[state=active]:text-primary-foreground border-primary border hover:bg-primary/90 hover:text-primary-foreground w-[190px] rounded-full"
+						className="uppercase py-4 data-[state=active]:bg-gradient-to-l data-[state=active]:from-[#8d2de1] data-[state=active]:to-[#4a00e0] data-[state=active]:text-primary-foreground border-primary border hover:bg-primary/90 hover:text-primary-foreground w-[190px] rounded-full"
 					>
 						Classes
 					</TabsTrigger>
 					<TabsTrigger
 						value="events"
-						className="data-[state=active]:bg-gradient-to-l data-[state=active]:from-[#8d2de1] data-[state=active]:to-[#4a00e0] data-[state=active]:text-primary-foreground border-primary border hover:bg-primary/90 hover:text-primary-foreground w-[190px] rounded-full"
+						className="uppercase py-4 data-[state=active]:bg-gradient-to-l data-[state=active]:from-[#8d2de1] data-[state=active]:to-[#4a00e0] data-[state=active]:text-primary-foreground border-primary border hover:bg-primary/90 hover:text-primary-foreground w-[190px] rounded-full"
 					>
 						Events
 					</TabsTrigger>
 					<TabsTrigger
 						value="parties"
-						className="data-[state=active]:bg-gradient-to-l data-[state=active]:from-[#8d2de1] data-[state=active]:to-[#4a00e0] data-[state=active]:text-primary-foreground border-primary border hover:bg-primary/90 hover:text-primary-foreground w-[190px] rounded-full"
+						className="uppercase py-4 data-[state=active]:bg-gradient-to-l data-[state=active]:from-[#8d2de1] data-[state=active]:to-[#4a00e0] data-[state=active]:text-primary-foreground border-primary border hover:bg-primary/90 hover:text-primary-foreground w-[190px] rounded-full"
 					>
 						Parties
 					</TabsTrigger>
