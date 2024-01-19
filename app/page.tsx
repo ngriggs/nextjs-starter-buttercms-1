@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Button } from "../components/ui/button";
 import { Card, CardContent, CardTitle } from "../components/ui/card";
 import Offerings from "./offerings";
-import { CarouselDemo } from "./testimonials";
+import Testimonial from "./testimonials";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -261,15 +261,16 @@ export default function Test() {
 				>
 					Testimonials
 				</h1>
-				<CarouselDemo
+				<Testimonial
 					reviews={relaventReviews}
 					orientation="vertical"
 					className="hidden md:flex"
+					height={400}
 				/>
-				<CarouselDemo
+				<Testimonial
 					reviews={relaventReviews}
 					orientation="horizontal"
-					className="flex md:hidden w-screen"
+					className="block md:hidden w-screen"
 				/>
 			</div>
 

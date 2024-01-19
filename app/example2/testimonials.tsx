@@ -1,14 +1,19 @@
-import { AvatarImage, Avatar } from "../../components/ui/avatar";
+import {
+	AvatarImage,
+	Avatar,
+	AvatarFallback,
+} from "../../components/ui/avatar";
 import { Card } from "../../components/ui/card";
+import TestimonialCarousel from "@/app/testimonials";
 
 export default function Testimonials({ ...params }) {
 	console.log("Testimonials", params);
 	return (
-		<div className="">
-			<div className="container grid place-items-center min-h-svh">
-				<div className="w-full py-12 bg-gray-50 dark:bg-gray-900">
+		<div className="md:container">
+			<div className="grid place-items-center min-h-svh">
+				<div className="w-full py-12">
 					<div className="container mx-auto px-4 sm:px-6 lg:px-8">
-						<h2 className="text-3xl leading-9 font-extrabold text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 mb-10 text-center">
+						<h2 className="text-3xl leading-9 font-title text-gray-900 dark:text-gray-100 md:text-5xl sm:leading-10 mb-10 text-center">
 							What our customers are saying
 						</h2>
 						<div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
@@ -18,6 +23,7 @@ export default function Testimonials({ ...params }) {
 										alt="Customer name"
 										src="/placeholder.svg?height=64&width=64"
 									/>
+									<AvatarFallback>JD</AvatarFallback>
 								</Avatar>
 								<div className="text-center">
 									<div className="text-lg font-semibold">John Doe</div>
@@ -37,6 +43,7 @@ export default function Testimonials({ ...params }) {
 										alt="Customer name"
 										src="/placeholder.svg?height=64&width=64"
 									/>
+									<AvatarFallback>JS</AvatarFallback>
 								</Avatar>
 								<div className="text-center">
 									<div className="text-lg font-semibold">Jane Smith</div>
@@ -56,6 +63,7 @@ export default function Testimonials({ ...params }) {
 										alt="Customer name"
 										src="/placeholder.svg?height=64&width=64"
 									/>
+									<AvatarFallback>EJ</AvatarFallback>
 								</Avatar>
 								<div className="text-center">
 									<div className="text-lg font-semibold">Emma Johnson</div>
@@ -71,6 +79,26 @@ export default function Testimonials({ ...params }) {
 							</Card>
 						</div>
 					</div>
+				</div>
+			</div>
+			<div className="items-center justify-center text-left flex flex-col my-6 md:my-20">
+				<h1
+					className={`font-title text-center md:text-left w-full md:ml-2 my-4 md:text-5xl text-3xl`}
+				>
+					{params.headline}
+				</h1>
+				<div className="grid place-items-center">
+					<TestimonialCarousel
+						reviews={params.testimonialItem}
+						orientation="vertical"
+						className="hidden md:flex"
+						height={200}
+					/>
+					<TestimonialCarousel
+						reviews={params.testimonialItem}
+						orientation="horizontal"
+						className="block md:hidden w-screen px-4"
+					/>
 				</div>
 			</div>
 		</div>

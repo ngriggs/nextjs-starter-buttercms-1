@@ -10,20 +10,25 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
-export function CarouselDemo({ reviews, className, orientation }: any) {
+export default function CarouselDemo({
+	reviews,
+	className,
+	orientation,
+	height,
+}: any) {
 	return (
 		<Carousel
 			className={cn("w-full", className)}
 			opts={{ loop: true }}
 			orientation={orientation}
 		>
-			<CarouselContent className="w-full md:h-[400px]">
+			<CarouselContent className={`flex w-full my-auto h-[${height}px]`}>
 				{reviews.map((review: any, index: number) => (
 					<CarouselItem key={index}>
 						<div className="p-1">
 							<Card className=" border-none shadow-none">
 								<CardContent className="flex p-6 w-full">
-									{review.text}
+									{review.text ? review.text : "missing review text"}
 								</CardContent>
 								<CardFooter>
 									<div className="flex justify-between space-x-4">
@@ -36,11 +41,15 @@ export function CarouselDemo({ reviews, className, orientation }: any) {
 										</Avatar>
 										<div className="space-y-0">
 											<h4 className="text-sm font-semibold">
-												{review.author_name}
+												{review.author_name
+													? review.author_name
+													: "missing author name"}
 											</h4>
 											<div className="flex items-center pt-2">
 												<span className="text-xs text-muted-foreground">
-													{review.relative_time_description}
+													{review.relative_time_description
+														? review.relative_time_description
+														: "missing relative time description"}
 												</span>
 											</div>
 										</div>
@@ -56,6 +65,12 @@ export function CarouselDemo({ reviews, className, orientation }: any) {
 				orientation="vertical"
 				buttonPlacement="right"
 				className="hidden md:flex"
+			/>
+			<CarouselNavigation
+				items={reviews}
+				orientation="horizontal"
+				buttonPlacement="bottom"
+				className="flex md:hidden"
 			/>
 		</Carousel>
 	);

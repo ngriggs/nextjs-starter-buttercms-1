@@ -4,6 +4,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { Icons } from "./icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Button } from "./ui/button";
 
 export default function HoverPopover({ item }: any) {
 	const [open, setOpen] = useState(false);
@@ -57,11 +58,11 @@ export default function HoverPopover({ item }: any) {
 			</Link>
 
 			<PopoverContent
-				className="mt-[15px] rounded-sm"
+				className="rounded-sm p-1"
 				onMouseEnter={handlePopoverMouseEnter}
 				onMouseLeave={handlePopoverMouseLeave}
 				side="top"
-				sideOffset={0}
+				sideOffset={5}
 				onCloseAutoFocus={(event) => {
 					event.preventDefault();
 				}}
@@ -72,11 +73,13 @@ export default function HoverPopover({ item }: any) {
 							key={sub.title}
 							href={sub.link}
 							// target={sub.link}
-							className="-m-3 flex items-start rounded-sm p-3"
+							className="flex items-start rounded-sm"
 						>
-							<ul className="">
-								<li className="text-base font-light hover:underline hover:underline-offset-2">
+							<ul className="w-full flex flex-col">
+								<li className="text-base font-light px-3 py-2 rounded-sm hover:underline focus:bg-accent hover:bg-accent hover:underline-offset-2 h-full w-full">
+									{/* <Button variant={"ghost"} className="w-full"> */}
 									{sub.title}
+									{/* </Button> */}
 								</li>
 							</ul>
 						</Link>

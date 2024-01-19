@@ -27,15 +27,8 @@ export default function Features({ ...params }) {
 				<div className="flex flex-col my-20">
 					<div className="grid place-content-start">
 						<p className="p-2 tracking-[3px] text-giggles-yellow">ABOUT</p>
-						<h1 className="p-2 font-summerVibesSolid text-4xl tracking-[-2px] md:text-[56px]">
-							hi, we&apos;re{" "}
-							<span
-								className="relative inline-block bg-giggles-svg2 bg-contain bg-center bg-no-repeat"
-								style={{ backgroundSize: "80%", lineHeight: "1.5" }}
-							>
-								<span className="relative z-10">giggles</span>
-							</span>
-							.
+						<h1 className="p-2 font-title text-4xl md:text-[56px]">
+							hi, we&apos;re giggles.
 						</h1>
 						<p className="max-w-lg p-2 font-quicksand text-xl leading-[32px]">
 							An indoor playspace and gathering place{" "}

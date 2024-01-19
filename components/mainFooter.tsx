@@ -123,7 +123,7 @@ export default function footer({ socialMedia }: any) {
 
 export function Footer2() {
 	return (
-		<footer className="bg-gray-800 relative text-white pt-10 px-4 md:px-6">
+		<footer className="bg-card text-card-foreground relative  pt-10 px-4 md:px-6">
 			<div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 				<div>
 					<Link href="/" className="hover:cursor-pointer w-full">
@@ -141,31 +141,27 @@ export function Footer2() {
 					<h3 className="font-semibold text-lg mb-4">Quick Links</h3>
 					<ul className="space-y-2 text-sm">
 						<li>
-							<Link
-								className="text-white hover:underline"
-								href="/"
-								target="_top"
-							>
+							<Link className=" hover:underline" href="/" target="_top">
 								Home
 							</Link>
 						</li>
 						<li>
-							<Link className="text-white hover:underline" href="/about">
+							<Link className="hover:underline" href="/about">
 								About us
 							</Link>
 						</li>
 						<li>
-							<Link className="text-white hover:underline" href="/events">
+							<Link className="hover:underline" href="/events">
 								Events
 							</Link>
 						</li>
 						<li>
-							<Link className="text-white hover:underline" href="/classes">
+							<Link className="hover:underline" href="/classes">
 								Classes
 							</Link>
 						</li>
 						<li>
-							<Link className="text-white hover:underline" href="/team">
+							<Link className=" hover:underline" href="/team">
 								Coaches
 							</Link>
 						</li>

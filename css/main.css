@@ -88,3 +88,7 @@ Other options to keep in mind:
 		@apply bg-background text-foreground;
 	}
 }
+
+.cursor {
+	animation: blink 1s infinite;
+}

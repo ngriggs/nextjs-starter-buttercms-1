@@ -7,13 +7,10 @@ export default function TwoColumnWithImage({ ...params }) {
 	console.log("TwoColumnWithImage", params);
 	return (
 		<div id={params.scrollAnchorId} className="relative w-full">
-			<div className="container mx-auto grid md:grid-cols-2 grid-cols-1 sm:py-20 md:flex-row">
+			<div className="md:container mx-auto grid md:grid-cols-2 grid-cols-1 sm:py-20 md:flex-row">
 				{params.image && params.imagePosition === "left" && (
 					<div className="my-auto">
-						<div
-							className={`my-10 grid place-items-center
-											rounded-r-full`}
-						>
+						<div className="my-10 grid place-items-center max-h-[70vh] overflow-hidden object-cover object-center">
 							<Image src={params.image.url} alt="" width={3000} height={3000} />
 						</div>
 					</div>
@@ -23,17 +20,10 @@ export default function TwoColumnWithImage({ ...params }) {
 					<div className="max-w-[600px]">
 						<div className="grid place-content-start">
 							<p className="p-2 tracking-[3px] text-giggles-yellow">ABOUT</p>
-							<h1 className="p-2 font-summerVibesSolid text-4xl tracking-[-2px] md:text-[56px]">
-								hi, we&apos;re{" "}
-								<span
-									className="relative inline-block bg-giggles-svg2 bg-contain bg-center bg-no-repeat"
-									style={{ backgroundSize: "80%", lineHeight: "1.5" }}
-								>
-									<span className="relative z-10">giggles</span>
-								</span>
-								.
+							<h1 className="p-2 font-title text-3xl md:text-5xl">
+								hi, we&apos;re giggles.
 							</h1>
-							<p className="max-w-lg p-2 font-quicksand text-xl leading-[32px]">
+							<p className="max-w-lg p-2 text-xl leading-[32px]">
 								An indoor playspace and gathering place{" "}
 								<br className="hidden sm:block" /> located in the heart of
 								Highwood, IL.
@@ -79,10 +69,7 @@ export default function TwoColumnWithImage({ ...params }) {
 
 				{params.image && params.imagePosition === "right" && (
 					<div className=" my-auto -order-last md:order-last">
-						<div
-							className={`my-10 grid place-content-center
-											rounded-r-full `}
-						>
+						<div className="my-10 grid place-content-center max-h-[70vh] overflow-hidden object-cover object-center">
 							<Image src={params.image.url} alt="" width={3000} height={3000} />
 						</div>
 					</div>
