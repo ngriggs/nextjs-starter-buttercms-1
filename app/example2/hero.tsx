@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Typewriter from "./typewriter";
 import Link from "next/link";
-import { Button, buttonVariants } from "../../components/ui/button";
+import { Button } from "../../components/ui/button";
 
 export default function Hero({ ...params }) {
-	console.log("Hero", params);
 	const { heroSection, featureSection } = {
 		heroSection: {
 			title: "Your Online Presence",

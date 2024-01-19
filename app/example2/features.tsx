@@ -22,7 +22,6 @@ import { cloneElement } from "react";
 import Image from "next/image";
 
 export default function Features({ ...params }) {
-	console.log("Features", params);
 	return (
 		<div className="bg-cover bg-center bg-feature-background inset-0 -z-10 min-h-screen w-screen ">
 			<div className="container grid grid-cols-1 md:grid-cols-2">

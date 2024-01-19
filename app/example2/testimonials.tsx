@@ -7,7 +7,6 @@ import { Card } from "../../components/ui/card";
 import TestimonialCarousel from "@/app/testimonials";
 
 export default function Testimonials({ ...params }) {
-	console.log("Testimonials", params);
 	return (
 		<div className="md:container">
 			<div className="grid place-items-center min-h-svh">

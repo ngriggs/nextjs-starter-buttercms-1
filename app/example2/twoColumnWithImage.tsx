@@ -4,7 +4,6 @@ import { Button } from "../../components/ui/button";
 import { Icons } from "../../components/icons";
 
 export default function TwoColumnWithImage({ ...params }) {
-	console.log("TwoColumnWithImage", params);
 	return (
 		<div id={params.scrollAnchorId} className="relative w-full">
 			<div className="md:container mx-auto grid md:grid-cols-2 grid-cols-1 sm:py-20 md:flex-row">

@@ -2,7 +2,6 @@ import { getLandingPage } from "@/lib/getLandingPage";
 import LandingPageSection from "@/app/example2/landingPageSection";
 
 export default async function Page({ params }: any) {
-	console.log(params.slug);
 	const landingPageData = await getLandingPage(params.slug);
 	console.log(landingPageData?.landingPage?.body);
 

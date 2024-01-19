@@ -16,6 +16,15 @@ export default function CarouselDemo({
 	orientation,
 	height,
 }: any) {
+	console.log(reviews);
+
+	function abbreviateName(data: { name: string }): string {
+		const nameParts = data.name.split(" ");
+		const abbreviatedName = nameParts.map((part) => part.charAt(0)).join("");
+		return abbreviatedName.toUpperCase(); // Optionally, convert to uppercase
+	}
+
+	console.log(abbreviateName(reviews[0]));
 	return (
 		<Carousel
 			className={cn("w-full", className)}
@@ -28,7 +37,15 @@ export default function CarouselDemo({
 						<div className="p-1">
 							<Card className=" border-none shadow-none">
 								<CardContent className="flex p-6 w-full">
-									{review.text ? review.text : "missing review text"}
+									{review.text ? (
+										review.text
+									) : review.quote ? (
+										<div
+											dangerouslySetInnerHTML={{ __html: review.quote.html }}
+										/>
+									) : (
+										"missing review text"
+									)}
 								</CardContent>
 								<CardFooter>
 									<div className="flex justify-between space-x-4">
@@ -37,18 +54,22 @@ export default function CarouselDemo({
 												src={review.profile_photo_url}
 												alt="@shadcn"
 											/>
-											<AvatarFallback>CN</AvatarFallback>
+											<AvatarFallback>{abbreviateName(review)}</AvatarFallback>
 										</Avatar>
 										<div className="space-y-0">
 											<h4 className="text-sm font-semibold">
 												{review.author_name
 													? review.author_name
+													: review.name
+													? review.name
 													: "missing author name"}
 											</h4>
 											<div className="flex items-center pt-2">
 												<span className="text-xs text-muted-foreground">
 													{review.relative_time_description
 														? review.relative_time_description
+														: review.title
+														? review.title
 														: "missing relative time description"}
 												</span>
 											</div>
