@@ -62,9 +62,7 @@ export default function NavBar({ test, socialMedia }: any) {
 							<nav className="hidden gap-4 text-sm sm:gap-6 md:block my-auto">
 								<div className="flex">
 									<Link
-										className={`flex-1 h-[58px] flex mr-6 my-1 bg-white rounded-sm rounded-tl-3xl rounded-br-3xl ${
-											isNavbarSticky ? "" : ""
-										}`}
+										className={`flex-1 h-[58px] flex mr-6 my-1 bg-white rounded-sm rounded-tl-3xl rounded-br-3xl w-[80px]`}
 										href="/"
 										target="_top"
 									>

@@ -7,7 +7,7 @@ export default async function Page({ params }: any) {
 	console.log(landingPageData?.landingPage?.body);
 
 	return (
-		<div className="relative bg-inherit text-secondary-foreground min-svh pt-20">
+		<div className="relative bg-inherit text-secondary-foreground min-h-svh">
 			{landingPageData?.landingPage?.body.map((section: any, index: number) => {
 				return (
 					<LandingPageSection

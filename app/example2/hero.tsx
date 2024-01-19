@@ -46,8 +46,8 @@ export default function Hero({ ...params }) {
 	};
 
 	return (
-		<div className="relative bg-gradient-to-b from-[#5a1a99] to-[#e6d3f8] pt-20 ">
-			<div className="container text-white z-20 my-20 flex min-h-screen flex-col">
+		<div className="relative bg-gradient-to-b from-[#5a1a99] to-transparent pt-20 ">
+			<div className="container z-20 my-20 flex min-h-screen flex-col">
 				<div className="flex-1 px-4 pb-10 md:px-6">
 					<div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
 						<Image
@@ -63,7 +63,7 @@ export default function Hero({ ...params }) {
 									<Typewriter texts={["Elevate", "Enhance", "Enrich"]} />
 									{heroSection.title}
 								</h1>
-								<p className="max-w-[600px] text-gray-100 md:text-xl">
+								<p className="max-w-[600px] md:text-xl">
 									{heroSection.subtitle}
 								</p>
 							</div>
@@ -117,9 +117,7 @@ export default function Hero({ ...params }) {
 									<h2 className="text-2xl font-bold tracking-tighter">
 										{feature.title}
 									</h2>
-									<p className="text-center text-gray-100">
-										{feature.description}
-									</p>
+									<p className="text-center">{feature.description}</p>
 								</div>
 							))}
 						</div>

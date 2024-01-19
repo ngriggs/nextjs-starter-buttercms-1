@@ -76,7 +76,7 @@ export default function HoverPopover({ item }: any) {
 							className="flex items-start rounded-sm"
 						>
 							<ul className="w-full flex flex-col">
-								<li className="text-base font-light px-3 py-2 rounded-sm hover:underline focus:bg-accent hover:bg-accent hover:underline-offset-2 h-full w-full">
+								<li className="text-base font-light px-3 py-2 rounded-sm focus:bg-accent hover:bg-accent h-full w-full">
 									{/* <Button variant={"ghost"} className="w-full"> */}
 									{sub.title}
 									{/* </Button> */}

@@ -52,7 +52,7 @@ export async function getClasses(category?: any) {
 			method: "POST",
 			headers,
 			body: JSON.stringify(requestBody),
-			next: { revalidate: 100 },
+			next: { revalidate: 36000 },
 		};
 		const response = await (
 			await fetch(

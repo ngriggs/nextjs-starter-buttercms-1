@@ -18,6 +18,8 @@ import {
 } from "@/components/ui/select";
 import { Icons } from "@/components/icons";
 import Link from "next/link";
+import { cloneElement } from "react";
+import Image from "next/image";
 
 export default function Features({ ...params }) {
 	console.log("Features", params);
@@ -76,50 +78,28 @@ export default function Features({ ...params }) {
 					</div>
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-20">
-					{[0, 1, 2, 3].map((_, index) => (
-						<Card
-							key={index}
-							className=" transition-all duration-100 hover:outline hover:outline-border outline-border"
-						>
-							<CardHeader>
-								<CardTitle>Create project</CardTitle>
-								<CardDescription>
-									Deploy your new project in one-click.
-								</CardDescription>
-							</CardHeader>
-							<CardContent>
-								<form>
-									<div className="grid w-full items-center gap-4">
-										<div className="flex flex-col space-y-1.5">
-											<Label htmlFor="name">Name</Label>
-											<Input id="name" placeholder="Name of your project" />
-										</div>
-										<div className="flex flex-col space-y-1.5">
-											<Label htmlFor="framework">Framework</Label>
-											<Select>
-												<SelectTrigger id="framework">
-													<SelectValue placeholder="Select" />
-												</SelectTrigger>
-												<SelectContent position="popper">
-													<SelectItem value="next">Next.js</SelectItem>
-													<SelectItem value="sveltekit">SvelteKit</SelectItem>
-													<SelectItem value="astro">Astro</SelectItem>
-													<SelectItem value="nuxt">Nuxt.js</SelectItem>
-												</SelectContent>
-											</Select>
-										</div>
-									</div>
-								</form>
-							</CardContent>
-							<CardFooter className="flex justify-between">
-								<Button variant={"destructive"}>Cancel</Button>
-								<Button variant="outline2">
-									<span className="w-0 h-0 rounded-full bg-secondary/50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ease-out duration-300 transition-all group-hover:w-[200px] group-hover:h-[200px] -z-1"></span>
-									Deploy
-								</Button>
-							</CardFooter>
-						</Card>
-					))}
+					{params.features.map((feature: any, index: number) => {
+						return (
+							<Card
+								key={index}
+								className="border-none shadow-none grid place-items-center text-center bg-transparent"
+							>
+								<CardContent className="space-y-2">
+									<Image
+										src={feature.icon.url}
+										alt={""}
+										height={feature.icon.height}
+										width={feature.icon.width}
+										className="rounded-lg"
+									></Image>
+								</CardContent>
+								<CardHeader>
+									<CardTitle>{feature.headline}</CardTitle>
+									<CardDescription>{feature.description}</CardDescription>
+								</CardHeader>
+							</Card>
+						);
+					})}
 				</div>
 			</div>
 		</div>

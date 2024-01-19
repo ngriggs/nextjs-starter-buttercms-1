@@ -25,7 +25,7 @@ export async function getMenu() {
 			method: "POST",
 			headers,
 			body: JSON.stringify(requestBody),
-			next: { revalidate: 36000 },
+			next: { revalidate: 100 },
 		};
 		const response = await (
 			await fetch(
