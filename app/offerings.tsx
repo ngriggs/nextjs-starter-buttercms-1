@@ -14,7 +14,7 @@ export default function Offerings() {
 	const classes = [
 		{
 			title: "Ninja Zone",
-			icon: <ConeIcon />,
+			icon: <ConeIcon className="p-2" />,
 			description:
 				"Ninja Zone is a discipline inspired from Obstacle Course Training, Gymnastics, Street Dance, & Martial Arts.",
 		},
@@ -22,19 +22,19 @@ export default function Offerings() {
 			title: "Recreational",
 			description:
 				"LGA follows the guidlines of the USAG gymnastics level 1-4 for bothboys and girls.",
-			icon: <RingsIcon />,
+			icon: <RingsIcon className="p-2" />,
 		},
 		{
 			title: "Preschool",
 			description:
 				"Our program is based on a variety of skills, musical activities and rhythm to enhance your child’s overall development.",
-			icon: <PreschoolIcon />,
+			icon: <PreschoolIcon className="p-2" />,
 		},
 		{
 			title: "Cheer Tumble",
 			description:
 				"Our program is USASF (US All Star Federation for Cheer & Dance Teams) Levels 1-4 Tumbling & Safety Rules & Regulations.",
-			icon: <CheerTumble />,
+			icon: <CheerTumble className="p-2" />,
 		},
 	];
 	return (
@@ -89,22 +89,25 @@ export default function Offerings() {
 				value="events"
 				className="border-none shadow-none place-items-center grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto"
 			>
-				{classes.map((item, index) => {
-					return (
-						<Card
-							key={index}
-							className="border-none shadow-none grid place-items-center text-center"
-						>
-							<CardContent className="space-y-2">
-								{cloneElement(item.icon)}
-							</CardContent>
-							<CardHeader>
-								<CardTitle>{item.title}</CardTitle>
-								<CardDescription>{item.description}</CardDescription>
-							</CardHeader>
-						</Card>
-					);
-				})}
+				{classes
+					.slice()
+					.reverse()
+					.map((item, index) => {
+						return (
+							<Card
+								key={index}
+								className="border-none shadow-none grid place-items-center text-center"
+							>
+								<CardContent className="space-y-2">
+									{cloneElement(item.icon)}
+								</CardContent>
+								<CardHeader>
+									<CardTitle>{item.title}</CardTitle>
+									<CardDescription>{item.description}</CardDescription>
+								</CardHeader>
+							</Card>
+						);
+					})}
 			</TabsContent>
 			<TabsContent
 				value="parties"
