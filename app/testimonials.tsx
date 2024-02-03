@@ -16,25 +16,20 @@ export default function CarouselDemo({
 	orientation,
 	height,
 }: any) {
-	console.log(reviews);
-
 	function abbreviateName(data: { author_name: string }): string {
 		const nameParts = data.author_name.split(" ");
 		const abbreviatedName = nameParts.map((part) => part.charAt(0)).join("");
 		return abbreviatedName.toUpperCase(); // Optionally, convert to uppercase
 	}
-
-	console.log(abbreviateName(reviews[0]));
-	console.log(`flex w-full my-auto h-[${height ? height : height}px]`);
+	const string = height ? `h-[${height}px]` : "";
+	console.log(string);
 	return (
 		<Carousel
 			className={cn("w-full", className)}
 			opts={{ loop: true }}
 			orientation={orientation}
 		>
-			<CarouselContent
-				className={`flex w-full my-auto h-[${height ? height : height}px]`}
-			>
+			<CarouselContent className={`flex w-full my-auto ${string}`}>
 				{reviews.map((review: any, index: number) => (
 					<CarouselItem key={index}>
 						<div className="p-1">
