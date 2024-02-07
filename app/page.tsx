@@ -101,8 +101,8 @@ export default function Test() {
 			>
 				<div className="absolute inset-0 bg-gradient-to-b from-[#4A00E0]/75 to-[#2B213D]/75 " />
 
-				<div className="grid relative place-items-center mb-36">
-					<div className="mx-auto text-primary-foreground dark:text-primary">
+				<div className="grid relative place-items-center mb-[200px] md:mb-36">
+					<div className="mx-auto flex flex-col justify-between h-full md:h-auto text-primary-foreground dark:text-primary">
 						<h1
 							className={`text-center max-w-4xl text-5xl md:text-8xl font-title`}
 						>
@@ -222,7 +222,7 @@ export default function Test() {
 			</div>
 			{/* Have a question section */}
 			<div className="w-full bg-black dark:bg-inherit text-white">
-				<div className="container flex flex-col md:flex-row text-center items-center justify-center h-[30vh] space-x-6">
+				<div className="container flex flex-col md:flex-row text-center items-center justify-center h-[30vh] gap-6">
 					<p className={`font-title text-3xl md:text-5xl`}>
 						Have a question? Get in touch now!
 					</p>
@@ -243,7 +243,7 @@ export default function Test() {
 			</div>
 			{/* Stats */}
 			<div className="container min-h-[50vh] items-center justify-center flex flex-col">
-				<div className="h-[300px] w-full bg-gradient-to-l from-[#8d2de1] to-[#4a00e0] rounded-[50px] [&>div>h3]:text-3xl md:[&>div>h3]:text-5xl grid grid-cols-1 md:grid-cols-3 place-items-center text-white">
+				<div className="min-h-[300px] w-full gap-6 bg-gradient-to-l from-[#8d2de1] to-[#4a00e0] rounded-[50px] [&>div>h3]:text-3xl md:[&>div>h3]:text-5xl grid grid-cols-1 md:grid-cols-3 place-items-center text-white">
 					{stats.map((stat, index) => {
 						return (
 							<div className={`flex flex-col`} key={index}>

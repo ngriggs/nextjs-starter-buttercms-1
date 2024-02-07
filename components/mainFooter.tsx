@@ -137,7 +137,7 @@ export function Footer2() {
 						/>
 					</Link>
 				</div>
-				<div>
+				<div className="text-center md:text-left">
 					<h3 className="font-semibold text-lg mb-4">Quick Links</h3>
 					<ul className="space-y-2 text-sm">
 						<li>
@@ -167,16 +167,16 @@ export function Footer2() {
 						</li>
 					</ul>
 				</div>
-				<div className="flex flex-col [&>p]:text-sm">
+				<div className="flex flex-col [&>p]:text-sm text-center md:text-left">
 					<h3 className="font-semibold text-lg mb-4">Contact Us</h3>
 					<p>2610 Commerce Dr.</p>
 					<p>Libertyville, IL 60048</p>
 					<p>Email: info@example.com</p>
 					<p>Phone: +1 234 567 890</p>
 				</div>
-				<div>
+				<div className="grid place-content-center md:place-content-start">
 					<h3 className="font-semibold text-lg mb-4">Follow Us</h3>
-					<div className="flex space-x-4">
+					<div className="flex gap-4">
 						<Link href="#">
 							<FacebookIcon className="h-6 w-6 hover:scale-105" />
 						</Link>
